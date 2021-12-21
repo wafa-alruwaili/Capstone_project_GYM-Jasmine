@@ -1,12 +1,12 @@
 package com.example.GYM.Jasmine.model.Entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import javax.persistence.*;
 
 @Entity
 @Table
 public class Member {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int m_id;
     private int height;
@@ -18,6 +18,13 @@ public class Member {
     private int dob;
     private String start_date;
     private String end_date;
+//    @ManyToMany
+//    @JoinColumn(name = "l_id")
+//    private Lessons lessons;
+
+
+    public Member() {
+}
 
     public Member(int m_id, int height, int weight, String name, String gender, String address, String renewal, int dob, String start_date, String end_date) {
         this.m_id = m_id;
@@ -32,8 +39,7 @@ public class Member {
         this.end_date = end_date;
     }
 
-    public Member() {
-    }
+
 
     public int getM_id() {
         return m_id;
@@ -117,6 +123,8 @@ public class Member {
 
     @Override
     public String toString() {
+
+
         return "member{" +
                 "m_id=" + m_id +
                 ", height=" + height +
