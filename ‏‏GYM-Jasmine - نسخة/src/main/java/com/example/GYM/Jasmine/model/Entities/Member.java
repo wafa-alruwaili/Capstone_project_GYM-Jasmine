@@ -18,9 +18,10 @@ public class Member {
     private int dob;
     private String start_date;
     private String end_date;
-//    @ManyToMany
-//    @JoinColumn(name = "l_id")
-//    private Lessons lessons;
+
+    @ManyToMany
+    @JoinColumn(name = "l_id")
+    private Lessons lessons;
 
 
     public Member() {

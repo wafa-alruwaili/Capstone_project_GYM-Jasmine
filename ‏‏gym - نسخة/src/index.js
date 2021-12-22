@@ -4,31 +4,30 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Lesson from "./routes/Lesson";
-import Employees from "./routes/Employees";
+// import Lesson from "./routes/Lesson";
+// import Employees from "./routes/Employees";
 import Register from "./routes/register"
-import Plan from "./routes/Plan";
+// import Plan from "./routes/Plan";
+
 
 
 ReactDOM.render(
-
-<BrowserRouter>.
+  <BrowserRouter>.
     <Routes>
-      <Route path="/" element={<App />}/>
-        {/* <Route path="login" element={<Login />} /> */}
-        <Route path="lesson" element={<Lesson />}>
-          <Route path="l_id" element={<Lesson />} />
-        </Route>
-        <Route path="register" element={<Register />} />
-        <Route path="employees" element={<Employees />} >
-          <Route path="l_id" element={<Employees />} />
-        </Route>
+      <Route path="/" element={<App />}>
+        <Route path="register" element={<Register/>} />
+        {/* <Route path="triage" element={<Triages />}>
+          <Route path=":NationalId" element={<Triage />} />
+        </Route> */}
+        {/* <Route path="registers" element={<Registers />} /> */}
+        {/* <Route path="doctors" element={<Doctors />} >
+          <Route path=":NationalId" element={<Doctor />} /> */}
+        {/* </Route> */}
 
-        <Route path="plan" element={<Plan />} >
-          <Route path="l_id" element={<Plan />} />
-        </Route>
-     
+        {/* <Route path="histories" element={<Histories />} >
+          <Route path=":NationalId" element={<History />} />
+        </Route> */}
+      </Route>
     </Routes>
-  </BrowserRouter> ,
-  document.getElementById('root')
-);
+  </BrowserRouter>,
+  document.getElementById('root'));
