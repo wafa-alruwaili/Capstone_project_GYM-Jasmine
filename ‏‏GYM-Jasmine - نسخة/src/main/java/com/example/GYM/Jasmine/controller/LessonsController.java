@@ -1,8 +1,10 @@
-import com.example.GYM.Jasmine.model.Entities.Lessons;
+package com.example.GYM.Jasmine.controller;
+
 import com.example.GYM.Jasmine.model.service.LessonsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.GYM.Jasmine.model.Entities.Lessons;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,13 +21,13 @@ public class LessonsController<lessonsService> {
     }
 
     @GetMapping
-    public List<Lessons> getLessons() {
-        return LessonsService.getLessonss();
+    public List<Lessons> getLessonss() {
+        return lessonsService.getLesson();
     }
 
     @GetMapping(path = "{lessonsId}")
     public Optional<Lessons> getLessons(@PathVariable(name = "lessonsId") Integer lessonsId) {
-        return lessonsService.getLessons(lessonsId);
+        return lessonsService.getLesson(lessonsId);
     }
 
     @PostMapping(path = "add")

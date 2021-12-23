@@ -20,17 +20,17 @@ public class LessonsService {
     }
 
 
-    public List<Lessons> getLessonss() {
+    public List<Lessons> getLesson() {
         return lessonsRepository.findAll();
     }
 
-    public Optional<Lessons> getLessons(Integer lessonsId) {
+    public Optional<Lessons> getLesson(Integer lessonsId) {
         return lessonsRepository.findById(lessonsId);
 
     }
 
-    public void addNewLessons(Lessons member) {
-        lessonsRepository.save(lessons);
+    public void addNewLessons(Lessons Lessons) {
+        lessonsRepository.save(Lessons );
     }
 
     public void deleteLessons(Integer lessonsId) {
@@ -41,5 +41,3 @@ public class LessonsService {
 
 
 }
-
-
