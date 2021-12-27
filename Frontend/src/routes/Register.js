@@ -5,10 +5,10 @@ import axios from "axios"
 
 
 export default function Register() {
-    //  const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", date_of_birth: "", start_date: "", end_date: "" })
+    //const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", date_of_birth: "", start_date: "", end_date: "" })
 
     function handleClick() {
-        
+
     }
 
     let [m_id, setM_id] = useState("")
@@ -33,13 +33,27 @@ export default function Register() {
     function handleStart_date(event) { setStart_date((start_date = event.target.value)); }
     function handleEnd_date(event) { setEnd_date((end_date = event.target.value)); }
     function handleRenewal(event) { setRenwal((renewal = event.target.value)); }
-    function handleSubmit(event) {event.preventDefault();
+    function handleSubmit(event) {
+        event.preventDefault();
         axios({
-            
+
             method: 'post',
             url: 'api/member/add',
             data: newmember
-            
+
+        });
+    }
+
+
+
+    let [del, setdel] = useState("")
+    function handleClickDel3(event) { setdel((del = event.target.value)) }
+    function handleClickDel2() {
+
+        axios({
+            method: 'delete',
+            url: `api/delete/{memberId}/${del}`,
+
         });
     }
 
@@ -76,8 +90,24 @@ export default function Register() {
                 <input type="text" name="m_id" placeholder="m_id" size="15" onChange={handleM_id} /><hr />
                 <label> Name </label>
                 <input type="text" name="name" placeholder="name" size="15" onChange={handleName} /><hr />
-                <label> Gender </label>
-                <input type="text" name="gender" placeholder="gender" onChange={handleGender} /><hr />
+                <label> Gender  </label>
+                {/* <select id="f1" onChange={handleGender}> */}
+                {/* <option disabled value="" selected>Selection</option> */}
+                {/* // <option value="male">Male</option>
+                  //  <option value="femal">Femal</option> */}
+                {/* </select> */}
+                {/* <div id="f1" onChange={handleGender}>
+                    <input type="radio" value="male" />male
+                    <input type="radio" value="femal" />femal
+                </div> */}
+
+                <input type="radio" value="male" checked={gender == 'male'}
+        onChange={handleGender} />Male
+        <input type="radio" value="femal" checked={gender == 'femal'}
+        onChange={handleGender} />Femal
+
+                <br></br>
+                <br></br>
                 <label >Heigh</label>
                 <input type="text" name="heigh" placeholder="heigh" size="15" onChange={handleHeigh} /><hr />
                 <label >Weight</label>
@@ -92,14 +122,28 @@ export default function Register() {
                 <input type="text" name="start_date" placeholder="start_date" size="15" onChange={handleStart_date} /><hr />
                 <label >End_date</label>
                 <input type="text" name="end_date" placeholder="end_date" size="15" onChange={handleEnd_date} /><hr />
-                <label >Renewal</label>
-                <input type="text" name="renewal" placeholder="renewal" size="15" onChange={handleRenewal} /><hr />
+                <label> Renewal </label>
+
+
+
+                {/* <div id="f1" onChange={handleRenewal}>
+                    <input type="radio" value="yes" />yes
+                    <input type="radio" value="no" />no
+                </div> */}
+
+
+<input type="radio" value="yes" checked={ renewal== 'yes'}
+        onChange={handleRenewal} />Yes
+        <input type="radio" value="no" checked={renewal == 'no'}
+        onChange={handleRenewal} />No
+
                 <br />
                 <br />
-                {/* <button type="submit" className="registerbtn" onClick={handleSubmit} style={{ width: "10%", background: "#ff3399", color: "#FFFFFF", }}>submit</button> */}
-                <input type="submit" className="registerbtn" onClick={handleSubmit} style={{ width: "10%", background: "#ff3399", color: "#FFFFFF", }}></input>
-                
-                
+                <button type="submit" className="registerbtn" onClick={handleSubmit} style={{ width: "10%", background: "#ff3399", color: "#FFFFFF", }}>submit</button>
+
+                <input type="text" id="m_id" name="m_id" onChange={handleClickDel3} />
+                <input type="submit" value="Remove" onClick={handleClickDel2} style={{ width: "10%", background: "#ff3399", color: "#FFFFFF", }}></input>
+
                 <br />
             </div>
         </form>

@@ -4,7 +4,7 @@ import axios from "axios"
 
 
 
-export default function App() {
+export default function Home() {
   // const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", dob: "", start_date: "", end_date: "" })
 
 
@@ -63,14 +63,16 @@ export default function App() {
          fontsize: "2.5rem",
           color: "#f0ecec", 
           textAlign: 'left' }}
-
+ 
       >
-
+  <ul className="ul-list">
         <Link to="/Register"><button>Register </button>|</Link>
         <Link to="/member"><button>Member </button>|</Link>
-        <Link to="/lesson"><button>Lesson </button>|</Link>
+        <Link to="/lessons"><button>Lessons </button>|</Link>
         <Link to="/employees"><button>Employees </button>|</Link>
         <Link to="/plan"><button>Plan </button>|</Link>
+        {/* <Link to="/test"><button>Test </button>|</Link> */}
+       </ul>
       </nav>
 
       <br></br>

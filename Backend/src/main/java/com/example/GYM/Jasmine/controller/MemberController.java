@@ -35,9 +35,18 @@ public class MemberController<memberService> {
         memberService.addNewMember(member);
     }
 
-    @DeleteMapping(path = "delete/{memberId}")
-    public void deleteMember(@PathVariable ("memberId") Integer memberId){
-        memberService.deleteMember(memberId);
+//    @DeleteMapping(path = "api/delete/{memberId}")
+//    public void deleteMember(@PathVariable ("memberId") String memberId){
+//        int intmemberId =Integer .parseInt(memberId);
+//        memberService.deleteMember(intmemberId);
+
+    @DeleteMapping(path = "api/delete/{memberId}")
+    public void deleteMember(@PathVariable ("memberId") String memberId){
+       int memberInt =Integer.parseInt(memberId);
+        memberService.deleteMember(memberInt);
+    }
+
+
 
     }
-}
+

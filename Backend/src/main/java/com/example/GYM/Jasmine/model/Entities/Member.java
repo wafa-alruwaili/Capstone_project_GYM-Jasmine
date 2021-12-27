@@ -11,13 +11,13 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int m_id;
-    private int height;
-    private int weight;
     private String name;
     private String gender;
-    private String address;
-    private String renewal;
     private int dob;
+    private String address;
+    private int height;
+    private int weight;
+    private String renewal;
     private String start_date;
     private String end_date;
 
@@ -136,95 +136,6 @@ public class Member {
         this.lessons = lessons;
     }
 
-
-//
-//    public List<Lessons> getLessons() {
-//        return lessons;
-//    }
-//
-//    public void setLessons(List<Lessons> lessons) {
-//        this.lessons = lessons;
-//    }
-//
-//    public int getM_id() {
-//        return m_id;
-//    }
-//
-//    public void setM_id(int m_id) {
-//        this.m_id = m_id;
-//    }
-//
-//    public int getHeight() {
-//        return height;
-//    }
-//
-//    public void setHeight(int height) {
-//        this.height = height;
-//    }
-//
-//    public int getWeight() {
-//        return weight;
-//    }
-//
-//    public void setWeight(int weight) {
-//        this.weight = weight;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public String getGender() {
-//        return gender;
-//    }
-//
-//    public void setGender(String gender) {
-//        this.gender = gender;
-//    }
-//
-//    public String getAddress() {
-//        return address;
-//    }
-//
-//    public void setAddress(String address) {
-//        this.address = address;
-//    }
-//
-//    public String getRenewal() {
-//        return renewal;
-//    }
-//
-//    public void setRenewal(String renewal) {
-//        this.renewal = renewal;
-//    }
-//
-//    public int getDob() {
-//        return dob;
-//    }
-//
-//    public void setDob(int dob) {
-//        this.dob = dob;
-//    }
-//
-//    public String getStart_date() {
-//        return start_date;
-//    }
-//
-//    public void setStart_date(String start_date) {
-//        this.start_date = start_date;
-//    }
-//
-//    public String getEnd_date() {
-//        return end_date;
-//    }
-//
-//    public void setEnd_date(String end_date) {
-//        this.end_date = end_date;
-//    }
 
     @Override
     public String toString() {
