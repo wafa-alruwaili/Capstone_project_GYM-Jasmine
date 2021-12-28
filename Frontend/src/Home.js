@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <div>
-     <h1 style={{ background: "#ff3399", fontsize: "2.5rem", color: "#f0ecec", textAlign: "center" }}>Welcome in GYM JASMINE </h1>
+     <h1 style={{ background: "#33cc33", fontsize: "2.5rem", color: "#f0ecec", textAlign: "center" }}>🌸Welcome in GYM JASMINE🌸</h1>
 
 
      <nav
@@ -67,11 +67,10 @@ export default function Home() {
       >
   <ul className="ul-list">
         <Link to="/Register"><button>Register </button>|</Link>
-        <Link to="/member"><button>Member </button>|</Link>
+        <Link to="/members"><button>Member </button>|</Link>
         <Link to="/lessons"><button>Lessons </button>|</Link>
         <Link to="/employees"><button>Employees </button>|</Link>
         <Link to="/plan"><button>Plan </button>|</Link>
-        {/* <Link to="/test"><button>Test </button>|</Link> */}
        </ul>
       </nav>
 

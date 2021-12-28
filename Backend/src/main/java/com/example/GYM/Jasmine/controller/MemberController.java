@@ -40,7 +40,7 @@ public class MemberController<memberService> {
 //        int intmemberId =Integer .parseInt(memberId);
 //        memberService.deleteMember(intmemberId);
 
-    @DeleteMapping(path = "api/delete/{memberId}")
+    @DeleteMapping(path = "delete/{memberId}")
     public void deleteMember(@PathVariable ("memberId") String memberId){
        int memberInt =Integer.parseInt(memberId);
         memberService.deleteMember(memberInt);
