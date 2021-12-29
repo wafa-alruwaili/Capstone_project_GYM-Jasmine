@@ -5,7 +5,7 @@ import axios from "axios"
 
 
 export default function Home() {
-  // const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", dob: "", start_date: "", end_date: "" })
+  const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", dob: "", start_date: "", end_date: "" })
 
 
   // //Member
@@ -38,6 +38,7 @@ export default function Home() {
   //     url: "/api/member/delete/1"
   //   })
   // }
+  
 
 
   return (
@@ -76,9 +77,9 @@ export default function Home() {
 
       <br></br>
       <br></br>
-      {/* <h2>my Member details are:  </h2>
-      <button onClick={handleClick}>Post to Spring (Member)</button>
-      <button onClick={handleClickDel}>Delet to Spring (Member)</button> */}
+      {/* <h2>my Member details are:  </h2> */}
+     {/* <button onClick={handleClick}>Post to Spring (Member)</button> */}
+      {/* <button onClick={handleClickDel}>Delet to Spring (Member)</button>  */}
       <Outlet />
     </div>
   )

@@ -5,7 +5,7 @@ import axios from "axios"
 
 
 export default function Register() {
-    //const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", date_of_birth: "", start_date: "", end_date: "" })
+const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", date_of_birth: "", start_date: "", end_date: "" })
 
     function handleClick() {
 
@@ -33,7 +33,7 @@ export default function Register() {
     function handleStart_date(event) { setStart_date((start_date = event.target.value)); }
     function handleEnd_date(event) { setEnd_date((end_date = event.target.value)); }
     function handleRenewal(event) { setRenwal((renewal = event.target.value)); }
-    function handleClickDel3(event) { setdel((del = event.target.value)) }
+    // function handleClickDel3(event) { setdel((del = event.target.value)) }
 
 
     let newmember = {
@@ -48,7 +48,7 @@ export default function Register() {
         end_date: end_date,
         renewal: renewal,
 
-    };
+    }
 
 
     function handleSubmit(event) {
@@ -62,15 +62,15 @@ export default function Register() {
         });
     }
 
-    function handleClickDel2() {
+    // function handleClickDel2() {
 
-        axios({
-            method: 'delete',
-            url: `api/member/delete/${del}`,
+    //     axios({
+    //         method: 'delete',
+    //         url: `api/member/delete/${del}`,
 
-        });
+    //     });
 
-    }
+    // }
 
 
 
@@ -81,7 +81,7 @@ export default function Register() {
     return (
         <form onSubmit={handleSubmit} >
             <div className="log">
-                {/* <img src="*" width="100%"></img> */}
+            <img src="t1.jpg" width="100%"/>
 
 
 
@@ -129,8 +129,8 @@ export default function Register() {
                 <br />
                 <br />
                 <button type="submit" className="registerbtn" onClick={handleSubmit} style={{ width: "10%", background: "#33cc33", color: "#FFFFFF", }}>submit</button>
-                <input type="text" id="id" name="id" onChange={handleClickDel3} />
-                <input type="submit" value="Remove" onClick={handleClickDel2} style={{ width: "10%", background: "#33cc33", color: "#FFFFFF", }}></input><br/><br/>
+                {/* <input type="text" id="id" name="id" onChange={handleClickDel3} /> */}
+                {/* <input type="submit" value="Remove" onClick={handleClickDel2} style={{ width: "10%", background: "#33cc33", color: "#FFFFFF", }}></input><br/><br/> */}
 
                 <br />
                 {/* <link to="/Member"></link> */}

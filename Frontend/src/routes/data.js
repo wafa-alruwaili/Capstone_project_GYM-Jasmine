@@ -1,42 +1,30 @@
-import Members from "./Members";
+// import Lessonss from "./Lessonss";
 
-let members = [  
-{
-m_id: 1,
-name: "wafa",
-gender: "f",
-address: "dammam",
-date_of_birth: 33,
-heigh: 160,
-weight: 55,
-start_date: 12,
-end_date: 30,
-renewal: "yes",
+// let lessonss = [  
+// {
+// number : 1,
+// name: " lesson swimming",
+// type: "swimming",
+// description: "hello",
+// date_time: "morning",
+//    },
 
-   },
+//    {
+//       number : 2,
+//       name: " lesson boxing",
+//       type: "boxing",
+//       description: "hello",
+//       date_time: "night",
+//        },
 
-   {
-    m_id: 2,
-    name: "sara",
-    gender: "f",
-    address: "dammam",
-    date_of_birth: 23,
-    heigh: 160,
-    weight: 55,
-    start_date: 20,
-    end_date: 30,
-    renewal: "no",
-    
-       },
-
-]
-export function getMembers() {
-return members;
-}
+// ]
+// export function getLessonss() {
+// return lessonss;
+// }
 
 
-export function getMember(m_Id) {
-return Members.find(
-Member => Member.m_Id === m_Id
-);
-}
+// export function getLessons(l_Id) {
+// return Lessonss.find(
+//    Lessons => Lessons.l_Id === l_Id
+// );
+// }
