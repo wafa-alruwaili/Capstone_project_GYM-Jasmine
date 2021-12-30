@@ -1,12 +1,18 @@
 package com.example.GYM.Jasmine.model.Entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import java.awt.*;
 import java.util.List;
 
 @Entity
 @Table
+//@JsonIdentityInfo(
+//        generator = ObjectIdGenerators.PropertyGenerator.class,
+//        property = "id")
 public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -23,13 +29,17 @@ public class Member {
 
 
 
+//    @ManyToMany
+//    @JoinTable(name = "member_lessons",
+//            joinColumns = @JoinColumn(name = "m_Id"),
+//            inverseJoinColumns = @JoinColumn(name = "l_Id"))
+//    private java.util.List<Lessons> lessons;
+
     @ManyToMany
     @JoinTable(name = "member_lessons",
             joinColumns = @JoinColumn(name = "m_Id"),
             inverseJoinColumns = @JoinColumn(name = "l_Id"))
     private java.util.List<Lessons> lessons;
-
-
 
     public Member() {
 }

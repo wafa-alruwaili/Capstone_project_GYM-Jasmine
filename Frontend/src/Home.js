@@ -5,7 +5,7 @@ import axios from "axios"
 
 
 export default function Home() {
-  const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", dob: "", start_date: "", end_date: "" })
+  // const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", dob: "", start_date: "", end_date: "" })
 
 
   // //Member
@@ -43,7 +43,7 @@ export default function Home() {
 
   return (
     <div>
-     <h1 style={{ background: "#33cc33", fontsize: "2.5rem", color: "#f0ecec", textAlign: "center" }}>🌸Welcome in GYM JASMINE🌸</h1>
+     <h1 style={{ background: "#595959", fontsize: "2.5rem", color: "#f0ecec", textAlign: "center" }}>Welcome in GYM JASMINE</h1>
 
 
      <nav
@@ -66,17 +66,13 @@ export default function Home() {
           textAlign: 'left' }}
  
       >
-  <ul className="ul-list">
-        <Link to="/Register"><button>Register </button>|</Link>
-        <Link to="/members"><button>Member </button>|</Link>
-        <Link to="/lessons"><button>Lessons </button>|</Link>
-        <Link to="/employees"><button>Employees </button>|</Link>
-        <Link to="/plan"><button>Plan </button>|</Link>
-       </ul>
+  
       </nav>
 
       <br></br>
       <br></br>
+      <Link to="/Register"  ><button style={{ width: "10%", background: "#595959", color: "#FFFFFF", }}>انضم الينا</button></Link>
+
       {/* <h2>my Member details are:  </h2> */}
      {/* <button onClick={handleClick}>Post to Spring (Member)</button> */}
       {/* <button onClick={handleClickDel}>Delet to Spring (Member)</button>  */}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios"
+import { Link } from "react-router-dom";
 
 
 
@@ -81,11 +82,11 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
     return (
         <form onSubmit={handleSubmit} >
             <div className="log">
-            <img src="t1.jpg" width="100%"/>
+            {/* <img src="t1.jpg" width="100%"/> */}
 
 
 
-                <center> <h1 style={{ background: "#33cc33", fontsize: "2.5rem", color: "#f0ecec", textAlign: "center" }}>  Register Member</h1> </center>
+                <center> <h1>  Register Member</h1> </center>
 
 
                 <hr />
@@ -112,7 +113,7 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
                 <input type="text" name="heigh" placeholder="heigh" size="15" onChange={handleHeigh} /><br/><br/>
                 <label >Weight</label>
                 <input type="text" name="weight" placeholder="weight" size="15" onChange={handleWeight} /><br/><br/>
-                <label>date_of_birth</label>
+                <label>Age</label>
                 <input type="text" name="date_of_birth" size="10" onChange={handleDate_of_birth} /><br/><br/>
                 <label> Address</label>
                 <input type="text" name="Address" onChange={handleAddress} /><br/><br/>
@@ -126,9 +127,12 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
                 <input type="radio" value="no" checked={renewal == 'no'}
                     onChange={handleRenewal} />No<br/><br/>
 
-                <br />
-                <br />
-                <button type="submit" className="registerbtn" onClick={handleSubmit} style={{ width: "10%", background: "#33cc33", color: "#FFFFFF", }}>submit</button>
+            
+            
+            <hr/><button type="submit" className="registerbtn" onClick={handleSubmit} style={{ width: "10%", background: "#595959", color: "#FFFFFF", }}>submit</button><br/><br/>
+            <Link to="/members"  ><button  style={{ width: "10%", background: "#595959", color: "#FFFFFF", }}>profail</button></Link><br/><br/>
+            <Link to="/"  ><button  style={{ width: "10%", background: "#595959", color: "#FFFFFF", }}>Back</button></Link>
+
                 {/* <input type="text" id="id" name="id" onChange={handleClickDel3} /> */}
                 {/* <input type="submit" value="Remove" onClick={handleClickDel2} style={{ width: "10%", background: "#33cc33", color: "#FFFFFF", }}></input><br/><br/> */}
 

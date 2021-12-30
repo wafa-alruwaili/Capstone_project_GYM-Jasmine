@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import axios from 'axios'
+import { Link } from "react-router-dom";
+
+
+
 export default class Member extends Component {
     constructor(props) {
         super(props)
@@ -12,6 +16,7 @@ export default class Member extends Component {
             const MemberList = res.data
             this.setState({ MemberList })
         });
+        console.log(this.state.MemberList)
     }
     deleteSpecialist(m_id) {
         axios.delete(`api/member/delete/${m_id}`)
@@ -21,6 +26,7 @@ export default class Member extends Component {
            })
     }
     render() {
+        console.log(this.state.MemberList)
         return (
             <div>
                 <table >
@@ -55,7 +61,8 @@ export default class Member extends Component {
                                 <td>{item.renewal}</td><br></br>
                                 <td>{item.start_date}</td><br></br>
                                 <td>{item.end_date}</td><br></br>
-                                <td><button >confirm</button></td>
+                                <td><Link to="/lessons" ><button>Choose lesson</button></Link></td>
+
                                 <td><button onClick={(e) => this.deleteSpecialist(item.m_id, e)}>delete</button></td>
                             </tr>
                         )))

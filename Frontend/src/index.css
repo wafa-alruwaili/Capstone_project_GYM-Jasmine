@@ -5,6 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
+    background-color: #ACCAB0;
+    background:#e1efbb url("https://cdn.wallpapersafari.com/14/87/dU7Lxw.jpg");
+    color: rgb(255, 255, 255);
+    padding: 40px;
+    font-family: Arial;
+    text-align: center;
+
 }
 
 code {
@@ -12,3 +20,32 @@ code {
     monospace;
 }
 
+table{
+  border :5px solid rgb(184, 187, 181);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td{
+  border: 5px solid rgb(184, 187, 181);
+  padding: .5rem;
+}
+
+
+caption{
+
+font-size: 1.1rem;
+font-weight: bold;
+/* background :rgb(23, 122, 58) ; */
+padding: .2rem 0;
+text-align: center;
+}
+
+/* thead{
+background:rgb(23, 122, 58);
+
+}
+tbody tr:nth-child(odd){
+background: rgb(23, 122, 58);
+}
+ */

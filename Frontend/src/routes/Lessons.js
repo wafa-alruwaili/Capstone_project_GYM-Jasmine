@@ -24,7 +24,7 @@
 import React from "react";
 import react, { useEffect, useState } from 'react'
 import axios from "axios"
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useParams, useNavigate } from "react-router-dom";
 
 
@@ -84,41 +84,46 @@ export default function Lessons() {
     return (
         <form onSubmit={handleSubmit} >
             <div className="log">
-                {/* <img src="*" width="100%"></img> */}
+                {/* <img src="x1.jpg" width="100%"/> */}
 
 
 
-                 <center> <h1 style={{ background: "#33cc33", fontsize: "2.5rem", color: "#f0ecec", textAlign: "center" }}>  Lessons</h1> </center>
+                 <center> <h1>  Lessons</h1> </center>
 
 
-                <hr />
-                 <label> number lesson</label>
-                 <input type="text" name="l_id" placeholder="l_id" size="15" onChange={handleL_id} /><hr />
-                 <label> subject lesson </label>
-                 <input type="text" name="l_name" placeholder="l_name" size="15" onChange={handleL_name} /><hr />
-                 <label> type lesson :-</label><br></br><br></br>
+                
+                 {/* <label> number lesson</label> */}
+                 {/* <input type="text" name="l_id" placeholder="l_id" size="15" onChange={handleL_id} /><br /><br /> */}
+                 {/* <label> subject lesson </label>
+                 <input type="text" name="l_name" placeholder="l_name" size="15" onChange={handleL_name} /><hr /> */}
+                 <label> subject lesson </label><br></br><br></br>
                  <input type="radio" value="Swimming" checked={l_type == 'Swimming'} onChange={handleL_type} name="Swimming" /> Swimming🏊<br />
-                     <img src="s1.jpg" width="10%"></img><br />
+                     {/* <img src="s1.jpg" width="10%"></img><br /> */}
 
                      <input type="radio" value="Boxing" checked={l_type == 'Boxing'} onChange={handleL_type} name="Boxing" /> Boxing💪<br />
-                     <img src="x1.jpg" width="10%"></img><br />
+                     {/* <img src="x1.jpg" width="10%"></img><br /> */}
 
                      <input type="radio" value="Body building" checked={l_type == 'Body building'} onChange={handleL_type} name="Body building" /> Body building🏋️‍♀️<br />
-                     <img src="b1.jpg" width="10%"></img><br />
+                     {/* <img src="b1.jpg" width="10%"></img><br /> */}
 
                      <input type="radio" value="Yoga" checked={l_type == 'Yoga'} onChange={handleL_type} name="Yoga" /> Yoga🧘‍♀️<br />
-                     <img src="y1.jpg" width="10%"></img><br />
+                     {/* <img src="y1.jpg" width="10%"></img><br /> */}
                  <br></br>
-                 <br></br>
-                 <label >description lesson</label>
+                 <label >Note lesson</label>
                  <br /><textarea placeholder="L_description" onChange={handleL_description} >
                  </textarea>
                  <br />               
-                 <label >date_time lesson</label>
-                 <input type="text" name="l_date_time" placeholder="l_date_time" size="15" onChange={handleL_date_time} /><hr />
+                 <label >time lesson</label>
+                 <br /><input type="radio" value="am" checked={l_type == 'am'} onChange={handleL_type} name="am" /> am<br />
+                     {/* <img src="x1.jpg" width="10%"></img><br /> */}
+
+                     <input type="radio" value="pm" checked={l_type == 'pm'} onChange={handleL_type} name="pm" /> pm<br />
+                     {/* <img src="b1.jpg" width="10%"></img><br /> */}
 
 
-                 <button type="submit" className="registerbtn" onClick={handleSubmit} style={{ width: "10%", background: "#33cc33", color: "#FFFFFF", }}>submit</button>
+                 <button type="submit" className="registerbtn" onClick={handleSubmit} style={{ width: "10%", background: "#595959", color: "#FFFFFF", }}>submit</button>
+                 <Link to="/invoices"  ><button  style={{ width: "20%", background: "#595959", color: "#FFFFFF", }}>Monthly subscription</button></Link> 
+
                  {/* <input type="submit" className="registerbtn" onClick={handleSubmit} style={{ width: "10%", background: "#ff3399", color: "#FFFFFF", }}></input> */}
 
                 
