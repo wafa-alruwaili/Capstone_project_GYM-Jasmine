@@ -13,7 +13,7 @@ export default function Invoices() {
             borderRight: "solid 1px",
             padding: "1rem"
           }}
-        >
+        ><br/><br/>
           <input
             value={searchParams.get("filter") || ""}
             onChange={event => {
@@ -37,7 +37,7 @@ export default function Invoices() {
                 style={({ isActive }) => ({
                   display: "block",
                   margin: "1rem 0",
-                  color: isActive ? "white" : "gray"
+                  color: isActive ? "white" : "yellow"
                 })}
                 to={`/invoices/${invoice.p_id}`}
                 key={invoice.p_id}

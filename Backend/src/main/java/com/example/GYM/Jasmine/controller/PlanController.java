@@ -37,6 +37,7 @@ public class PlanController<planService> {
 
     @DeleteMapping(path = "delete/{planId}")
     public void deletePlan(@PathVariable ("planId") Integer planId){
+
         planService.deletePlan(planId);
 
     }

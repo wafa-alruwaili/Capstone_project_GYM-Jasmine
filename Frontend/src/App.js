@@ -6,7 +6,9 @@ import axios from "axios"
 
 export default function App() {
     const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", dob: "", start_date: "", end_date: "" })
+let [langouge, setLangouge] = useState("");
 
+function handleLangouge(event) { setLangouge((langouge = event.target.value)); }
 
     // //Member
     // useEffect(() => {
@@ -42,11 +44,17 @@ export default function App() {
 
 
     return (
-        <div>
-            <h1 style={{ background: "#595959", fontsize: "2.5rem", color: "#f0ecec", textAlign: "center" }}>Welcome in GYM JASMINE</h1>
+        
+
+<div link rel="stylesheet" href="index.css" 
+
+link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 
-            <nav
+            <h1 style={{ background: "#595959", fontsize: "2.5rem", color: "#f0ecec", textAlign: "center" }}>Welcome in GYM GOLDEN</h1>
+            
+
+            {/* <nav
                 style={{
                     borderBottom: "solid 1px",
                     paddingBottom: "4rem",
@@ -67,25 +75,57 @@ export default function App() {
                     textAlign: 'left'
                 }}
 
-            >
+            ></nav> */}
+
+
+            {/* header section starts */}
+           
+           
+            <header>
+                
+            <a href="#" class="logo"><i class="fas fa-utensils"></i>GYM The Lion</a>
+            
+            <img scr="logo.png"/>
+            <div id="menu-bar" class="fas fa-bars"></div>
+            
+                <nav class="navbar">
+                <label style={{color:"#ffcc00"}}> Language  </label>  
+                 <select  style={{background:"#ffffcc"}}id="f1" onChange={handleLangouge}> 
+                <option disabled value="" selected>Selection</option> 
+                <option value="male">Arabic</option>
+                   <option value="femal">Einglish</option> 
+                 </select> 
+                 
+
+
+
+                 <time  style={{color:"#ffcc00"}}>7:57Pm</time>
                 <ul className="ul-list">
-                    <Link to="/Home"><button>Home </button>|</Link>
-                    <Link to="/Register"><button>Register </button>|</Link>
-                    <Link to="/members"><button>Member </button>|</Link>
-                    <Link to="/lessons"><button>Lessons </button>|</Link>
-                    <Link to="/invoices"><button>Plan </button>|</Link>
-                    <Link to="/employees"><button>Employees </button></Link>
-
+                    <Link to="/Home"><button style={{ width:"12%", background: "#ffcc00", color: "#000000" }}>Home </button></Link>
+                    <Link to="/Register"><button style={{ width:"16%", background: "#ffcc00", color: "#000000" }}>Register </button></Link>
+                    <Link to="/members"><button style={{ width:"16%", background: "#ffcc00", color: "#000000" }}>Member </button></Link>
+                    <Link to="/lessons"><button style={{ width:"16%", background: "#ffcc00", color: "#000000" }}>Lessons </button></Link>
+                    <Link to="/invoices"><button style={{ width:"10%", background: "#ffcc00", color: "#000000" }}>Plan </button></Link>
+                    <Link to="/employees"><button style={{ width:"21%", background: "#ffcc00", color: "#000000" }}>Employees </button></Link>
                 </ul>
-            </nav>
+            
+                
 
-            <br></br>
-            <br></br>
+
+</nav>
+            
+            </header>
+            
+
+
+            
+             {/* header section ends  */}
 
             {/* <h2>my Member details are:  </h2> */}
             {/* <button onClick={handleClick}>Post to Spring (Member)</button> */}
             {/* <button onClick={handleClickDel}>Delet to Spring (Member)</button>  */}
             <Outlet />
+        
         </div>
     )
 }

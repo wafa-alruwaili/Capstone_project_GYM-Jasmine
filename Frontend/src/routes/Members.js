@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 
 
+
 export default class Member extends Component {
     constructor(props) {
         super(props)
@@ -18,6 +19,16 @@ export default class Member extends Component {
         });
         console.log(this.state.MemberList)
     }
+
+
+    // componentDidUpdate() {
+    //     axios.post("api/member/add").then(res => {
+    //         const MemberList = res.data
+    //         this.setState({ MemberList })
+    //     });
+    //     console.log(this.state.MemberList)
+    // }
+
     deleteSpecialist(m_id) {
         axios.delete(`api/member/delete/${m_id}`)
             .then(res => {
@@ -32,7 +43,7 @@ export default class Member extends Component {
                 <table >
                   <caption>
 
-                    <h1><b>My Page</b></h1>
+                  <br/><br/><h1  style={{color: "#ffcc00" }}> My Page </h1>
                     
                     </caption>
                     <thead>
@@ -61,14 +72,22 @@ export default class Member extends Component {
                                 <td>{item.renewal}</td><br></br>
                                 <td>{item.start_date}</td><br></br>
                                 <td>{item.end_date}</td><br></br>
-                                <td><Link to="/lessons" ><button>Choose lesson</button></Link></td>
+                                <td><Link to="/lessons" ><button  style={{background: "#ffcc00", color: "#000000"}}>Choose lesson</button></Link></td>
 
-                                <td><button onClick={(e) => this.deleteSpecialist(item.m_id, e)}>delete</button></td>
+
+                                {/* <td><button style={{ background: "#ffcc00", color: "#000000"}}onClick={(e) => this.componentDidUpdate(item.m_id, e)}>post</button></td> */}
+
+                                <td><button style={{ background: "#ffcc00", color: "#000000"}}onClick={(e) => this.deleteSpecialist(item.m_id, e)}>delete</button></td>
                             </tr>
                         )))
                         }
                     </tbody>
                 </table>
+
+
+
+                <br></br><Link to="/Home" ><button  style={{width:50,background: "#ffcc00", color: "#000000"}}>Logoff</button></Link><br></br>
+
             </div>
         )}}
 

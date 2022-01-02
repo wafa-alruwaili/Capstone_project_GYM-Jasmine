@@ -2,20 +2,23 @@ package com.example.GYM.Jasmine.model.Entities;
 
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table
 //@JsonIdentityInfo(
-//        generator = ObjectIdGenerators.PropertyGenerator.class,
-//        property = "id")
+//       generator = ObjectIdGenerators.PropertyGenerator.class,
+//    property = "id")
 public class Member {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int m_id;
     private String name;
     private String gender;
@@ -29,33 +32,44 @@ public class Member {
 
 
 
-//    @ManyToMany
-//    @JoinTable(name = "member_lessons",
-//            joinColumns = @JoinColumn(name = "m_Id"),
-//            inverseJoinColumns = @JoinColumn(name = "l_Id"))
-//    private java.util.List<Lessons> lessons;
+    @OneToMany(mappedBy = "member")
 
-    @ManyToMany
-    @JoinTable(name = "member_lessons",
-            joinColumns = @JoinColumn(name = "m_Id"),
-            inverseJoinColumns = @JoinColumn(name = "l_Id"))
-    private java.util.List<Lessons> lessons;
+    @JsonIgnore
+
+    private List<Lessons> items = new ArrayList<>();
+
+
+//    @OneToMany(mappedBy="member")
+//    private List<Lessons> lessons;
 
     public Member() {
 }
 
-    public Member(int m_id, int height, int weight, String name, String gender, String address, String renewal, int dob, String start_date, String end_date, java.util.List<Lessons> lessons) {
+
+
+
+
+    public Member(int m_id, String name, String gender, int dob, String address, int height, int weight, String renewal, String start_date, String end_date, List<Lessons> items) {
         this.m_id = m_id;
-        this.height = height;
-        this.weight = weight;
         this.name = name;
         this.gender = gender;
-        this.address = address;
-        this.renewal = renewal;
         this.dob = dob;
+        this.address = address;
+        this.height = height;
+        this.weight = weight;
+        this.renewal = renewal;
         this.start_date = start_date;
         this.end_date = end_date;
-        this.lessons = lessons;
+        this.items = items;
+    }
+
+
+    public List<Lessons> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Lessons> items) {
+        this.items = items;
     }
 
     public int getM_id() {
@@ -64,22 +78,6 @@ public class Member {
 
     public void setM_id(int m_id) {
         this.m_id = m_id;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
     }
 
     public String getName() {
@@ -98,6 +96,14 @@ public class Member {
         this.gender = gender;
     }
 
+    public int getDob() {
+        return dob;
+    }
+
+    public void setDob(int dob) {
+        this.dob = dob;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -106,20 +112,28 @@ public class Member {
         this.address = address;
     }
 
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
     public String getRenewal() {
         return renewal;
     }
 
     public void setRenewal(String renewal) {
         this.renewal = renewal;
-    }
-
-    public int getDob() {
-        return dob;
-    }
-
-    public void setDob(int dob) {
-        this.dob = dob;
     }
 
     public String getStart_date() {
@@ -138,13 +152,6 @@ public class Member {
         this.end_date = end_date;
     }
 
-    public List<Lessons> getLessons() {
-        return lessons;
-    }
-
-    public void setLessons(List<Lessons> lessons) {
-        this.lessons = lessons;
-    }
 
 
     @Override

@@ -11,12 +11,15 @@ export default function Invoice() {
   let invoice = getInvoice(parseInt(params.invoiceId, 10));
   const [myPlan, setMyPlan] = useState({ p_id: "", p_name: "", description: "", amount: "", active: "" })
 
-  let [p_id, setP_id] = useState("{invoice.p_id}")
+
+
+  
+let [p_id, setP_id] = useState("{invoice.p_id}")
 let [p_name, setP_name] = useState("{invoice.p_name}")
 let [description, setDescription] = useState("{invoice.description}")
 let [amount, setAmount] = useState("{invoice.p_name}")
 let [active, setActive] = useState("{invoice.active}")
-let [del, setdel] = useState("")
+let [del, setdel] = useState("{invoice.del}")
 
 
 function handleP_id(event) { setP_id((p_id = event.target.value)); }
@@ -82,17 +85,17 @@ let newplan = {
   
   return (
     <main style={{ padding: "1rem" }}>
-      <h2>الأشتــراكــات</h2>
-      <p>
+     <br/><br/><br/><br/> <h1 style={{color: "#ffcc00" }}>Subscriptions</h1><br/>
+      {/* <p>
         {invoice.p_name}
-      </p>
+      </p> */}
       {/* <p>p_name {invoice.active}</p> */}
 <p>{invoice.Link}</p>
       <form>
       <tr>
-    <th>رقم الاشتراك</th>
-    <th>عنوان الاشتراك</th>
-    <th>وصف الاشتراك</th>
+    <th> Subscription number</th>
+    <th> Subscription address</th>
+    <th>Subscription time</th>
   </tr>
   <tr>
     <th>{invoice.p_id}</th>
@@ -101,18 +104,17 @@ let newplan = {
   </tr>
   
         <table border="1">
-          <td>سعر الاشتراك</td>
+          <td>Subscription price </td>
           <td>{invoice.amount}</td>
 
         </table>
         <tr>
   </tr>
-        <br/>
-        <br/><br/>
-       <br/><button type="submit" className="registerbtn" onClick={handleSubmit} style={{ width: "50%", background: "#595959", color: "#FFFFFF", }}>submit</button><br/>
+     
+       <br/><button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "50%", background: "#ffcc00", color: "#000000", }}>submit</button><br/>
         
         
-       <br/><input type="submit" value="Remove" onClick={handleClickDel2} style={{ width: "50%", background: "#595959", color: "#FFFFFF", }}></input><br/><br/><br/>
+       <br/> <input type="submit" value="Remove" onClick={handleClickDel2} style={{ width: "50%", background: "#ffcc00", color: "#000000", }}></input><br/><br/><br/>
 
       </form>
     </main>
