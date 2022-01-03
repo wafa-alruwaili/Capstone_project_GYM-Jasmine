@@ -8,9 +8,11 @@ import Members from './routes/Members';
 import reportWebVitals from './reportWebVitals';
 import Lessons from "./routes/Lessons";
 import Employees from "./routes/Employees";
+import Employe from "./routes/Employe";
 import Register from "./routes/Register"
 import Invoices from "./routes/invoices";
 import Invoice from "./routes/invoice";
+import Login from './routes/Login';
 
 
 ReactDOM.render(
@@ -28,13 +30,13 @@ ReactDOM.render(
         </main>
       }
     />
-        <Route path="/Home" element={<Home />} /> 
+        <Route path="/Home" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/members" element={<Members />}>
-       
-          {/* <Route path=":m_id" element={<Member />} /> */}
         </Route>
         <Route path="/register" element={<Register />} />
         <Route path="/lessons" element={<Lessons />} />
+        <Route path="/employe" element={<Employe />} /> 
         <Route path="/employees" element={< Employees />} />
         {/* <Route path="/plan" element={< Plan />} > */}
           {/* <Route path="/test" element={< Test />} /> */}

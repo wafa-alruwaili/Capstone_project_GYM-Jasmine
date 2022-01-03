@@ -2,6 +2,7 @@ package com.example.GYM.Jasmine.controller;
 
 import com.example.GYM.Jasmine.model.service.EmployeesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.GYM.Jasmine.model.Entities.Employees;
@@ -35,8 +36,16 @@ public class EmployeesController<employeesService> {
         employeesService.addNewEmployees(employees);
     }
 
+@GetMapping(path ="login")
+public String checkLogin(@RequestParam(name ="user_name")String user_name ,
+                         @RequestParam (name ="password")
+                                 String password) {
+        return employeesService.getCheck(user_name,password);
+                                 }
+
+
     @DeleteMapping(path = "delete/{employeesId}")
-    public void deleteEmployees(@PathVariable ("employeesId") Integer employeesId){
+    public void deleteEmployees(@PathVariable ("employeesId") Integer employeesId) {
         employeesService.deleteEmployees(employeesId);
 
     }

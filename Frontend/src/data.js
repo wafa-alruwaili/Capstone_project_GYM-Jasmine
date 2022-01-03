@@ -50,46 +50,46 @@ let invoices = [
 
 
 
-// import  React from 'react'
-// import { Link } from 'react-router-dom'
-// let invoices = [
+// // import  React from 'react'
+// // import { Link } from 'react-router-dom'
+// // let invoices = [
 
-//     {
-//         p_id: 1,
-//         p_name: "Swimming",
-//         description: "hello",
-//         amount: 220,
-//         active:"on",
-//     //  Link:<Link to="/payment" ><button>payment</button></Link>
-//     },
-//     {
-//         p_id: 2,
-//         p_name: "Boxing",
-//         description: "hello",
-//         amount: 100,
-//         active:"on",
-//     },
-//     {
-//         p_id: 3,
-//         p_name: "Body building",
-//         description: "hello",
-//         amount: 150,
-//         active:"on",
-//     },
-//     {
-//         p_id: 4,
-//         p_name: "Yoga",
-//         description: "hello",
-//         amount: 250,
-//         active:"on",
-//     },
+// //     {
+// //         p_id: 1,
+// //         p_name: "Swimming",
+// //         description: "hello",
+// //         amount: 220,
+// //         active:"on",
+// //     //  Link:<Link to="/payment" ><button>payment</button></Link>
+// //     },
+// //     {
+// //         p_id: 2,
+// //         p_name: "Boxing",
+// //         description: "hello",
+// //         amount: 100,
+// //         active:"on",
+// //     },
+// //     {
+// //         p_id: 3,
+// //         p_name: "Body building",
+// //         description: "hello",
+// //         amount: 150,
+// //         active:"on",
+// //     },
+// //     {
+// //         p_id: 4,
+// //         p_name: "Yoga",
+// //         description: "hello",
+// //         amount: 250,
+// //         active:"on",
+// //     },
 
-//   ];
-//   export function getInvoices() {
-//     return invoices;
-//   }
-//   export function getInvoice(number) {
-//     return invoices.find(
-//       invoice => invoice.number === number
-//     );
-//   }
+// //   ];
+// //   export function getInvoices() {
+// //     return invoices;
+// //   }
+// //   export function getInvoice(number) {
+// //     return invoices.find(
+// //       invoice => invoice.number === number
+// //     );
+// //   }

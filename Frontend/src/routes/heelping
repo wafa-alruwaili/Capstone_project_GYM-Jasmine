@@ -1,81 +1,96 @@
 
-//    @OneToMany(mappedBy = "plan")
-//    @JsonIgnore
-//    private List<Member> items = new ArrayList<>();
+// //    @OneToMany(mappedBy = "plan")
+// //    @JsonIgnore
+// //    private List<Member> items = new ArrayList<>();
+/
+//    @ManyToOne
+//
+//    @JoinColumn(name="memberid",referencedColumnName = "m_id")
+//
+//    private Member  member;
+
+/////////////////////////////////////////////////////////////////////////
+// //@ManyToMany(mappedBy = "lessons")
+//     //@JsonIgnore
+//     //private java.util.List<Member> member = new ArrayList<>();
+///////////////////////////////////////////////////////////////////////////
+
+// // @ManyToOne
+//     //@JoinColumn(name="planid",referencedColumnName = "p_id")
+//     //private Plan plan;
+
+// /*******************************************************************
+//     //@ManyToMany
+//     //@JoinTable(name = "member_lessons",
+//            // joinColumns = @JoinColumn(name = "m_Id"),
+//             //inverseJoinColumns = @JoinColumn(name = "l_Id"))
+//     //private java.util.List<Lessons> lessons;
+// //******************************************************************
+
+//     //@ManyToOne
+//    // @JoinColumn(name="planid",referencedColumnName = "p_Id")
+//     //private Plan plan;
+
+////////////////////////////////////////////////////////////////////////////
+//    @OneToMany(mappedBy="member")
+//    private List<Lessons> lessons;
+/////////////////////////////////////////////////////////////////////////
 
 
+// @OneToMany(mappedBy = "member")
 
-//@ManyToMany(mappedBy = "lessons")
-    //@JsonIgnore
-    //private java.util.List<Member> member = new ArrayList<>();
+//     @JsonIgnore
 
-
-// @ManyToOne
-    //@JoinColumn(name="planid",referencedColumnName = "p_id")
-    //private Plan plan;
-
-/*******************************************************************
-    //@ManyToMany
-    //@JoinTable(name = "member_lessons",
-           // joinColumns = @JoinColumn(name = "m_Id"),
-            //inverseJoinColumns = @JoinColumn(name = "l_Id"))
-    //private java.util.List<Lessons> lessons;
-//******************************************************************
-
-    //@ManyToOne
-   // @JoinColumn(name="planid",referencedColumnName = "p_Id")
-    //private Plan plan;
-
-
-
-
-
-
-
-
-v m_id:'',
-
-
-
-            name:'',
-            gender:'',
-
-            let plan= { "p_id":plan}
-
-            let newmember = {
-       "m_id": m_id,
-        "name": name,
-        "gender": gender,
-        "address": address,
-        "date_of_birth": date_of_birth,
-        "heigh": heigh,
-        "weight": weight,
-        "start_date": start_date,
-        "end_date": end_date,
-        "renewal": renewal,
-        plan:{
-            planid:plan
-        }
-    }
-
-
-       handlesubmite() {
+//     private List<Lessons> items = new ArrayList<>();
 
 
 
 
-           let newmember = {
-        m_id: m_id,
-        name: name,
-        gender: gender,
-        address: address,
-        date_of_birth: date_of_birth,
-        heigh: heigh,
-        weight: weight,
-        start_date: start_date,
-        end_date: end_date,
-        renewal: renewal,
-        plan:{
-            p_id:p_id
-        }
-    }
+
+
+// v m_id:'',
+
+
+
+//             name:'',
+//             gender:'',
+
+//             let plan= { "p_id":plan}
+
+//             let newmember = {
+//        "m_id": m_id,
+//         "name": name,
+//         "gender": gender,
+//         "address": address,
+//         "date_of_birth": date_of_birth,
+//         "heigh": heigh,
+//         "weight": weight,
+//         "start_date": start_date,
+//         "end_date": end_date,
+//         "renewal": renewal,
+//         plan:{
+//             planid:plan
+//         }
+//     }
+
+
+//        handlesubmite() {
+
+
+
+
+//            let newmember = {
+//         m_id: m_id,
+//         name: name,
+//         gender: gender,
+//         address: address,
+//         date_of_birth: date_of_birth,
+//         heigh: heigh,
+//         weight: weight,
+//         start_date: start_date,
+//         end_date: end_date,
+//         renewal: renewal,
+//         plan:{
+//             p_id:p_id
+//         }
+//     }

@@ -5,7 +5,7 @@ import axios from "axios"
 
 
 export default function App() {
-    const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", dob: "", start_date: "", end_date: "" })
+    // const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", dob: "", start_date: "", end_date: "" })
 let [langouge, setLangouge] = useState("");
 
 function handleLangouge(event) { setLangouge((langouge = event.target.value)); }
@@ -51,7 +51,7 @@ function handleLangouge(event) { setLangouge((langouge = event.target.value)); }
 link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 
-            <h1 style={{ background: "#595959", fontsize: "2.5rem", color: "#f0ecec", textAlign: "center" }}>Welcome in GYM GOLDEN</h1>
+            <h1 style={{ background: "#595959", fontsize: "2.5rem", color: "#f0ecec", textAlign: "center" }}>Welcome in GYM The Lione</h1>
             
 
             {/* <nav
@@ -103,6 +103,7 @@ link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/
                 <ul className="ul-list">
                     <Link to="/Home"><button style={{ width:"12%", background: "#ffcc00", color: "#000000" }}>Home </button></Link>
                     <Link to="/Register"><button style={{ width:"16%", background: "#ffcc00", color: "#000000" }}>Register </button></Link>
+                    <Link to="/employe"><button style={{ width:"16%", background: "#ffcc00", color: "#000000" }}>employe register </button></Link>
                     <Link to="/members"><button style={{ width:"16%", background: "#ffcc00", color: "#000000" }}>Member </button></Link>
                     <Link to="/lessons"><button style={{ width:"16%", background: "#ffcc00", color: "#000000" }}>Lessons </button></Link>
                     <Link to="/invoices"><button style={{ width:"10%", background: "#ffcc00", color: "#000000" }}>Plan </button></Link>

@@ -108,7 +108,7 @@ function handleClickDel2() {
                 <h3 style={{  color: "#ffcc00" }}>Swimming</h3>
                 <p>Swimming is considered one of the most popular sports and the most practiced by athletes, as some consider it a sport of utmost pleasure, and a sport that always provides them with activity and vitality. Swimming is classified as the basis of the movement that aquatic organisms move without reaching the bottom of the water surface or the water pool.</p>
                 {/* <Link to="/invoices/1"  ><button  style={{ width: "10%", background:"#ffcc00", color: "#000000", }}>Join now</button></Link>  */}
-                <br/><button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "10%", background:"#ffcc00", color: "#000000", }}>add</button><br/>
+                {/* <br/><button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "10%", background:"#ffcc00", color: "#000000", }}>add</button><br/> */}
                 {/* <input type="submit" value="Remove" onClick={handleClickDel2} style={{ width: "10%", background: "#ffcc00", color: "#000000", }}></input><br/><br/> */}
 
                 </div>
@@ -119,7 +119,7 @@ function handleClickDel2() {
                 <h3 style={{  color: "#ffcc00" }}>Boxing</h3>
                 <p>Kickboxing can help you transform your body and build muscle mass, it boosts your metabolism and causes your body to lose weight faster, moreover, it is a great cardio exercise, which means it can help improve your body tone faster than other forms of exercise.</p>
                 {/* <Link to="/invoices/2"  ><button  style={{ width: "10%", background:"#ffcc00", color: "#000000", }}>Join now</button></Link>  */}
-                <br/><button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "10%", background:"#ffcc00", color: "#000000", }}>add</button><br/>
+                {/* <br/><button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "10%", background:"#ffcc00", color: "#000000", }}>add</button><br/> */}
                 {/* <input type="submit" value="Remove" onClick={handleClickDel2} style={{ width: "10%", background: "#ffcc00", color: "#000000", }}></input><br/><br/> */}
 
 </div>
@@ -130,7 +130,7 @@ function handleClickDel2() {
                 <h3 style={{  color: "#ffcc00" }}>Body building</h3>
                 <p>Prevention of heart disease, as bodybuilding reduces the risk of developing coronary heart disease, by engaging in physical activities such as weight training with aerobic exercises, you have a greater chance of lowering high blood pressure, reducing obesity and lowering harmful cholesterol in the blood, all of which are risk factors for heart disease.</p>
                 {/* <Link to="/invoices/3"  ><button  style={{ width: "10%", background:"#ffcc00", color: "#000000", }}>Join now</button></Link>  */}
-                <br/><button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "10%", background:"#ffcc00", color: "#000000", }}>add</button><br/>
+                {/* <br/><button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "10%", background:"#ffcc00", color: "#000000", }}>add</button><br/> */}
                 {/* <input type="submit" value="Remove" onClick={handleClickDel2} style={{ width: "10%", background: "#ffcc00", color: "#000000", }}></input><br/><br/> */}
 
                 </div>
@@ -141,7 +141,7 @@ function handleClickDel2() {
                 <h3 style={{  color: "#ffcc00" }}>Yoga</h3>
                 <p>Practicing yoga improves flexibility, mobility and balance Yoga will give you general fitness and Helps lose weight It increases your energyIt helps reduce stress and helps you breathe better Practicing yoga to be happier.</p>
                 {/* <Link to="/invoices/4"  ><button   style={{ width: "10%", background:"#ffcc00", color: "#000000", }}>Join now</button></Link>  */}
-                <br/><button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "10%", background:"#ffcc00", color: "#000000", }}>register</button><br/>
+                {/* <br/><button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "10%", background:"#ffcc00", color: "#000000", }}>register</button><br/> */}
                 {/* <input type="submit" value="Remove" onClick={handleClickDel2} style={{ width: "10%", background: "#ffcc00", color: "#000000", }}></input><br/><br/> */}
 
 
@@ -150,34 +150,35 @@ function handleClickDel2() {
             
         
                 
-                 {/* <label> number lesson</label> */}
-                 {/* <input type="text" name="l_id" placeholder="l_id" size="15" onChange={handleL_id} /><br /><br /> */}
-                 {/* <label> subject lesson </label>
-                 <input type="text" name="l_name" placeholder="l_name" size="15" onChange={handleL_name} /><hr /> */}
-                 {/* <label> subject lesson </label><br></br><br></br> */}
-                 {/* <input type="radio" value="Swimming" checked={l_type == 'Swimming'} onChange={handleL_type} name="Swimming" /> Swimming🏊<br /> */}
+                 <label> number lesson</label>
+                 <input type="text" name="l_id" placeholder="l_id" size="15" onChange={handleL_id} /><br /><br />
+                  {/* <label> subject lesson </label> */}
+                 {/* <input type="text" name="l_name" placeholder="l_name" size="15" onChange={handleL_name} /><hr />  */}
+                 <label> subject lesson </label><br></br><br></br>
+                 <input type="radio" value="Swimming" checked={l_type == 'Swimming'} onChange={handleL_type} name="Swimming" /> Swimming🏊<br />
                      {/* <img src="s1.jpg" width="10%"></img><br /> */}
 
-                     {/* <input type="radio" value="Boxing" checked={l_type == 'Boxing'} onChange={handleL_type} name="Boxing" /> Boxing💪<br /> */}
+                     <input type="radio" value="Boxing" checked={l_name == 'Boxing'} onChange={handleL_name} name="Boxing" /> Boxing💪<br />
                      {/* <img src="x1.jpg" width="10%"></img><br /> */}
 
-                     {/* <input type="radio" value="Body building" checked={l_type == 'Body building'} onChange={handleL_type} name="Body building" /> Body building🏋️‍♀️<br /> */}
+                     <input type="radio" value="Body building" checked={l_name == 'Body building'} onChange={handleL_name} name="Body building" /> Body building🏋️‍♀️<br />
                      {/* <img src="b1.jpg" width="10%"></img><br /> */}
 
-                     {/* <input type="radio" value="Yoga" checked={l_type == 'Yoga'} onChange={handleL_type} name="Yoga" /> Yoga🧘‍♀️<br /> */}
+                     <input type="radio" value="Yoga" checked={l_name == 'Yoga'} onChange={handleL_name} name="Yoga" /> Yoga🧘‍♀️<br />
                      {/* <img src="y1.jpg" width="10%"></img><br /> */}
                  <br></br>
-                 {/* <label >Note lesson</label> */}
-                 {/* <br /><textarea placeholder="L_description" onChange={handleL_description} > */}
-                 {/* </textarea> */}
+                 <label >Note lesson</label>
+                 <br /><textarea placeholder="L_description" onChange={handleL_description} >
+                 </textarea>
                  <br />               
-                 {/* <label >time lesson</label> */}
-                 {/* <br /><input type="radio" value="am" checked={l_type == 'am'} onChange={handleL_type} name="am" /> am<br /> */}
+                 <label >time lesson</label>
+                 <br /><input type="radio" value="am" checked={l_type == 'am'} onChange={handleL_type} name="am" /> am<br />
                      {/* <img src="x1.jpg" width="10%"></img><br /> */}
 
-                     {/* <input type="radio" value="pm" checked={l_type == 'pm'} onChange={handleL_type} name="pm" /> pm<br /> */}
+                     <input type="radio" value="pm" checked={l_type == 'pm'} onChange={handleL_type} name="pm" /> pm<br />
                      {/* <img src="b1.jpg" width="10%"></img><br /> */}
-
+                     <label> date_time</label>
+                 <input type="text" name="l_date_time" placeholder="l_date_time" size="15" onChange={handleL_date_time} /><br /><br />
 <h1>---------------------------------------------------------------------------------------</h1>
                  <button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "10%", background:"#ffcc00", color: "#000000", }}>submit</button><br/>
                  <Link to="/invoices"  ><button  style={{ width: "20%", background:"#ffcc00", color: "#000000", }}>Monthly subscription</button></Link> 

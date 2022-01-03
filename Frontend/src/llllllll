@@ -1,0 +1,90 @@
+// import React, { useEffect, useState, params } from "react";
+// import axios from "axios"
+// export default function Logen() {
+//     let [username, setusername] = useState("")
+//     let [password, setpassword] = useState("")
+//     let [sing, setsing] = useState("")
+//     function handlesetusername(event) {
+//         setusername((username = event.target.value));
+//     }
+//     function handlepassword(event) {
+//         setpassword((password = event.target.value));
+//     }
+//     //let users = { "username": username, "password": password } //الكلام الي بالبرتغالي هو نفسه الي بجافا الازرق الي فوق
+//     function handleSubmit(event) {
+//         event.preventDefault();
+//         axios({
+//             method: "get",
+//             url: "api/user/login",
+//             params: { username: username , password: password}
+//         })
+//         .then((res => {setsing(res.data)}))
+//     }
+//     return (
+//         <div>
+//             <form onSubmit={handleSubmit}>
+//                 <input
+//                     type="text"
+//                     value={username}
+//                     name="username"
+//                     placeholder=" username"
+//                     onChange={handlesetusername}
+//                 />
+//                 <input
+//                     type="text"
+//                     value={password}
+//                     name="password"
+//                     placeholder=" password"
+//                     onChange={handlepassword}
+//                 />
+//                 <br />
+//                 <input type="submit"
+//                     value="submit"
+//                 />
+//             </form>
+// <h1>{sing}</h1>
+//         </div>
+//     )
+// }
+// 11:11
+// In database UserRepostery:
+// 11:11
+// @Query("SELECT password FROM Users WHERE username = :username" )
+// String findPasswordByUsername(@Param("username") String username);
+
+// @Query("select case when count(username) > 0 then true else false end from Users where username = :username")
+// Boolean existsByUsername(@Param("username") String username);
+// 11:13
+// In userController :
+// 11:13
+// @GetMapping(path = "login")
+// public String checkLogin(@RequestParam (name = "username") String username , @RequestParam (name = "password") String password ) {
+//     return userService.getCheck(username,password);
+
+// }
+// 11:14
+// In userService :
+// 11:14
+// public String getCheck(String username ,String password) {
+//     if( userRepository.existsByUsername(username) ){
+//         String pass = userRepository.findPasswordByUsername(username);
+//         if (pass.equals(password)){
+//             return "authenticated" ;
+//         }
+//         else {
+//             return "Password does not match"; }
+//     }
+
+//     return "Username not found";
+// }
+
+
+// Send a message to ajf-se1-oct-21-students
+
+
+
+
+
+
+
+

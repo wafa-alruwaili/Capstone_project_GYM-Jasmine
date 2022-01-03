@@ -40,6 +40,17 @@ public class MemberController<memberService> {
 //        int intmemberId =Integer .parseInt(memberId);
 //        memberService.deleteMember(intmemberId);
 
+
+
+
+//    @GetMapping(path ="login")
+//    public String checkLogin(@RequestParam(name ="name")String name ,
+//                             @RequestParam (name ="password")
+//                                     String password) {
+//        return memberService.getCheck(name,password);
+//    }
+
+
     @DeleteMapping(path = "delete/{memberId}")
     public void deleteMember(@PathVariable ("memberId") String memberId){
        int memberInt =Integer.parseInt(memberId);

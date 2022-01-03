@@ -31,25 +31,21 @@ public class Member {
     private String end_date;
 
 
+@ManyToMany
+     @JoinTable(name = "member_lessons",
+             joinColumns = @JoinColumn(name = "m_Id"),
+             inverseJoinColumns = @JoinColumn(name = "l_Id"))
+     private java.util.List<Lessons> lessons;
 
-    @OneToMany(mappedBy = "member")
-
-    @JsonIgnore
-
-    private List<Lessons> items = new ArrayList<>();
 
 
-//    @OneToMany(mappedBy="member")
-//    private List<Lessons> lessons;
 
     public Member() {
 }
 
 
 
-
-
-    public Member(int m_id, String name, String gender, int dob, String address, int height, int weight, String renewal, String start_date, String end_date, List<Lessons> items) {
+    public Member(int m_id, String name, String gender, int dob, String address, int height, int weight, String renewal, String start_date, String end_date, List<Lessons> lessons) {
         this.m_id = m_id;
         this.name = name;
         this.gender = gender;
@@ -60,17 +56,9 @@ public class Member {
         this.renewal = renewal;
         this.start_date = start_date;
         this.end_date = end_date;
-        this.items = items;
+        this.lessons = lessons;
     }
 
-
-    public List<Lessons> getItems() {
-        return items;
-    }
-
-    public void setItems(List<Lessons> items) {
-        this.items = items;
-    }
 
     public int getM_id() {
         return m_id;
@@ -152,7 +140,13 @@ public class Member {
         this.end_date = end_date;
     }
 
+    public List<Lessons> getLessons() {
+        return lessons;
+    }
 
+    public void setLessons(List<Lessons> lessons) {
+        this.lessons = lessons;
+    }
 
     @Override
     public String toString() {

@@ -29,6 +29,24 @@ public class MemberService {
 
         }
 
+
+//    public String getCheck(String name ,String password) {
+//        if( memberRepository.existsByName(name) ){
+//            String Member = memberRepository.findByName(name);
+//            if (Member.equals(password)){
+//                return "authenticated" ;
+//            }
+//            else {
+//                return "Password does not match"; }
+//        }
+//
+//        return "Username not found";
+//    }
+
+
+
+
+
         public void addNewMember(Member member) {
             memberRepository.save(member);
         }
