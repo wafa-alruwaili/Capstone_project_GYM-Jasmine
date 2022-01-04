@@ -24,19 +24,24 @@ public class Lessons {
          @JsonIgnore
          private java.util.List<Member> member = new ArrayList<>();
 
+         @ManyToOne
+         @JoinColumn(name="planid",referencedColumnName = "p_Id")
+         private Plan plan;
+
+
     public Lessons() {
     }
 
 
-    public Lessons(int l_id, String l_name, String l_type, String l_description, String l_date_time, List<Member> member) {
+    public Lessons(int l_id, String l_name, String l_type, String l_description, String l_date_time, List<Member> member, Plan plan) {
         this.l_id = l_id;
         this.l_name = l_name;
         this.l_type = l_type;
         this.l_description = l_description;
         this.l_date_time = l_date_time;
         this.member = member;
+        this.plan = plan;
     }
-
 
     public int getL_id() {
         return l_id;
@@ -84,6 +89,14 @@ public class Lessons {
 
     public void setMember(List<Member> member) {
         this.member = member;
+    }
+
+    public Plan getPlan() {
+        return plan;
+    }
+
+    public void setPlan(Plan plan) {
+        this.plan = plan;
     }
 
     @Override

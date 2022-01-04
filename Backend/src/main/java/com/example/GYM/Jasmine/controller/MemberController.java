@@ -43,12 +43,12 @@ public class MemberController<memberService> {
 
 
 
-//    @GetMapping(path ="login")
-//    public String checkLogin(@RequestParam(name ="name")String name ,
-//                             @RequestParam (name ="password")
-//                                     String password) {
-//        return memberService.getCheck(name,password);
-//    }
+    @GetMapping(path ="login")
+    public String checkLogin(@RequestParam(name ="name")String name ,
+                             @RequestParam (name ="password")
+                                     String password) {
+        return memberService.getCheck(name,password);
+    }
 
 
     @DeleteMapping(path = "delete/{memberId}")

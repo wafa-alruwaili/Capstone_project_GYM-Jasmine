@@ -38,6 +38,7 @@ ReactDOM.render(
         <Route path="/lessons" element={<Lessons />} />
         <Route path="/employe" element={<Employe />} /> 
         <Route path="/employees" element={< Employees />} />
+
         {/* <Route path="/plan" element={< Plan />} > */}
           {/* <Route path="/test" element={< Test />} /> */}
         

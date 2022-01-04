@@ -19,17 +19,27 @@ public class Plan {
     private String amount;
     private String active;
 
+    @OneToMany(mappedBy = "plan")
+   @JsonIgnore
+   private List<Lessons> items = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name="employeesid",referencedColumnName = "e_Id")
+    private Employees employees;
 
     public Plan() {
 
     }
 
-    public Plan(int p_id, String p_name, String p_description, String amount, String active) {
+
+    public Plan(int p_id, String p_name, String p_description, String amount, String active, List<Lessons> items, Employees employees) {
         this.p_id = p_id;
         this.p_name = p_name;
         this.p_description = p_description;
         this.amount = amount;
         this.active = active;
+        this.items = items;
+        this.employees = employees;
     }
 
     public int getP_id() {
@@ -72,6 +82,21 @@ public class Plan {
         this.active = active;
     }
 
+    public List<Lessons> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Lessons> items) {
+        this.items = items;
+    }
+
+    public Employees getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(Employees employees) {
+        this.employees = employees;
+    }
 
     @Override
     public String toString() {

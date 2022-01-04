@@ -11,9 +11,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MemberRepository extends JpaRepository<Member, Integer>{
-//    @Query("SELECT password FROM Member WHERE name= :name")
-//    String findByName(@Param("name") String name);
-//
-//    @Query("select case when count(name) > 0 then true else false end from Member where name = :name")
-//    Boolean existsByName(@Param("name") String name);
+    @Query("SELECT password FROM Member WHERE name= :name")
+    String findByName(@Param("name") String name);
+
+    @Query("select case when count(name) > 0 then true else false end from Member where name = :name")
+    Boolean existsByName(@Param("name") String name);
 }

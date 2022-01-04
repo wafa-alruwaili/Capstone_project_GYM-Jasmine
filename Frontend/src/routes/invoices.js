@@ -3,9 +3,16 @@ import React from "react";
 import {Outlet,NavLink, useSearchParams } from "react-router-dom";
 import { getInvoices } from "../data";
 //import "./invoices.css"
+
+
+
 export default function Invoices() {
     let invoices = getInvoices();
     let [searchParams, setSearchParams] = useSearchParams();
+    
+    
+    
+    
     return (
       <div style={{ display: "flex" }}>
         <nav

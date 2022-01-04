@@ -29,7 +29,8 @@ public class Member {
     private String renewal;
     private String start_date;
     private String end_date;
-
+private  String username;
+private String password;
 
 @ManyToMany
      @JoinTable(name = "member_lessons",
@@ -45,7 +46,7 @@ public class Member {
 
 
 
-    public Member(int m_id, String name, String gender, int dob, String address, int height, int weight, String renewal, String start_date, String end_date, List<Lessons> lessons) {
+    public Member(int m_id, String name, String gender, int dob, String address, int height, int weight, String renewal, String start_date, String end_date, String username, String password, List<Lessons> lessons) {
         this.m_id = m_id;
         this.name = name;
         this.gender = gender;
@@ -56,9 +57,10 @@ public class Member {
         this.renewal = renewal;
         this.start_date = start_date;
         this.end_date = end_date;
+        this.username = username;
+        this.password = password;
         this.lessons = lessons;
     }
-
 
     public int getM_id() {
         return m_id;
@@ -138,6 +140,22 @@ public class Member {
 
     public void setEnd_date(String end_date) {
         this.end_date = end_date;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public List<Lessons> getLessons() {

@@ -20,6 +20,8 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
     let [start_date, setStart_date] = useState("")
     let [end_date, setEnd_date] = useState("")
     let [renewal, setRenwal] = useState("")
+    let [username, setUsername] = useState("")
+    let [password, setPassword] = useState("")
     let [del, setdel] = useState("")
 
 
@@ -35,6 +37,10 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
     function handleStart_date(event) { setStart_date((start_date = event.target.value)); }
     function handleEnd_date(event) { setEnd_date((end_date = event.target.value)); }
     function handleRenewal(event) { setRenwal((renewal = event.target.value)); }
+    function handleUsername(event) { setUsername((username = event.target.value)); }
+    function handlePassword(event) { setPassword((password = event.target.value)); }
+
+    
     // function handleClickDel3(event) { setdel((del = event.target.value)) }
 
 
@@ -49,7 +55,9 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
         weight: weight,
         start_date: start_date,
         end_date: end_date,
-        renewal: renewal
+        renewal: renewal,
+        username:username,
+        password:password
     }
 
 
@@ -127,6 +135,11 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
                     onChange={handleRenewal} />Yes
                 <input style={{ width: "10%", color: "#ffcc00", }}type="radio" value="no" checked={renewal == 'no'}
                     onChange={handleRenewal} />No<br/><br/>
+                <label style={{ width: "10%", color: "#ffcc00", }}> username </label>
+                <input type="text" name="username" placeholder="username" size="15" onChange={handleUsername} /><br/><br/>
+
+                <label style={{ width: "10%", color: "#ffcc00", }}> password </label>
+                <input type="password" name="password" placeholder="password" size="15" onChange={handlePassword} /><br/><br/>
 
             
             

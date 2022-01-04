@@ -1,7 +1,5 @@
 
-// //    @OneToMany(mappedBy = "plan")
-// //    @JsonIgnore
-// //    private List<Member> items = new ArrayList<>();
+// //   
 /
 //    @ManyToOne
 //
@@ -14,10 +12,6 @@
 //     //@JsonIgnore
 //     //private java.util.List<Member> member = new ArrayList<>();
 ///////////////////////////////////////////////////////////////////////////
-
-// // @ManyToOne
-//     //@JoinColumn(name="planid",referencedColumnName = "p_id")
-//     //private Plan plan;
 
 // /*******************************************************************
 //     //@ManyToMany
@@ -37,10 +31,14 @@
 /////////////////////////////////////////////////////////////////////////
 
 
+
+
+// @OneToMany(mappedBy = "plan")
+// //    @JsonIgnore
+// //    private List<Member> items = new ArrayList<>();
+
 // @OneToMany(mappedBy = "member")
-
 //     @JsonIgnore
-
 //     private List<Lessons> items = new ArrayList<>();
 
 

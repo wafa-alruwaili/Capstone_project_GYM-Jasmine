@@ -1,8 +1,13 @@
 package com.example.GYM.Jasmine.model.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
@@ -14,16 +19,22 @@ public class Employees {
     private String user_name;
     private String type;
 
+    @OneToMany(mappedBy = "employees")
+    @JsonIgnore
+    private List<Plan> items = new ArrayList<>();
 
-    public Employees(int e_id, int password, String full_name, String user_name, String type) {
+
+
+    public Employees() {
+    }
+
+    public Employees(int e_id, int password, String full_name, String user_name, String type, List<Plan> items) {
         this.e_id = e_id;
         this.password = password;
         this.full_name = full_name;
         this.user_name = user_name;
         this.type = type;
-    }
-
-    public Employees() {
+        this.items = items;
     }
 
     public int getE_id() {
@@ -42,8 +53,6 @@ public class Employees {
         this.password = password;
     }
 
-
-
     public String getFull_name() {
         return full_name;
     }
@@ -60,7 +69,6 @@ public class Employees {
         this.user_name = user_name;
     }
 
-
     public String getType() {
         return type;
     }
@@ -69,6 +77,13 @@ public class Employees {
         this.type = type;
     }
 
+    public List<Plan> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Plan> items) {
+        this.items = items;
+    }
 
     @Override
     public String toString() {
