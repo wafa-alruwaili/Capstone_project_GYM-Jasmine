@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, Outlet } from "react-router-dom";
 import axios from "axios"
-
+import Login from './routes/Login';
 
 
 export default function App() {
@@ -40,10 +40,18 @@ function handleLangouge(event) { setLangouge((langouge = event.target.value)); }
     //     url: "/api/member/delete/1"
     //   })
     // }
-
+ 
+        let[login,setLogin]= useState(false);
+        function handleLogin(props){
+          setLogin(true);
+        }
+        if(!login){
+          return <Login handleLogin={handleLogin}  />;
+        }
 
 
     return (
+       
         
 
 <div link rel="stylesheet" href="index.css" 
@@ -101,13 +109,13 @@ link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/
 
                  <time  style={{color:"#ffcc00"}}>7:57Pm</time>
                 <ul className="ul-list">
-                    <Link to="/Home"><button style={{ width:"12%", background: "#ffcc00", color: "#000000" }}>Home </button></Link>
-                    <Link to="/Register"><button style={{ width:"16%", background: "#ffcc00", color: "#000000" }}>Register </button></Link>
-                    <Link to="/employe"><button style={{ width:"16%", background: "#ffcc00", color: "#000000" }}>employe register </button></Link>
-                    <Link to="/members"><button style={{ width:"16%", background: "#ffcc00", color: "#000000" }}>Member </button></Link>
-                    <Link to="/lessons"><button style={{ width:"16%", background: "#ffcc00", color: "#000000" }}>Lessons </button></Link>
-                    <Link to="/invoices"><button style={{ width:"10%", background: "#ffcc00", color: "#000000" }}>Plan </button></Link>
-                    <Link to="/employees"><button style={{ width:"21%", background: "#ffcc00", color: "#000000" }}>Employees </button></Link>
+                    <Link to="/Home"><button className='FOF'>Home </button></Link>
+                    <Link to="/Register"><button className='FOF' >Register </button></Link>
+                    <Link to="/employe"><button className='FOF'>employe register </button></Link>
+                    <Link to="/members"><button className='FOF'>Member </button></Link>
+                    <Link to="/lessons"><button className='FOF'>Lessons </button></Link>
+                    <Link to="/invoices"><button className='FOF'>Plan </button></Link>
+                    <Link to="/employees"><button className='FOF'>Employees </button></Link>
                 </ul>
             
                 

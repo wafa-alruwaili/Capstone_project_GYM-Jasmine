@@ -20,7 +20,7 @@ public class PlanService {
     }
 
 
-    public List<Plan> getLesson() {
+    public List<Plan> getPlans() {
         return planRepository.findAll();
     }
 
@@ -39,7 +39,5 @@ public class PlanService {
     }
 
 
-    public List<Plan> getPlans() {
-        return null;
-    }
+
 }

@@ -22,26 +22,22 @@ ReactDOM.render(
       <Route path="invoices" element={<Invoices />}>
       <Route path=":invoiceId" element={<Invoice />} />
     </Route>
-    <Route
+    {/* <Route
       path="*"
       element={
         <main style={{ padding: "1rem" }}>
-          <p>There's nothing here!</p>
+         <br/><br/><br/><br/> <p>There's nothing here!</p><br/><br/><br/><br/>
         </main>
       }
-    />
+    /> */}
         <Route path="/Home" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/members" element={<Members />}>
         </Route>
         <Route path="/register" element={<Register />} />
         <Route path="/lessons" element={<Lessons />} />
         <Route path="/employe" element={<Employe />} /> 
-        <Route path="/employees" element={< Employees />} />
-
-        {/* <Route path="/plan" element={< Plan />} > */}
-          {/* <Route path="/test" element={< Test />} /> */}
-        
+        <Route path="/employees" element={< Employees />} />  
       </Route>
     </Routes>
   </BrowserRouter>,

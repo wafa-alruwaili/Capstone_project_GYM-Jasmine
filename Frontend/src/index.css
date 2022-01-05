@@ -146,7 +146,7 @@ header .logo i{
 }
 
 header .navbar a{
-  font-size: 2rem;
+  font-size: .3rem;
   margin-left: .5rem;
   color:#ffcc00
   ;
@@ -181,12 +181,25 @@ section{
 }
 
 .home .image img{
-  width:100%;
+  width:300px;
   padding:1rem;
   animation:float 3s linear infinite;
 }
-
-
+.FOF
+{
+  font-family: ‘Helvetica’, ‘Arial’, sans-serif;
+  display: inline-block;
+    font-size: 9px;
+    padding: 1em 2em;
+    margin-top: 0px;
+   margin-bottom: 9px;
+     background-color:hsla(51, 91%, 50%, 0.945);
+    border-radius: 40px;
+   border: none;
+   cursor: pointer;
+     position: relative;
+    box-shadow: 0 .5px 12px #5c5656b7;
+}
 
 .home .content h3{
   font-size: 2rem;

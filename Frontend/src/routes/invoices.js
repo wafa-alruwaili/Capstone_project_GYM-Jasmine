@@ -1,15 +1,12 @@
-import { isDocument } from "@testing-library/user-event/dist/utils";
-import React from "react";
-import {Outlet,NavLink, useSearchParams } from "react-router-dom";
+import React from 'react';
+import { Outlet,NavLink,useSearchParams } from "react-router-dom";
 import { getInvoices } from "../data";
-//import "./invoices.css"
+ 
 
 
-
-export default function Invoices() {
+function Invoices() {
     let invoices = getInvoices();
     let [searchParams, setSearchParams] = useSearchParams();
-    
     
     
     
@@ -20,10 +17,11 @@ export default function Invoices() {
             borderRight: "solid 1px",
             padding: "1rem"
           }}
-        ><br/><br/>
+        >
           <input
             value={searchParams.get("filter") || ""}
             onChange={event => {
+              
               let filter = event.target.value;
               if (filter) {
                 setSearchParams({ filter });
@@ -36,7 +34,7 @@ export default function Invoices() {
             .filter(invoice => {
               let filter = searchParams.get("filter");
               if (!filter) return true;
-              let p_name = invoice.p_name.toLowerCase();
+              let p_name = invoice.eventP_name.toLowerCase();
               return p_name.startsWith(filter.toLowerCase());
             })
             .map(invoice => (
@@ -44,12 +42,13 @@ export default function Invoices() {
                 style={({ isActive }) => ({
                   display: "block",
                   margin: "1rem 0",
-                  color: isActive ? "white" : "yellow"
+                  color: isActive ? "white" : "white"
                 })}
-                to={`/invoices/${invoice.p_id}`}
-                key={invoice.p_id}
+                to={`/plan/${invoice.e_id}`}
+                key={invoice.e_id}
               >
-                {invoice.p_name}
+                {invoice.user_name}
+                
               </NavLink>
             ))}
         </nav>
@@ -57,3 +56,4 @@ export default function Invoices() {
       </div>
     );
   }
+  export default Invoices

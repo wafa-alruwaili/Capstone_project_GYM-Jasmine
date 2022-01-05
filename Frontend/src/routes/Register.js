@@ -157,4 +157,3 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
 
     );
 }
-
