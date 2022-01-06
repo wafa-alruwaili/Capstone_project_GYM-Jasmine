@@ -86,9 +86,6 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
 
 
 
-
-
-
     return (
         <form onSubmit={handleSubmit} >
             <div className="log">

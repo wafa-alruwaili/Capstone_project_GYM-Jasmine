@@ -2,7 +2,7 @@ import axios from "axios"
  
 
 let invcc = [];
- axios.get("api/employees")
+ axios.get("/api/plan")
             .then(result => {
                 invcc = result.data;
             });
@@ -17,21 +17,10 @@ let invcc = [];
   export function getInvoice(id) {
     
     return invcc.find(
-      invoice => invoice.e_id === id
+      invoice => invoice.p_id === id
     );
     }
-
-
-
-
-
-
-
-
-
-
-
-    
+  
 // import  React from 'react'
 // import { Link } from 'react-router-dom'
 // let invoices = [

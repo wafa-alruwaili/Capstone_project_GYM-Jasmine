@@ -104,7 +104,7 @@ p_id:p_id
 </div>
 <h1>---------------------------------------------------------------------------------------</h1>
 
-<img src="mah.jpg" alt=""/>
+<img src="ba.jpg" alt=""/>
             <div class="content">
                 <h3 style={{  color: "#ffcc00" }}>3-Body building</h3>
                 <p>Prevention of heart disease, as bodybuilding reduces the risk of developing coronary heart disease, by engaging in physical activities such as weight training with aerobic exercises, you have a greater chance of lowering high blood pressure, reducing obesity and lowering harmful cholesterol in the blood, all of which are risk factors for heart disease.</p>

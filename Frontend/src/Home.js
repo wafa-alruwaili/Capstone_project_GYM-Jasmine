@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, Outlet } from "react-router-dom";
 import axios from "axios"
+import Login from './routes/Login';
 
 
 
@@ -8,11 +9,22 @@ export default function Home() {
   // const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", dob: "", start_date: "", end_date: "" })
   let [username, setUserName] = useState("")
   let [passowrd, setPassowrd] = useState("")
+  let [Authentication,setAuthentication]= useState(false);
+
+  
   function handleUserName(event) { setUserName((username = event.target.value)); }
   function handlePassowrd(event) { setPassowrd((passowrd = event.target.value)); }
   function handleSubmit(event) {
     event.preventDefault();
   }
+
+  function handleLogin(){
+    setAuthentication(true);
+}
+if(!Authentication){
+    return<Login handleLogin = {handleLogin} />
+}
+  
 
   return (
     <div >

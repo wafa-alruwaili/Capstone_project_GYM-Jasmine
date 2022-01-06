@@ -199,6 +199,7 @@ section{
    cursor: pointer;
      position: relative;
     box-shadow: 0 .5px 12px #5c5656b7;
+    color:#0e0d0a;
 }
 
 .home .content h3{

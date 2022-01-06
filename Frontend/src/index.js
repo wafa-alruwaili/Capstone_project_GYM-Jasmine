@@ -19,25 +19,18 @@ ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} >
-      <Route path="invoices" element={<Invoices />}>
-      <Route path=":invoiceId" element={<Invoice />} />
-    </Route>
-    {/* <Route
-      path="*"
-      element={
-        <main style={{ padding: "1rem" }}>
-         <br/><br/><br/><br/> <p>There's nothing here!</p><br/><br/><br/><br/>
-        </main>
-      }
-    /> */}
+        <Route path="invoices" element={<Invoices />}>
+          <Route path=":invoiceId" element={<Invoice />} />
+        </Route>
+
         <Route path="/Home" element={<Home />} />
         {/* <Route path="/login" element={<Login />} /> */}
-        <Route path="/members" element={<Members />}>
-        </Route>
+        <Route path="/members" element={<Members />}/>
+        
         <Route path="/register" element={<Register />} />
         <Route path="/lessons" element={<Lessons />} />
-        <Route path="/employe" element={<Employe />} /> 
-        <Route path="/employees" element={< Employees />} />  
+        <Route path="/employe" element={<Employe />} />
+        <Route path="/employees" element={< Employees />} />
       </Route>
     </Routes>
   </BrowserRouter>,

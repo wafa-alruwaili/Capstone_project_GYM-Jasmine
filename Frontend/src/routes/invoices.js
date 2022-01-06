@@ -34,7 +34,7 @@ function Invoices() {
             .filter(invoice => {
               let filter = searchParams.get("filter");
               if (!filter) return true;
-              let p_name = invoice.eventP_name.toLowerCase();
+              let p_name = invoice.p_name.toLowerCase();
               return p_name.startsWith(filter.toLowerCase());
             })
             .map(invoice => (
@@ -44,10 +44,10 @@ function Invoices() {
                   margin: "1rem 0",
                   color: isActive ? "white" : "white"
                 })}
-                to={`/plan/${invoice.e_id}`}
-                key={invoice.e_id}
+                to={`/invoices/${invoice.p_id}`}
+                key={invoice.p_id}
               >
-                {invoice.user_name}
+                {invoice.p_name}
                 
               </NavLink>
             ))}
