@@ -15,7 +15,7 @@ const [myEmployees, setmyEmployees] = useState({ e_id: "", password: "", full_na
     let [full_name, setFull_name] = useState("")
     let [user_name, setUser_name] = useState("")
     let [type, setType] = useState("")
-    let [del, setdel] = useState("")
+    let [ClickDel2, setClickDel2] = useState("")
 
 
 
@@ -25,7 +25,7 @@ const [myEmployees, setmyEmployees] = useState({ e_id: "", password: "", full_na
     function handleFull_name(event) { setFull_name((full_name = event.target.value)); }
     function handleUser_name(event) { setUser_name((user_name = event.target.value)); }
     function handleType (event) { setType ((type  = event.target.value)); }
-    // function handleClickDel3(event) { setdel((del = event.target.value)) }
+    function handleClickDel2(event) { setClickDel2((ClickDel2 = event.target.value)) }
 
 
 
@@ -37,7 +37,7 @@ const [myEmployees, setmyEmployees] = useState({ e_id: "", password: "", full_na
         type: type
     }
 
-
+    
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -50,15 +50,15 @@ const [myEmployees, setmyEmployees] = useState({ e_id: "", password: "", full_na
         });
     }
 
-    // function handleClickDel2() {
+    function handleClickDel2() {
 
-    //     axios({
-    //         method: 'delete',
-    //         url: `api/member/delete/${del}`,
+        axios({
+            method: 'delete',
+            url: `api/employees/delete/${ClickDel2}`,
 
-    //     });
+        });
 
-    // }
+    }
 
 
 
@@ -89,9 +89,10 @@ const [myEmployees, setmyEmployees] = useState({ e_id: "", password: "", full_na
 
             
             
-            <hr/><button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "10%", background: "#ffcc00", color: "#000000", }}>submit</button><br/><br/>
-            <Link to="/employe"  ><button  style={{ width: "10%", background: "#ffcc00", color: "#000000", }}>profail</button></Link><br/><br/>
-            <Link to="/Home"  ><button  style={{ width: "10%", background: "#ffcc00", color: "#000000", }}>Back</button></Link>
+            <hr/><button type="submit" className="registerbutton" onClick={handleSubmit} className="FOF">submit</button>
+            <button type="submit" className="registerbutton" onClick={handleClickDel2} className="FOF">Delete</button>
+            <hr/> <Link to="/Employee_details"  ><button  className="FOF">profail empolyees</button></Link>
+            <Link to="/Home"  ><button  className="FOF">Back</button></Link>
 
                
                 <br />

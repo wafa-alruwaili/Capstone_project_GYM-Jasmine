@@ -59,7 +59,7 @@ export default function Employees() {
 
         axios({
             method: 'delete',
-            url: `api/plan/delete/${clickdel12}`,
+            url: `api/plan/delete/${p_id}`,
 
         });
 
@@ -135,7 +135,7 @@ export default function Employees() {
 
 
                 <hr />
-                <label class="FOF"> e_id </label>
+                <label style={{ width: "10%", color: "#ffcc00", }}> e_id </label>
                 <input type="text" name="e_id" placeholder="e_id" size="15" onChange={handleE_id} /><br/><br/>
                 {/* <label style={{ width: "10%", color: "#ffcc00", }}> password </label>
                 <input type="text" name="name" placeholder="name" size="15" onChange={handlePassword} /><br/><br/>
@@ -161,8 +161,8 @@ export default function Employees() {
                
                
                 <Link to="/invoice" ><hr/><button type="submit" className="registerbutton" onClick={handleSubmit} class="FOF" >submit</button></Link>
-            <button type="submit" className="registerbutton" onClick={handleClickDel12} class="FOF">Remove</button>
-            <Link to="/employe"  ><button  class="FOF">profail</button></Link>
+            <button type="submit" className="registerbutton" onClick={handleClickDel2} class="FOF">Remove</button>
+            <Link to="/invoice"  ><button  class="FOF">profail</button></Link>
             <Link to="/Home"  ><button  class="FOF">Back</button></Link>
 
                

@@ -50,18 +50,22 @@ export default function App() {
                     </select>
 
 
-
+                   
 
                     <time style={{ color: "#ffcc00" }}>7:57Pm</time>
                     <ul className="ul-list">
                         {/* <Link to="/Login"><button className='FOF'>Login </button></Link> */}
                         <Link to="/Home"><button className='FOF'>Home </button></Link>
                         <Link to="/Register"><button className='FOF' >Register </button></Link>
-                        <Link to="/employe"><button className='FOF'>employe register </button></Link>
-                        <Link to="/members"><button className='FOF'>Member </button></Link>
                         <Link to="/lessons"><button className='FOF'>Lessons </button></Link>
+                        <Link to="/members"><button className='FOF'>Member </button></Link>
                         <Link to="/invoices"><button className='FOF'>Plan </button></Link>
+                        <Link to="/employe"><button className='FOF'>employe register </button></Link>
+                        <Link to="/Employee_details"><button className='FOF'>Employee_details </button></Link>
                         <Link to="/employees"><button className='FOF'>Employees </button></Link>
+                        {/* <Link to="/Dataemployees"><button className='FOF'>Dataemployees</button></Link> */}
+
+                   
                     </ul>
 
 

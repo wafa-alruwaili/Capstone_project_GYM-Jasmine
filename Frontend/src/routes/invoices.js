@@ -46,8 +46,7 @@ function Invoices() {
                 })}
                 to={`/invoices/${invoice.p_id}`}
                 key={invoice.p_id}
-              >
-                {invoice.p_name}
+              ><br/>{invoice.p_name}
                 
               </NavLink>
             ))}

@@ -140,9 +140,9 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
 
             
             
-            <hr/><button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "10%", background: "#ffcc00", color: "#000000", }}>submit</button><br/><br/>
-            <Link to="/members"  ><button  style={{ width: "10%", background: "#ffcc00", color: "#000000", }}>profail</button></Link><br/><br/>
-            <Link to="/Home"  ><button  style={{ width: "10%", background: "#ffcc00", color: "#000000", }}>Back</button></Link>
+            <hr/><button type="submit" className="registerbutton" onClick={handleSubmit}  class="FOF">submit</button>
+            <Link to="/lessons"  ><button   class="FOF">chose lesson</button></Link>
+            <Link to="/Home"  ><button   class="FOF">Back</button></Link>
 
                 {/* <input type="text" id="id" name="id" onChange={handleClickDel3} /> */}
                 {/* <input type="submit" value="Remove" onClick={handleClickDel2} style={{ width: "10%", background: "#33cc33", color: "#FFFFFF", }}></input><br/><br/> */}

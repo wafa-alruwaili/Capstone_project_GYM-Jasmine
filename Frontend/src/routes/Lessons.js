@@ -18,10 +18,10 @@ const [myLessons, setMyLessons] = useState({ l_id: "", l_name: "", l_type: "", l
     let [l_type, setL_type] = useState("")
     let [l_description, setL_description] = useState("")
     let [l_date_time, setL_date_time] = useState("")
+    let [note, setNote] = useState("");
     let [m_id, setM_id] = useState("")
     let [p_id, setP_id] = useState("")
     let [del, setdel] = useState("")
-    let [note, setNote] = useState("");
     
 
 
@@ -42,7 +42,7 @@ const [myLessons, setMyLessons] = useState({ l_id: "", l_name: "", l_type: "", l
         axios({
 
             method: 'post',
-            url: 'api/lessons/add',
+            url: 'api/member/add',
             data: newlessons,
 
         });
@@ -164,8 +164,9 @@ p_id:p_id
                  <label> number Plan</label>
                  <input type="text" name="p_id" placeholder="p_id" size="15" onChange={handleP_id} /><br /><br />
 <h1>---------------------------------------------------------------------------------------</h1>
-                 <button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "10%", background:"#ffcc00", color: "#000000", }}>submit</button><br/>
-                 <Link to="/invoices"  ><button  style={{ width: "20%", background:"#ffcc00", color: "#000000", }}>Monthly subscription</button></Link> 
+                 <button type="submit" className="registerbutton" onClick={handleSubmit}  class="FOF">submit</button><br/>
+                 <Link to="/members"  ><button  class="FOF">profail</button></Link> 
+                 <Link to="/Register"  ><button   class="FOF">Back</button></Link>
 
                  {/* <input type="submit" className="registerbtn" onClick={handleSubmit} style={{ width: "10%", background: "#ff3399", color: "#FFFFFF", }}></input> */}
 

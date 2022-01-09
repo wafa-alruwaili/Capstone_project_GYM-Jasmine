@@ -9,15 +9,28 @@ export default function Plan() {
   let invoice = getInvoice(parseInt(params.invoiceId, 10));
   
   
-  return (
-    <main style={{ padding: "1rem" }}>
-     <br/><br/><br/> <h2>:- {invoice.p_name}</h2><br/><br/><br/>
-      <p>
-        : {invoice.p_id}:{invoice.p_name} : {invoice.p_description} :{invoice.amount} :{invoice.active}
-      </p>
+  return (//هنا يطلع لي في صفحة البلان اللي بالنص
+    
+  
+    <div class="card">
+    <div class="container">
+     
+    
+
+    <main style={{ padding: "1rem" }}><br/><br/>
+
+    <h2><b>{invoice.p_name}</b></h2>
+      <p>{invoice.p_id}</p>
+      <p>{invoice.p_name}</p>
+      <p>{invoice.p_description}</p>
+      <p>{invoice.amount}</p>
+      <p>{invoice.active}</p>
     </main>
+    </div>
+  </div>
   );
 }
+
 
 // *******************************************************************************
 // import React from 'react';

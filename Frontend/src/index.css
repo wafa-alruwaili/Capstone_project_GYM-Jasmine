@@ -39,6 +39,7 @@ body {
 
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -201,6 +202,21 @@ section{
     box-shadow: 0 .5px 12px #5c5656b7;
     color:#0e0d0a;
 }
+
+.CR{
+
+  margin: 0 auto;
+  float: center;
+ background: #53534670;
+ width: 300px;
+ border: 2px solid #e2f01c;
+
+}
+/* .cardtext{
+  font-family: ‘Helvetica’, ‘Arial’, sans-serif;
+  font-size: 9px;
+  color:#0e0d0a;
+} */
 
 .home .content h3{
   font-size: 2rem;

@@ -13,6 +13,7 @@ import Register from "./routes/Register"
 import Invoices from "./routes/invoices";
 import Invoice from "./routes/invoice";
 import Login from './routes/Login';
+import Employee_details from "./routes/Employee_details";
 
 
 ReactDOM.render(
@@ -22,14 +23,13 @@ ReactDOM.render(
         <Route path="invoices" element={<Invoices />}>
           <Route path=":invoiceId" element={<Invoice />} />
         </Route>
-
         <Route path="/Home" element={<Home />} />
-        {/* <Route path="/login" element={<Login />} /> */}
+        <Route path="/login" element={<Login />} />
         <Route path="/members" element={<Members />}/>
-        
         <Route path="/register" element={<Register />} />
         <Route path="/lessons" element={<Lessons />} />
         <Route path="/employe" element={<Employe />} />
+        <Route path="/employee_details" element={< Employee_details />} />
         <Route path="/employees" element={< Employees />} />
       </Route>
     </Routes>
