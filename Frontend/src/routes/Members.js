@@ -1,3 +1,6 @@
+
+
+
 import React, { Component } from "react";
 import axios from 'axios'
 import { Link } from "react-router-dom";
@@ -37,39 +40,33 @@ export default class Member extends Component {
     render() {
        
         return (
-            
-            <div className="CR">
-               <p></p>
+           
+ 
+             
+            <div class="m1">
                     {this.state.MemberList.map((item => (
                         <tr key={item.m_id}>
-
-
-                       
-                        {/* {for (let i =0, < 10, i++)} {
-                            
-                            
-                        } */}
-                    
-                    <br/><br/><br/><br/><br/>
-                        <div class="cardtext">
-                        <p>name:{item.name} </p>
-                        <p> gender : {item.gender}</p>
-                        <p>dob:{item.dob} </p>
-                        <p> address : {item.address}</p>
-                        <p>height:{item.height} </p>
-                        <p> weight : {item.weight}</p>
-                        <p>renewal:{item.renewal} </p>
-                        <p> start_date : {item.start_date}</p>
-                        <p>end_date :{item.end_date} </p>
-                        <p>l_name:{item.lessons[0].l_name} </p>
-                        <p>l_type:{item.lessons[0].l_type} </p>
-                        <p>l_description :{item.lessons.l_description} </p>
-                        <p>l_date_time:{item.lessons.l_date_time} </p>
-                        <p> note:{item.lessons.note} </p>
                         
-                        </div>
+                    
+                        <br/><br/><br/><br/><br/>
+                        <p style={{ width: "10%", color: "#ffcc00", }}>name: </p>{item.name}
+                        <p style={{ width: "10%", color: "#ffcc00", }}> gender: </p>{item.gender}
+                        <p style={{ width: "10%", color: "#ffcc00", }}>dob: </p>{item.dob}
+                        <p style={{ width: "10%", color: "#ffcc00", }}> address : </p>{item.address}
+                        <p style={{ width: "10%", color: "#ffcc00", }}>height: </p>{item.height}
+                        <p style={{ width: "10%", color: "#ffcc00", }}> weight : </p>{item.weight}
+                        <p style={{ width: "10%", color: "#ffcc00", }}>renewal: </p>{item.renewal}
+                        <p style={{ width: "10%", color: "#ffcc00", }}> start_date : </p>{item.start_date}
+                        <p style={{ width: "10%", color: "#ffcc00",float: "left" }}>end_date :</p>{item.end_date} 
+                        <p style={{ width: "10%", color: "#ffcc00", }}>l_name: </p>{item.lessons.l_name}
+                        {/* <p style={{ width: "10%", color: "#ffcc00", }}>l_type: </p> {item.lessons[0].l_type} */}
+                        <p style={{ width: "10%", color: "#ffcc00", }}>l_description : </p>{item.lessons.l_description}
+                        <p style={{ width: "10%", color: "#ffcc00", }}>l_date_time: </p>{item.lessons.l_date_time}
+                        <p style={{ width: "10%", color: "#ffcc00", }}> note:</p>{item.lessons.note} 
+                        
+            
                        
-<button button  onClick={(e) => this. deleteSpecialist(item.m_id, e)}>delete</button>
+<button className="FOF"  onClick={(e) => this. deleteSpecialist(item.m_id, e)}>delete</button>
 
 
 
@@ -77,8 +74,8 @@ export default class Member extends Component {
                         </tr>
                     )))
                     }
-        
-        </div>
+  </div>
+
         
        
   )

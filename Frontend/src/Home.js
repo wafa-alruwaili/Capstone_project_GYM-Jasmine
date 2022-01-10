@@ -6,14 +6,9 @@ import Login from './routes/Login';
 
 
 export default function Home() {
-  // const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", dob: "", start_date: "", end_date: "" })
-  let [username, setUserName] = useState("")
-  let [passowrd, setPassowrd] = useState("")
   let [Authentication,setAuthentication]= useState(false);
 
   
-  function handleUserName(event) { setUserName((username = event.target.value)); }
-  function handlePassowrd(event) { setPassowrd((passowrd = event.target.value)); }
   function handleSubmit(event) {
     event.preventDefault();
   }
@@ -41,12 +36,9 @@ if(!Authentication){
 
           <h3>Benefit of sports</h3>
           <p>Among the benefits of sports is the prevention of heart disease and stroke, and regular exercise strengthens the heart muscle, improves its work, increases the efficiency of blood flow and blood circulation, and regulates the level of cholesterol in the blood in a healthy way. In addition to preventing and reducing the effects of diabetes and high blood pressure.</p>
-          <Link to="/Register"  ><button style={{ width: "10%", background: "#ffcc00", color: "#000000", }}>join us</button></Link>
-          <br /><br /> <label style={{ width: "10%", color: "#ffcc00", }}>User Name</label>
-          <input type="text" name="User Name" placeholder="User Name" size="15" onChange={handleUserName} /><br /><br />
-          <label style={{ width: "10%", color: "#ffcc00", }}>Passowrd</label>
-          <input type="text" name="Passowrd" placeholder="Passowrd" size="15" onChange={handlePassowrd} /><br /><br />
-          <Link to="/Employees"  ><hr /><button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "10%", background: "#ffcc00", color: "#000000", }}>LogIn</button><br /><br /></Link >
+          <Link to="/Register"  ><button style={{ width: "10%", background: "#ffcc00", color: "#000000", }}>join us</button></Link><br/>
+          {/* <Link to="/Login"  ><hr /><button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "10%", background: "#ffcc00", color: "#000000", }}>LogIn</button><br /><br /></Link > */}
+          <Link to="/Login"  ><button style={{ width: "10%", background: "#ffcc00", color: "#000000", }} >LogIn</button></Link>
 
 
         </div>

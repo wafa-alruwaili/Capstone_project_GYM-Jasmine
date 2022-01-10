@@ -14,17 +14,18 @@ export default function Plan() {
   
     <div class="card">
     <div class="container">
-     
+
     
 
     <main style={{ padding: "1rem" }}><br/><br/>
+<h1 style={{ color: "#ffcc00"}}>Subscriptions</h1>
 
-    <h2><b>{invoice.p_name}</b></h2>
-      <p>{invoice.p_id}</p>
-      <p>{invoice.p_name}</p>
-      <p>{invoice.p_description}</p>
-      <p>{invoice.amount}</p>
-      <p>{invoice.active}</p>
+    <h1 className="button2">{invoice.p_name}</h1>
+      <p style={{ background: "#ffcc00", color: "#000000"}}>Subscription number:-{invoice.p_id}</p>
+      <p style={{ background: "#ffcc00", color: "#000000"}}>Subscription name:-{invoice.p_name}</p>
+      <p style={{ background: "#ffcc00", color: "#000000"}}>Subscription description:-{invoice.p_description}</p>
+      <p style={{ background: "#ffcc00", color: "#000000"}}>Subscription price:-{invoice.amount}</p>
+      <p style={{ background: "#ffcc00", color: "#000000"}}>description active:-{invoice.active}</p>
     </main>
     </div>
   </div>

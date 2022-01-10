@@ -22,7 +22,7 @@ const [myLessons, setMyLessons] = useState({ l_id: "", l_name: "", l_type: "", l
     let [m_id, setM_id] = useState("")
     let [p_id, setP_id] = useState("")
     let [del, setdel] = useState("")
-    
+    console.log(m_id)
 
 
     function handleL_id(event) { setL_id((l_id = event.target.value)); }
@@ -35,14 +35,27 @@ const [myLessons, setMyLessons] = useState({ l_id: "", l_name: "", l_type: "", l
 
     
     function handleClickDel3(event) { setdel((del = event.target.value)) }
-         function handleNote(event) {setNote(note = event.target.value);}
+    function handleNote(event) {setNote(note = event.target.value);}
     
     function handleSubmit(event) {
         event.preventDefault();
         axios({
 
+            method: 'get',
+            url: `api/member/${m_id}`,
+            data: newlessons,
+
+        });
+    }
+
+
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        axios({
+
             method: 'post',
-            url: 'api/member/add',
+            url: 'api/lessons/add',
             data: newlessons,
 
         });
@@ -52,7 +65,7 @@ function handleClickDel2() {
 
         axios({
             method: 'delete',
-            url: `api/member/delete/${del}`,
+            url: `api/lessons/delete/${del}`,
 
         });
 
@@ -134,16 +147,16 @@ p_id:p_id
                   {/* <label> subject lesson </label> */}
                  {/* <input type="text" name="l_name" placeholder="l_name" size="15" onChange={handleL_name} /><hr />  */}
                  <label> subject lesson </label><br></br><br></br>
-                 <input type="radio" value="Swimming" checked={l_type == 'Swimming'} onChange={handleL_type} name="Swimming" /> Swimming🏊<br />
+                 <input type="checkbox" value="Swimming" l_type = 'Swimming' onChange={handleL_type} name="Swimming" /> Swimming🏊<br />
                      {/* <img src="s1.jpg" width="10%"></img><br /> */}
 
-                     <input type="radio" value="Boxing" checked={l_name == 'Boxing'} onChange={handleL_name} name="Boxing" /> Boxing💪<br />
+                     <input type="checkbox" value="Boxing" l_name = 'Boxing' onChange={handleL_name} name="Boxing" /> Boxing💪<br />
                      {/* <img src="x1.jpg" width="10%"></img><br /> */}
 
-                     <input type="radio" value="Body building" checked={l_name == 'Body building'} onChange={handleL_name} name="Body building" /> Body building🏋️‍♀️<br />
+                     <input type="checkbox" value="Body building" l_name = 'Body building' onChange={handleL_name} name="Body building" /> Body building🏋️‍♀️<br />
                      {/* <img src="b1.jpg" width="10%"></img><br /> */}
 
-                     <input type="radio" value="Yoga" checked={l_name == 'Yoga'} onChange={handleL_name} name="Yoga" /> Yoga🧘‍♀️<br />
+                     <input type="checkbox" value="Yoga" l_name ='Yoga' onChange={handleL_name} name="Yoga" /> Yoga🧘‍♀️<br />
                      {/* <img src="y1.jpg" width="10%"></img><br /> */}
                  <br></br>
                  <label >Note lesson</label>

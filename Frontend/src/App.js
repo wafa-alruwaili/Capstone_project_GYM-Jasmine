@@ -5,11 +5,8 @@ import Login from './routes/Login';
 
 
 export default function App() {
-    // const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", dob: "", start_date: "", end_date: "" })
-    let [langouge, setLangouge] = useState("");
-    // let [Authentication,setAuthentication]= useState(false);
+    //  let [Authentication,setAuthentication]= useState(false);
 
-    function handleLangouge(event) { setLangouge((langouge = event.target.value)); }
 
 
   
@@ -42,20 +39,14 @@ export default function App() {
                 <div id="menu-bar" class="fas fa-bars"></div>
 
                 <nav class="navbar">
-                    <label style={{ color: "#ffcc00" }}> Language  </label>
-                    <select style={{ background: "#ffffcc" }} id="f1" onChange={handleLangouge}>
-                        <option disabled value="" selected>Selection</option>
-                        <option value="male">Arabic</option>
-                        <option value="femal">Einglish</option>
-                    </select>
+                    
 
 
                    
 
-                    <time style={{ color: "#ffcc00" }}>7:57Pm</time>
                     <ul className="ul-list">
-                        {/* <Link to="/Login"><button className='FOF'>Login </button></Link> */}
                         <Link to="/Home"><button className='FOF'>Home </button></Link>
+                        {/* <Link to="/Login"><button className='FOF'>Login </button></Link> */}
                         <Link to="/Register"><button className='FOF' >Register </button></Link>
                         <Link to="/lessons"><button className='FOF'>Lessons </button></Link>
                         <Link to="/members"><button className='FOF'>Member </button></Link>
@@ -63,7 +54,6 @@ export default function App() {
                         <Link to="/employe"><button className='FOF'>employe register </button></Link>
                         <Link to="/Employee_details"><button className='FOF'>Employee_details </button></Link>
                         <Link to="/employees"><button className='FOF'>Employees </button></Link>
-                        {/* <Link to="/Dataemployees"><button className='FOF'>Dataemployees</button></Link> */}
 
                    
                     </ul>
@@ -78,11 +68,7 @@ export default function App() {
 
 
 
-            {/* header section ends  */}
-
-            {/* <h2>my Member details are:  </h2> */}
-            {/* <button onClick={handleClick}>Post to Spring (Member)</button> */}
-            {/* <button onClick={handleClickDel}>Delet to Spring (Member)</button>  */}
+           
             <Outlet />
 
         </div>

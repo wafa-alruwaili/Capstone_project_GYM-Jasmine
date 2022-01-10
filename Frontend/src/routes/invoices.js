@@ -42,11 +42,12 @@ function Invoices() {
                 style={({ isActive }) => ({
                   display: "block",
                   margin: "1rem 0",
-                  color: isActive ? "white" : "white"
+                  color: isActive ? "white" : "yellow"
                 })}
                 to={`/invoices/${invoice.p_id}`}
                 key={invoice.p_id}
-              ><br/>{invoice.p_name}
+              ><br/> 
+                {invoice.p_name}
                 
               </NavLink>
             ))}
