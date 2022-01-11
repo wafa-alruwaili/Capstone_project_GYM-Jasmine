@@ -26,12 +26,13 @@ export default function Employees() {
     // function handleFull_name(event) { setFull_name((full_name = event.target.value)); }
     // function handleUser_name(event) { setUser_name((user_name = event.target.value)); }
     // function handleType (event) { setType ((type  = event.target.value)); }
-    function handleClickDel12(event) { setClickDel12((clickdel12 = event.target.value)) }
     function handleP_id(event) { setP_id((p_id = event.target.value)); }
     function handleP_name(event) { setP_name((p_name = event.target.value)); }
     function handleP_description(event) { setP_description((p_description = event.target.value)); }
     function handleAmount(event) { setAmount((amount = event.target.value)); }
     function handleActive(event) { setActive((active = event.target.value)); }
+    function handleClickDel2(event) { setClickDel12((clickdel12 = event.target.value)) }
+
 
     let newemployees = {
       p_id: p_id,
@@ -39,9 +40,9 @@ export default function Employees() {
          p_description: p_description,
          amount: amount,
           active: active,   
-//   employees: {
-//                  e_id: e_id
-//          }  
+  employees: {
+                 e_id: e_id
+         }  
          }
 
     function handleSubmit(event) {

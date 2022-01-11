@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 import Home from './Home';
+import Home2 from './Home2';
 import App from './App';
 import Members from './routes/Members';
 import reportWebVitals from './reportWebVitals';
@@ -15,7 +16,6 @@ import Invoice from "./routes/invoice";
 import Login from './routes/Login';
 import Employee_details from "./routes/Employee_details";
 
-
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
@@ -23,6 +23,7 @@ ReactDOM.render(
         <Route path="invoices" element={<Invoices />}>
           <Route path=":invoiceId" element={<Invoice />} />
         </Route>
+        <Route path="/Home2" element={<Home2 />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/members" element={<Members />}/>

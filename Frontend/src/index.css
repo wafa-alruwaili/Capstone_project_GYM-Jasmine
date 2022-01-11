@@ -60,7 +60,7 @@ body {
 
 /* Add some padding inside the card container */
 .container {
-  padding: 2px 16px;
+  padding: 0px ;
 }
 
 code {
@@ -292,18 +292,29 @@ section{
 
 .button2{
   display:ruby;
-  padding:.5rem 2rem;
+  padding:.2rem 0rem;
   border:.2rem solid var(--red);
   /* color:var(--red); */
   cursor: pointer;
-  font-size: 4rem;
+  font-size: 3rem;
   border-radius: .5rem;
   position: relative;
   overflow: hidden;
   margin-top: .5rem;
   
 }
+ .gog{
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 35px;
+  margin-right: 5px;
+  display: flex;
 
+}
+
+
+  
 
 
 

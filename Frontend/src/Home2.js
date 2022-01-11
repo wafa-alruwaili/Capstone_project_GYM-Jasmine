@@ -6,25 +6,17 @@ import Login from './routes/Login';
 
 
 export default function Home() {
-  let [Authentication,setAuthentication]= useState(false);
 
   
   function handleSubmit(event) {
     event.preventDefault();
   }
 
-  function handleLogin(){
-    setAuthentication(true);
-}
-if(!Authentication){
-    return<Login handleLogin = {handleLogin} />
-}
   
 
   return (
     <div >
       <br /><br /><br /><br /><h1 style={{ fontsize: "2.5rem", color: "#ffcc00", textAlign: "center" }}>Welcome in<span> GYM The Lion</span> </h1>
-      <img scr="logo.png" />
 
       <section class="home" id="home">
         <div class="image">

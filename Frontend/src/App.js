@@ -32,20 +32,23 @@ export default function App() {
 
 
             <header>
+          
 
                 <a href="#" class="logo"><i class="fas fa-utensils"></i>GYM The Lion</a>
 
-                <img scr="logo.png" />
-                <div id="menu-bar" class="fas fa-bars"></div>
+                <div id="menu-bar" ><img src="images/logo.png"/></div>
 
                 <nav class="navbar">
                     
 
 
                    
-
+               <div className='gog'><img src="logo.png"/></div> 
                     <ul className="ul-list">
-                        <Link to="/Home"><button className='FOF'>Home </button></Link>
+                   
+
+                        <Link to="/Home2"><button className='FOF'>Home2</button></Link>
+                        {/* <Link to="/Home"><button className='FOF'>Home </button></Link> */}
                         {/* <Link to="/Login"><button className='FOF'>Login </button></Link> */}
                         <Link to="/Register"><button className='FOF' >Register </button></Link>
                         <Link to="/lessons"><button className='FOF'>Lessons </button></Link>
@@ -64,7 +67,6 @@ export default function App() {
                 </nav>
 
             </header>
-
 
 
 

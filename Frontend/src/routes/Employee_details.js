@@ -43,7 +43,7 @@ export default class Employee_details extends Component {
     <div>
                 <table >
                   <caption>
-
+                  <br/><br/><br/><br/>
                   <br/><br/><h1  style={{color: "#ffcc00" }}> Employees Details </h1>
                     
                     </caption>
