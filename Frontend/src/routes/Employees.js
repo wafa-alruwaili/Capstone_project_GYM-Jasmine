@@ -40,9 +40,9 @@ export default function Employees() {
          p_description: p_description,
          amount: amount,
           active: active,   
-  employees: {
-                 e_id: e_id
-         }  
+//   employees: {
+//                  e_id: e_id
+//          }  
          }
 
     function handleSubmit(event) {

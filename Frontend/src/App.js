@@ -28,21 +28,11 @@ export default function App() {
 
             <h1 style={{ background: "#595959", fontsize: "2.5rem", color: "#f0ecec", textAlign: "center" }}>Welcome in GYM The Lione</h1>
 
-
-
-
             <header>
-          
-
+        
                 <a href="#" class="logo"><i class="fas fa-utensils"></i>GYM The Lion</a>
-
-                <div id="menu-bar" ><img src="images/logo.png"/></div>
-
                 <nav class="navbar">
-                    
-
-
-                   
+                     
                <div className='gog'><img src="logo.png"/></div> 
                     <ul className="ul-list">
                    

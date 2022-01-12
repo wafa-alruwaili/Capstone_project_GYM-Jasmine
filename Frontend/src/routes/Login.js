@@ -46,31 +46,37 @@ export default function Login(props) {
     
 
     return (
-        <div>
+        
 
-
+        <div class="wrapper">
+            
+          <h2 class="form-signin-heading">Please login</h2>
 
 
 
             <br/>  <br/>  <br/>  <br/>
-            <form onSubmit={handleSubmit}>
+            <form class="form-signin" onSubmit={handleSubmit}>
+            
                 <input
                     type="text"
                     value={user_name}
                     user_name="user_name"
-                    placeholder=" user_name"
+                    placeholder=" user_name" class="form-control"
                     onChange={handleUser_name}
                 />
                 <input
                     type="text"
                     value={password}
                     user_name="password"
-                    placeholder=" password"
+                    placeholder=" password" class="form-control"
                     onChange={handlepassword}
                 />
                 <br />
+                <label class="checkbox"> 
+                <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"/> Remember me
+                </label>
             <input type="submit"
-                    value="submit"
+                   class="btn btn-lg btn-primary btn-block" value="submit"
                 />
             </form>
         </div>

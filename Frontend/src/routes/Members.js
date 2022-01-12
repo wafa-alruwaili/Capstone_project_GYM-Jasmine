@@ -1,83 +1,170 @@
 import React, { Component } from "react";
-import axios from 'axios'
-import { Link } from "react-router-dom";
-
-
-
-
+import axios from "axios"
 export default class Member extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             MemberList: [],
-           
         };
     }
     componentDidMount() {
-        axios.get("api/member").then(res => {
-            const MemberList = res.data
-            this.setState({ MemberList })
-            console.log(MemberList)
-
+        axios.get("api/member").then(response => {
+            const MemberList = response.data
+            this.setState({ MemberList });
         });
     }
-
-
-
-    deleteSpecialist(m_id) {
-        console.log(this.state.MemberList)
-
+    deleteUseGarden(m_id) {
+        console.log("Delete after Entering")
         axios.delete(`api/member/delete/${m_id}`)
             .then(res => {
-                const MemberList = this.state.MemberList.filter(item => item.m_id!== m_id);
-                this.setState({ MemberList })
-           })
+                const MemberList = this.state.MemberList.filter(item => item.m_id !== m_id);
+                this.setState({ MemberList });
+            })
     }
+render() {
+    return (
+        <div className="member" >
+            <div >
+               <p></p>
+                    {this.state.MemberList.map((item => (
+                        <tr key={item.m_id}>
+                       <div >
+                         <div >
+                           <div >
+                         </div>
+                        </div>
+                      <div >
+                      </div>
+                        <div className="lessons">
+                        {/* <img height="200" width="200" src={item.events.src} /> */}
+                        <p>Name :{item.name} </p>
+                        <p> address : {item.address}</p>
+                        <p>l_Name :{item.lessons.l_name} </p>
+                        <td><button button class="nnn" onClick={(e) => this.deleteUseGarden(item.m_id, e)}>delete</button></td>
+                        </div>
+                       <div >
+</div>
+</div>
+                 {/* <td><button button class="bubbly" onClick={(e) => this.deleteUseGarden(item.ticketId, e)}>delete</button></td> */}
+                        </tr>
+                    )))
+                    }
+        </div>
+        </div>
+  )
+}
+}
 
-    render() {
+
+
+
+
+// import React, { Component } from "react";
+// import axios from 'axios'
+// import { Link } from "react-router-dom";
+
+
+
+
+// export default class Member extends Component {
+//     constructor(props) {
+//         super(props)
+//         this.state = {
+//             MemberList: [],
+//            LessonsList:[],
+//         };
+//     }
+    
+//     // componentDidMount() {
+//     //     axios.get("api/member").then(res => {
+//     //         const MemberList = res.data
+//     //         this.setState({ MemberList})
+//     //         console.log(MemberList)
+
+            
+
+//     //         axios.get('/api/lessons', {
+//     //             params: {
+//     //               ID: {l_id}
+//     //             }
+//     //           })
+//     //           .then(function (LessonsList) {
+//     //             console.log(LessonsList);
+//     //           })
+
+                
+//     //     });
+//     // }
+    
+    
+    
+    
+//     componentDidMount() {
+//         axios.get("api/member").then(res => {
+//             const MemberList = res.data
+//             this.setState({ MemberList })
+//             console.log(MemberList)
+//             let LessonsList= document.querySelectorAll('./lessons')
+//             console.log(LessonsList)
+//         });
+//     }
+
+
+
+//     deleteSpecialist(m_id) {
+//         console.log(this.state.MemberList)
+
+//         axios.delete(`api/member/delete/${m_id}`)
+//             .then(res => {
+//                 const MemberList = this.state.MemberList.filter(item => item.m_id!== m_id);
+//                 this.setState({ MemberList })
+//            })
+//     }
+
+//     render() {
        
-        return (
+//         return (
            
  
              
-            <div class="m1">
-                    {this.state.MemberList.map((item => (
-                        <tr key={item.m_id}>
+//             <div class="m1">
+//                     {this.state.MemberList.map((item => (
+//                         <tr key={item.m_id}>
                         
                     
-                        <br/><br/><br/><br/><br/>
-                        <p style={{ width: "10%", color: "#ffcc00", }}>name: </p>{item.name}
-                        <p style={{ width: "10%", color: "#ffcc00", }}> gender: </p>{item.gender}
-                        <p style={{ width: "10%", color: "#ffcc00", }}>dob: </p>{item.dob}
-                        <p style={{ width: "10%", color: "#ffcc00", }}> address : </p>{item.address}
-                        <p style={{ width: "10%", color: "#ffcc00", }}>height: </p>{item.height}
-                        <p style={{ width: "10%", color: "#ffcc00", }}> weight : </p>{item.weight}
-                        <p style={{ width: "10%", color: "#ffcc00", }}>renewal: </p>{item.renewal}
-                        <p style={{ width: "10%", color: "#ffcc00", }}> start_date : </p>{item.start_date}
-                        <p style={{ width: "10%", color: "#ffcc00",float: "left" }}>end_date :</p>{item.end_date} 
-                        <p style={{ width: "10%", color: "#ffcc00", }}>l_name: </p>{item.lessons.l_name}
-                        {/* <p style={{ width: "10%", color: "#ffcc00", }}>l_type: </p> {item.lessons[0].l_type} */}
-                        <p style={{ width: "10%", color: "#ffcc00", }}>l_description : </p>{item.lessons.l_description}
-                        <p style={{ width: "10%", color: "#ffcc00", }}>l_date_time: </p>{item.lessons.l_date_time}
-                        <p style={{ width: "10%", color: "#ffcc00", }}> note:</p>{item.lessons.note} 
+//                         <br/><br/><br/><br/><br/>
+//                         <p style={{ width: "10%", color: "#ffcc00", }}>name: </p>{item.name}
+//                         <p style={{ width: "10%", color: "#ffcc00", }}> gender: </p>{item.gender}
+//                         <p style={{ width: "10%", color: "#ffcc00", }}>dob: </p>{item.dob}
+//                         <p style={{ width: "10%", color: "#ffcc00", }}> address : </p>{item.address}
+//                         <p style={{ width: "10%", color: "#ffcc00", }}>height: </p>{item.height}
+//                         <p style={{ width: "10%", color: "#ffcc00", }}> weight : </p>{item.weight}
+//                         <p style={{ width: "10%", color: "#ffcc00", }}>renewal: </p>{item.renewal}
+//                         <p style={{ width: "10%", color: "#ffcc00", }}> start_date : </p>{item.start_date}
+//                         <p style={{ width: "10%", color: "#ffcc00",float: "left" }}>end_date :</p>{item.end_date} 
+//                         <p style={{ width: "10%", color: "#ffcc00", }}>l_name: </p>{item.lessons.l_name}
+//                         {/* <p style={{ width: "10%", color: "#ffcc00", }}>l_type: </p> {item.lessons[0].l_type} */}
+//                         <p style={{ width: "10%", color: "#ffcc00", }}>l_description : </p>{item.lessons.l_description}
+//                         <p style={{ width: "10%", color: "#ffcc00", }}>l_date_time: </p>{item.lessons.l_date_time}
+//                         <p style={{ width: "10%", color: "#ffcc00", }}> note:</p>{item.lessons.note} 
                         
             
                        
-<button className="FOF"  onClick={(e) => this. deleteSpecialist(item.m_id, e)}>delete</button>
+// <button className="FOF"  onClick={(e) => this. deleteSpecialist(item.m_id, e)}>delete</button>
 
 
 
                  
-                        </tr>
-                    )))
-                    }
-  </div>
+//                         </tr>
+//                     )))
+//                     }
+//   </div>
 
         
        
-  )
-}
-}
+//   )
+// }
+// }
                    
         
 
