@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 export default function Register() {
-const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", dob: "", start_date: "", end_date: "" })
+const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", dob: "", start_date: "", end_date: "",username:"",password:"" })
 
     
 

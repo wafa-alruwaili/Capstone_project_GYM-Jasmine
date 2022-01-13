@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, Outlet } from "react-router-dom";
 import axios from "axios"
 import Login from './routes/Login';
+// import Navbar from './routes/Navbar';
 
 
 
@@ -16,6 +17,8 @@ export default function Home() {
 
   return (
     <div >
+          {/* <Navbar/> */}
+
       <br /><br /><br /><br /><h1 style={{ fontsize: "2.5rem", color: "#ffcc00", textAlign: "center" }}>Welcome in<span> GYM The Lion</span> </h1>
 
       <section class="home" id="home">

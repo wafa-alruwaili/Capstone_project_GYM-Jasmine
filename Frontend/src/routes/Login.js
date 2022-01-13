@@ -1,14 +1,87 @@
+// import { useState } from "react"
+// import React from "react"
+// import axios from "axios"
+// import { Link,useNavigate } from "react-router-dom"
+
+
+// export default function Login(props) {
+    
+//     let [user_name, setUser_name] = useState("")
+//     let [password, setpassword] = useState("")
+//     const navigate = useNavigate();
+
+//     function handleUser_name(event) {
+//         setUser_name((user_name = event.target.value));
+//     }
+   
+//     function handlepassword(event) {
+//         setpassword((password = event.target.value));
+//     }
+    
+
+    
+//     function handleSubmit(event) {
+//         event.preventDefault();
+//         axios({
+//             method: "get",
+//             url: "api/employees/login",
+//             params: { user_name: user_name, password: password }
+//         })
+//             .then((res => {
+//                 console.log(res.data)
+//                 if (res.data == "authenticated") {
+//                     props.handleLogin();
+//                     localStorage.setItem("logined","yes")
+//                      navigate("/Employee_details")
+//                 }
+//                 else {
+//                     alert(res.data)
+//                 }
+//             }))
+//     }
+
+    
+
+//     return (
+//         <form class="form">
+//             <h1>LogIn</h1>
+//                 <input
+//                     type="text"
+//                     class="textbox"
+//                     value={user_name}
+//                     name="username"
+//                     placeholder=" username"
+//                     onChange={handleUser_name}
+//                 />
+//                 < br/>  < br/>
+//                 <input id="form_signin"
+//                     type="text"
+//                     class="textbox"
+//                     value={password}
+//                     name="password"
+//                     placeholder=" password"
+//                     onChange={handlepassword}
+//                 />
+//                 <br />
+//                 <Link to="/"><button onClick={handleSubmit} className='FOF'>Login</button></Link>
+//                 <Link to="/Register"><button className='FOF'>Register</button></Link>
+//             </form>
+//     )
+// }
+
+
 import { useState } from "react"
 import React from "react"
 import axios from "axios"
-import { Link } from "react-router-dom"
+import { Link,useNavigate } from "react-router-dom"
 
 
 export default function Login(props) {
     
     let [user_name, setUser_name] = useState("")
     let [password, setpassword] = useState("")
-    // let [Authentication,setAuthentication]= useState(false);
+    let info=[user_name,password];
+    const navigate = useNavigate();
 
     function handleUser_name(event) {
         setUser_name((user_name = event.target.value));
@@ -18,12 +91,7 @@ export default function Login(props) {
         setpassword((password = event.target.value));
     }
     
-//       function handleLogin(){
-//     setAuthentication(true);
-// }
-// if(!Authentication){
-//     return<Login handleLogin = {handleLogin} />
-// }
+
     
     function handleSubmit(event) {
         event.preventDefault();
@@ -49,10 +117,8 @@ export default function Login(props) {
         
 
         <div class="wrapper">
-            
+            <br/>  <br/>  <br/>  <br/> 
           <h2 class="form-signin-heading">Please login</h2>
-
-
 
             <br/>  <br/>  <br/>  <br/>
             <form class="form-signin" onSubmit={handleSubmit}>
@@ -75,9 +141,12 @@ export default function Login(props) {
                 <label class="checkbox"> 
                 <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"/> Remember me
                 </label>
-            <input type="submit"
+                <br /> <br />
+            {/* <input className="FOF" type="submit"
                    class="btn btn-lg btn-primary btn-block" value="submit"
-                />
+                /> */}
+                <Link to="/"><button  className="FOF" onClick={handleSubmit}>Login</button></Link>
+                <Link to="/Home2"><button className="FOF">singUp</button></Link>
             </form>
         </div>
     )
