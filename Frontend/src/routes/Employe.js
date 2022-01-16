@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios"
 import { Link } from "react-router-dom";
-
+// import Navbar7 from "./Navbar7";
 
 
 
@@ -69,8 +69,11 @@ const [myEmployees, setmyEmployees] = useState({ e_id: "", password: "", full_na
     return (
         <form onSubmit={handleSubmit} >
             <div className="log">
-
-
+            {/* <Navbar7/> */}
+            <section class="home1" id="home1">
+        <div class="image1">
+      <img src="u-1.png" alt="" /></div>
+      </section>
 
             <br/><br/> <br/><br/><center> <h1  style={{ color: "#ffcc00", }}>  Employe Member</h1> </center><br></br>
 

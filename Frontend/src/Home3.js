@@ -2,22 +2,29 @@ import React, { useEffect, useState } from 'react'
 import { Link, Outlet } from "react-router-dom";
 import axios from "axios"
 import Login from './routes/Login';
-// import Navbar from './routes/Navbar';
+
 
 
 export default function Home() {
+  let [Authentication,setAuthentication]= useState(false);
 
   
   function handleSubmit(event) {
     event.preventDefault();
   }
 
+  function handleLogin(){
+    setAuthentication(true);
+}
+if(!Authentication){
+    return<Login handleLogin = {handleLogin} />
+}
   
 
   return (
     <div >
-{/* <Navbar/> */}
       <br /><br /><br /><br /><h1 style={{ fontsize: "2.5rem", color: "#ffcc00", textAlign: "center" }}>Welcome in<span> GYM The Lion</span> </h1>
+      <img scr="logo.png" />
 
       <section class="home" id="home">
         <div class="image">
@@ -79,7 +86,10 @@ export default function Home() {
         {/* <td><Link to="/invoices/3" ><button  style={{background: "#ffcc00", color: "#000000" }}>Choose lesson</button></Link></td> */}
 
     </div>
-    
+    <section class="home1" id="home1">
+        <div class="image1">
+      <img src="u-1.png" alt="" /></div>
+      </section>
     <div class="box">
         <img src="pic3.png" alt=""/>
         <h3 style={{color: "#ffcc00" }}>Hala Alhamrani</h3>
@@ -98,7 +108,6 @@ export default function Home() {
         <div class="image1">
       <img src="u-1.png" alt="" /></div>
       </section>
-
       <section class="footer">
         <div class="share">
           <a href="https://ar-ar.facebook.com/" class="button">facebook</a>

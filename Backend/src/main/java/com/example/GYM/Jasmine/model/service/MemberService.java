@@ -30,11 +30,11 @@ public class MemberService {
         }
 
 
-    public String getCheck(String name ,String password) {
-        if( memberRepository.existsByName(name) ){
-            String Member = memberRepository.findByName(name);
+    public String getCheck(String username ,String password) {
+        if( memberRepository.existsByName(username) ){
+            String Member = memberRepository.findByName(username);
             if (Member.equals(password)){
-                return "authenticated" ;
+                return "welcome" ;
             }
             else {
                 return "Password does not match"; }

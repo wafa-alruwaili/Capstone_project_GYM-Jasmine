@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios'
 import { Link } from "react-router-dom";
-
+// import Navbar7 from "./Navbar7";
 
 
 
@@ -41,17 +41,21 @@ export default class Employee_details extends Component {
 
 
     <div>
+         <section class="home1" id="home1">
+        <div class="image1">
+      <img src="u-1.png" alt="" /></div>
+      </section> {/* <Navbar7/> */}
                 <table >
                   <caption>
-                  <br/><br/><br/><br/>
-                  <br/><br/><h1  style={{color: "#ffcc00" }}> Employees Details </h1>
+                 
+                  <h1  style={{color: "#ffcc00" }}> Employees Details </h1>
                     
                     </caption>
                     <thead>
                         <tr>
-                            <th >Full_name </th><br></br>
-                            <th >User_name </th><br></br>
-                            <th >Type</th><br></br>
+                            <th >Full_name </th>
+                            <th >User_name </th>
+                            <th >Type</th>
 
 
                         </tr>
@@ -59,9 +63,9 @@ export default class Employee_details extends Component {
                     <tbody>
                         {this.state.Employee_detailsList.map((item => (
                             <tr key={item.e_id}>
-                                <td>{item.full_name}</td><br></br>
-                                <td>{item.user_name}</td><br></br>
-                                <td>{item.type}</td><br></br>
+                                <td>{item.full_name}</td>
+                                <td>{item.user_name}</td>
+                                <td>{item.type}</td>
                                 <td><button style={{ background: "#ffcc00", color: "#000000"}}onClick={(e) => this.deleteSpecialist(item.e_id, e)}>delete</button></td>                 
                             </tr>
                         )))
@@ -75,7 +79,7 @@ export default class Employee_details extends Component {
 
 
 
-                <br></br><Link to="/Home" ><button  style={{width:50,background: "#ffcc00", color: "#000000"}}>Logoff</button></Link><br></br>
+                <br></br><Link to="/Home" ><button  style={{width:50,background: "#ffcc00", color: "#000000"}}>Back</button></Link><br></br>
 
             </div>
         )}}

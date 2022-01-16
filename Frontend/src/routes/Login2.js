@@ -68,3 +68,84 @@
 //             </form>
 //     )
 // }
+import { useState } from "react"
+import React from "react"
+import axios from "axios"
+import { Link,useNavigate } from "react-router-dom"
+
+
+export default function Login2(props) {
+    
+    let [username, setUsername] = useState("")
+    let [password, setpassword] = useState("")
+    let info=[username,password];
+    const navigate = useNavigate();
+
+    function handleUsername(event) {
+        setUsername((username = event.target.value));
+    }
+   
+    function handlepassword(event) {
+        setpassword((password = event.target.value));
+    }
+    
+   
+    function handleSubmit(event) {
+        event.preventDefault();
+        axios({
+            method: "get",
+            url: "api/member/login2",
+            params: { username: username, password: password }
+        })
+            .then((res => {
+                console.log(res.data)
+                if (res.data == "welcome") {
+                    // props.handleLogin();
+                    localStorage.setItem("login2","welcome")//
+
+                }
+                else {
+                    alert(res.data)
+                }
+            }))
+    }
+
+    
+
+    return (
+        
+
+        <div class="wrapper">
+           
+          <h2 class="form-signin-heading" style={{ color: "#ffcc00", }}>Please login</h2>
+
+            <form class="form-signin" onSubmit={handleSubmit}>
+            
+                <input
+                    type="text"
+                    value={username}
+                    username="username"
+                    placeholder=" username" class="form-control"
+                    onChange={handleUsername}
+                />
+                <input
+                    type="text"
+                    value={password}
+                    name="password"
+                    placeholder=" password" class="form-control"
+                    onChange={handlepassword}
+                />
+                <br />
+                <label class="checkbox"> 
+                <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"/> Remember me
+                </label>
+                <br /> <br />
+            {/* <input className="FOF" type="submit"
+                   class="btn btn-lg btn-primary btn-block" value="submit"
+                /> */}
+                <Link to="/"><button  className="FOF" onClick={handleSubmit}>Login</button></Link>
+                <Link to="/Home"><button className="FOF">logoff</button></Link>
+            </form>
+        </div>
+    )
+}

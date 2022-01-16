@@ -1,18 +1,70 @@
 import React from 'react';
 import { useParams , Link } from "react-router-dom";
 import { getInvoice } from "../data";
+// import Navbar6 from './Navbar6';
+import axios from 'axios'
+import react, { useEffect, useState } from 'react'
 
 
 
 export default function Plan() {
   let params = useParams();
   let invoice = getInvoice(parseInt(params.invoiceId, 10));
+ const [myPlan, setMyPlan] = useState({ p_id: "", p_name: "", description: "", amount: "", active: "" })
+
+
+ let [p_id, setP_id] = useState("")
+ let [p_name, setP_name] = useState("")
+ let [description, setDescription] = useState("")
+ let [amount, setAmount] = useState("")
+ let [active, setActive] = useState("")
+ let [clickDel2, setClickDel2] = useState("")
+ 
+ function handleP_id(event) { setP_id((p_id = event.target.value)); }
+ function handleP_name(event) { setP_name((p_name = event.target.value)); }
+ function handleDescription(event) { setDescription((description = event.target.value)); }
+ function handleAmount(event) { setAmount((amount = event.target.value)); }
+ function handleActive(event) { setActive((active = event.target.value)); }
+ function handleClickDel2(event) { setClickDel2((clickDel2 = event.target.value)) }
+
+  function handleSubmit(event) {
+
+    // let n=localStorage.getItem("login");//n
+    // if(n=="authenticated"){//n
+
+
+  event.preventDefault();
+  axios({
+
+      method: 'post',
+      url: 'api/plan/add',
+      data:  newplan
+  });
+// }//n
+}
+   function handleClickDel2() {
+
+        axios({
+            method: 'delete',
+            url: `api/plan/delete/${clickDel2}`,
+
+        });
+
+    }
+    let newplan = {
+      p_id: p_id,
+      p_name: p_name,
+      description: description,
+      amount: amount,
+      active:active,
+  }
   
-  
+ 
   return (//هنا يطلع لي في صفحة البلان اللي بالنص
     
   
     <div class="card">
+      {/* <Navbar6/> */}
     <div class="container">
 
     
@@ -28,6 +80,10 @@ export default function Plan() {
       <p style={{ background: "#ffcc00", color: "#000000"}}>description active:-{invoice.active}</p>
     </main>
     </div>
+    <br/><button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "50%", background: "#ffcc00", color: "#000000", }}>submit</button><br/>
+        
+        
+          <br/> <input type="submit" value="Remove" onClick={handleClickDel2} style={{ width: "50%", background: "#ffcc00", color: "#000000", }}></input><br/><br/><br/>
   </div>
   );
 }

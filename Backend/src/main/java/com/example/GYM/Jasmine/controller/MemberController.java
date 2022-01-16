@@ -43,11 +43,11 @@ public class MemberController<memberService> {
 
 
 
-    @GetMapping(path ="login")
-    public String checkLogin(@RequestParam(name ="name")String name ,
+    @GetMapping(path ="login2")
+    public String checkLogin(@RequestParam(name ="username")String username ,
                              @RequestParam (name ="password")
                                      String password) {
-        return memberService.getCheck(name,password);
+        return memberService.getCheck(username,password);
     }
 
 
@@ -60,4 +60,3 @@ public class MemberController<memberService> {
 
 
     }
-

@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios"
 import { Link } from "react-router-dom";
-
-
-
+// import Navbar2 from "./Navbar2";
 
 export default function Register() {
 const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", dob: "", start_date: "", end_date: "",username:"",password:"" })
@@ -64,6 +62,11 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
 
     function handleSubmit(event) {
         event.preventDefault();
+        
+        // let n=localStorage.getItem("login2");//n
+        // if(n=="welcome"){//n
+    
+        
         axios({
 
             method: 'post',
@@ -71,6 +74,7 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
             data: newmember
 
         });
+    // }//n
     }
 
     // function handleClickDel2() {
@@ -89,8 +93,11 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
     return (
         <form onSubmit={handleSubmit} >
             <div className="log">
-
-
+{/* <Navbar2/> */}
+<section class="home1" id="home1">
+        <div class="image1">
+      <img src="u-1.png" alt="" /></div>
+      </section>
 
             <br/><br/> <br/><br/><center> <h1  style={{ color: "#ffcc00", }}>  Register Member</h1> </center><br></br>
 
@@ -138,10 +145,13 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
                 <label style={{ width: "10%", color: "#ffcc00", }}> password </label>
                 <input type="password" name="password" placeholder="password" size="15" onChange={handlePassword} /><br/><br/>
 
-            
+                <section class="home1" id="home1">
+        <div class="image1">
+      <img src="u-1.png" alt="" /></div>
+      </section>
             
             <hr/><button type="submit" className="registerbutton" onClick={handleSubmit}  class="FOF">submit</button>
-            <Link to="/lessons"  ><button   class="FOF">chose lesson</button></Link>
+            <Link to="/members"  ><button   class="FOF">details</button></Link>
             <Link to="/Home"  ><button   class="FOF">Back</button></Link>
 
                 {/* <input type="text" id="id" name="id" onChange={handleClickDel3} /> */}

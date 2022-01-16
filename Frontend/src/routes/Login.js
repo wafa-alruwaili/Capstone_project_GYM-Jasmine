@@ -103,7 +103,8 @@ export default function Login(props) {
             .then((res => {
                 console.log(res.data)
                 if (res.data == "authenticated") {
-                    props.handleLogin();
+                    // props.handleLogin();
+                    localStorage.setItem("login","authenticated")//
                 }
                 else {
                     alert(res.data)
@@ -117,10 +118,9 @@ export default function Login(props) {
         
 
         <div class="wrapper">
-            <br/>  <br/>  <br/>  <br/> 
-          <h2 class="form-signin-heading">Please login</h2>
+           
+          <h2 class="form-signin-heading" style={{ color: "#ffcc00", }}>Please login</h2>
 
-            <br/>  <br/>  <br/>  <br/>
             <form class="form-signin" onSubmit={handleSubmit}>
             
                 <input
@@ -145,8 +145,8 @@ export default function Login(props) {
             {/* <input className="FOF" type="submit"
                    class="btn btn-lg btn-primary btn-block" value="submit"
                 /> */}
-                <Link to="/"><button  className="FOF" onClick={handleSubmit}>Login</button></Link>
-                <Link to="/Home2"><button className="FOF">singUp</button></Link>
+                <Link to="/employees"><button  className="FOF" onClick={handleSubmit}>Login</button></Link>
+                <Link to="/Home"><button className="FOF">logoff</button></Link>
             </form>
         </div>
     )

@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import React from 'react'
 import react, { useState } from "react";
 import axios from "axios"
+// import Navbar7 from "./Navbar7";
+
 
 export default function Employees() {
     const [myEmployees, setmyEmployees] = useState({ e_id: "", password: "", full_name: "", user_name: "",type :"" })
@@ -82,7 +84,10 @@ export default function Employees() {
 <form onSubmit={handleSubmit} >
             <div className="log">
 
-
+{/* <Navbar7/> */}<section class="home1" id="home1">
+        <div class="image1">
+      <img src="u-1.png" alt="" /></div>
+      </section>
 
             <br/><br/> <br/><br/><center> <h1  style={{ color: "#ffcc00", }}>  Employe Member</h1> </center><br></br>
 

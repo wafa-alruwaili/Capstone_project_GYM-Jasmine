@@ -1,8 +1,6 @@
 import React from 'react';
 import { Outlet,NavLink,useSearchParams } from "react-router-dom";
 import { getInvoices } from "../data";
- 
-
 
 function Invoices() {
     let invoices = getInvoices();
@@ -11,13 +9,17 @@ function Invoices() {
     
     
     return (
+
       <div style={{ display: "flex" }}>
+        
+        <br/><br/>
         <nav
           style={{
             borderRight: "solid 1px",
             padding: "1rem"
           }}
         >
+          <br/><br/>
           <input
             value={searchParams.get("filter") || ""}
             onChange={event => {

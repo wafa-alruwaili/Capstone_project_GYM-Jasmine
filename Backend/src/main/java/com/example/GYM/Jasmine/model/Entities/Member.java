@@ -36,7 +36,9 @@ private String password;
      @JoinTable(name = "member_lessons",
              joinColumns = @JoinColumn(name = "m_Id"),
              inverseJoinColumns = @JoinColumn(name = "l_Id"))
-     private java.util.List<Lessons> lessons;
+
+
+private java.util.List<Lessons> lessons;
 
 
 
