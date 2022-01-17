@@ -63,8 +63,8 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
     function handleSubmit(event) {
         event.preventDefault();
         
-        // let n=localStorage.getItem("login2");//n
-        // if(n=="welcome"){//n
+        let n=localStorage.getItem("login2");//n
+        if(n=="welcome"){//n
     
         
         axios({
@@ -74,7 +74,7 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
             data: newmember
 
         });
-    // }//n
+    }//n
     }
 
     // function handleClickDel2() {

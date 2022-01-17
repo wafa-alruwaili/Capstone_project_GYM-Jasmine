@@ -47,6 +47,8 @@ export default function App() {
                         <Link to="/Employee_details"><button className='FOF'>Employee_details </button></Link>
                         <Link to="/employees"><button className='FOF'>Employees </button></Link>
                       <Link to="/home"> <button onClick={()=>{localStorage.setItem("login","")}}className="FOF"> Log Out </button></Link>
+                      {/* <Link to="/home"> <button onClick={()=>{localStorage.setItem("login2","")}}className="FOF"> Log Out2 </button></Link> */}
+                        {/* <Link to="/Login2"><button className='FOF'>Login member </button></Link> */}
 
                    
                     </ul>

@@ -29,8 +29,8 @@ export default function Plan() {
 
   function handleSubmit(event) {
 
-    // let n=localStorage.getItem("login");//n
-    // if(n=="authenticated"){//n
+    let n=localStorage.getItem("login");//n
+    if(n=="authenticated"){//n
 
 
   event.preventDefault();
@@ -40,7 +40,7 @@ export default function Plan() {
       url: 'api/plan/add',
       data:  newplan
   });
-// }//n
+}//n
 }
    function handleClickDel2() {
 

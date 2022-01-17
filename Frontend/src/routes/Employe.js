@@ -41,6 +41,9 @@ const [myEmployees, setmyEmployees] = useState({ e_id: "", password: "", full_na
 
     function handleSubmit(event) {
         event.preventDefault();
+let n=localStorage.getItem("login");//n
+    if(n=="authenticated"){//n
+
         axios({
 
             method: 'post',
@@ -48,6 +51,8 @@ const [myEmployees, setmyEmployees] = useState({ e_id: "", password: "", full_na
             data: newemployees
 
         });
+        }//n
+
     }
 
     function handleClickDel2() {
@@ -75,7 +80,7 @@ const [myEmployees, setmyEmployees] = useState({ e_id: "", password: "", full_na
       <img src="u-1.png" alt="" /></div>
       </section>
 
-            <br/><br/> <br/><br/><center> <h1  style={{ color: "#ffcc00", }}>  Employe Member</h1> </center><br></br>
+            <br/><br/> <br/><br/><center> <h1  style={{ color: "#ffcc00", }}>  Employee register</h1> </center><br></br>
 
 
                 <hr />

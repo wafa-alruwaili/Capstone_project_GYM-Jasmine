@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, Outlet } from "react-router-dom";
 import axios from "axios"
 import Login from './routes/Login';
+import Login2 from './routes/Login2';
 
 
 
@@ -9,9 +10,9 @@ export default function Home() {
   let [Authentication,setAuthentication]= useState(false);
 
   
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
+  // function handleSubmit(event) {
+  //   event.preventDefault();
+  // }
 
   function handleLogin(){
     setAuthentication(true);
@@ -20,6 +21,15 @@ if(!Authentication){
     return<Login handleLogin = {handleLogin} />
 }
   
+// function handleLogin2(){
+//   setAuthentication(true);
+// }
+// if(!Authentication){
+//   return<Login2 handleLogin2 = {handleLogin2} />
+// }
+
+
+
 
   return (
     <div >
@@ -39,7 +49,8 @@ if(!Authentication){
           <p>Among the benefits of sports is the prevention of heart disease and stroke, and regular exercise strengthens the heart muscle, improves its work, increases the efficiency of blood flow and blood circulation, and regulates the level of cholesterol in the blood in a healthy way. In addition to preventing and reducing the effects of diabetes and high blood pressure.</p>
           <Link to="/Register"  ><button style={{ width: "10%", background: "#ffcc00", color: "#000000", }}>join us</button></Link><br/>
           {/* <Link to="/Login"  ><hr /><button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "10%", background: "#ffcc00", color: "#000000", }}>LogIn</button><br /><br /></Link > */}
-          <Link to="/Home"  ><button style={{ width: "10%", background: "#ffcc00", color: "#000000", }} >LogIn</button></Link>
+          <Link to="/login"><button style={{ width: "10%", background: "#ffcc00", color: "#000000", }} >LogIn for employees</button></Link><br/>
+          <Link to="/Login2"><button style={{ width: "10%", background: "#ffcc00", color: "#000000", }}>Login member </button></Link>
 
 
         </div>

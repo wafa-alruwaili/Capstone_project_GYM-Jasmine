@@ -67,7 +67,7 @@
 //                 <Link to="/lessons"><button className='FOF'>Choose your Lessons</button></Link>
 //             </form>
 //     )
-// }
+// }????????????????????????????????????????????????????????????????????
 import { useState } from "react"
 import React from "react"
 import axios from "axios"
@@ -100,7 +100,7 @@ export default function Login2(props) {
             .then((res => {
                 console.log(res.data)
                 if (res.data == "welcome") {
-                    // props.handleLogin();
+                    props.handleLogin2();
                     localStorage.setItem("login2","welcome")//
 
                 }
@@ -143,7 +143,7 @@ export default function Login2(props) {
             {/* <input className="FOF" type="submit"
                    class="btn btn-lg btn-primary btn-block" value="submit"
                 /> */}
-                <Link to="/"><button  className="FOF" onClick={handleSubmit}>Login</button></Link>
+                <Link to="/members"><button  className="FOF" onClick={handleSubmit}>Login</button></Link>
                 <Link to="/Home"><button className="FOF">logoff</button></Link>
             </form>
         </div>
