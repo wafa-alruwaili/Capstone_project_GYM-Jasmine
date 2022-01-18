@@ -2,10 +2,7 @@ package com.example.GYM.Jasmine.model.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,10 +11,18 @@ import java.util.List;
 public class Employees {
     @Id
     private int e_id;
-    private int password;
     private String full_name;
-    private String user_name;
     private String type;
+    private String username;
+    private  String password;
+
+@OneToOne(mappedBy = "employees")
+private Users users;
+
+//
+//    @OneToMany(mappedBy = "employees")
+//    @JsonIgnore
+//    private List<Users> users = new ArrayList<>();
 
     @OneToMany(mappedBy = "employees")
     @JsonIgnore
@@ -28,12 +33,13 @@ public class Employees {
     public Employees() {
     }
 
-    public Employees(int e_id, int password, String full_name, String user_name, String type, List<Plan> items) {
+    public Employees(int e_id, String full_name, String type, String username, String password, Users users, List<Plan> items) {
         this.e_id = e_id;
-        this.password = password;
         this.full_name = full_name;
-        this.user_name = user_name;
         this.type = type;
+        this.username = username;
+        this.password = password;
+        this.users = users;
         this.items = items;
     }
 
@@ -45,14 +51,6 @@ public class Employees {
         this.e_id = e_id;
     }
 
-    public int getPassword() {
-        return password;
-    }
-
-    public void setPassword(int password) {
-        this.password = password;
-    }
-
     public String getFull_name() {
         return full_name;
     }
@@ -61,20 +59,36 @@ public class Employees {
         this.full_name = full_name;
     }
 
-    public String getUser_name() {
-        return user_name;
-    }
-
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
-    }
-
     public String getType() {
         return type;
     }
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
     }
 
     public List<Plan> getItems() {
@@ -91,7 +105,7 @@ public class Employees {
                 "e_id=" + e_id +
                 ", password=" + password +
                 ", full_name=" + full_name +
-                ", user_name='" + user_name + '\'' +
+                ", username='" + username + '\'' +
                 ", type='" + type + '\'' +
                 '}';
     }

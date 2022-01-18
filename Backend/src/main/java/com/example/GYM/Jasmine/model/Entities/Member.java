@@ -29,8 +29,16 @@ public class Member {
     private String renewal;
     private String start_date;
     private String end_date;
-private  String username;
-private String password;
+    private String username;
+    private  String password;
+
+
+    @OneToOne(mappedBy = "member")
+    private Users users;
+
+//    @OneToMany(mappedBy = "member")
+//    @JsonIgnore
+//    private List<Users> users = new ArrayList<>();
 
 @ManyToMany
      @JoinTable(name = "member_lessons",
@@ -46,9 +54,7 @@ private java.util.List<Lessons> lessons;
     public Member() {
 }
 
-
-
-    public Member(int m_id, String name, String gender, int dob, String address, int height, int weight, String renewal, String start_date, String end_date, String username, String password, List<Lessons> lessons) {
+    public Member(int m_id, String name, String gender, int dob, String address, int height, int weight, String renewal, String start_date, String end_date, String username, String password, Users users, List<Lessons> lessons) {
         this.m_id = m_id;
         this.name = name;
         this.gender = gender;
@@ -61,6 +67,7 @@ private java.util.List<Lessons> lessons;
         this.end_date = end_date;
         this.username = username;
         this.password = password;
+        this.users = users;
         this.lessons = lessons;
     }
 
@@ -158,6 +165,14 @@ private java.util.List<Lessons> lessons;
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
     }
 
     public List<Lessons> getLessons() {

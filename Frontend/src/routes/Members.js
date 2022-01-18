@@ -73,7 +73,7 @@ export default class Member extends Component {
                  <br></br><Link to="/register" ><button className="FOF" >back</button></Link><br></br>
                  <br></br><Link to="/lessons" ><button  className="FOF">Choose the lesson</button></Link><br></br>
 
-                    <Link to="/invoice" ><button  className="FOF">Want a monthly subscription?</button></Link>
+                    <Link to="/invoices" ><button  className="FOF">Want a monthly subscription?</button></Link>
 {/* <img src="https://64.media.tumblr.com/a25f16ec5f7126e18a9f690adf6cae09/tumblr_inline_npn24dFZ1F1t1pu2e_540.gifv"/> */}
             </div>
         )}}

@@ -168,11 +168,11 @@ function handleSubmit(event) {
                       {/* <img src="b1.jpg" width="10%"></img><br /> */}
                       <label> date_time</label>
                   <input type="text" name="l_date_time" placeholder="l_date_time" size="15" onChange={handleL_date_time} /><br /><br />
-                  <label> number MEMBER</label>
+                  {/* <label> number MEMBER</label>
                   <input type="text" name="m_id" placeholder="m_id" size="15" onChange={handleM_id} /><br /><br />
                  
                   <label> number Plan</label>
-                  <input type="text" name="p_id" placeholder="p_id" size="15" onChange={handleP_id} /><br /><br />
+                  <input type="text" name="p_id" placeholder="p_id" size="15" onChange={handleP_id} /><br /><br /> */}
  <h1>---------------------------------------------------------------------------------------</h1>
                   <button type="submit" className="registerbutton" onClick={handleSubmit}  class="FOF">submit</button><br/>
                   {/* <button type="submit" className="registerbutton" onClick={handleOnchang}  class="FOF">post</button><br/> */}

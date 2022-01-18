@@ -54,7 +54,7 @@ export default class Employee_details extends Component {
                     <thead>
                         <tr>
                             <th >Full_name </th>
-                            <th >User_name </th>
+                            <th >Username </th>
                             <th >Type</th>
 
 
@@ -64,7 +64,7 @@ export default class Employee_details extends Component {
                         {this.state.Employee_detailsList.map((item => (
                             <tr key={item.e_id}>
                                 <td>{item.full_name}</td>
-                                <td>{item.user_name}</td>
+                                <td>{item.username}</td>
                                 <td>{item.type}</td>
                                 <td><button style={{ background: "#ffcc00", color: "#000000"}}onClick={(e) => this.deleteSpecialist(item.e_id, e)}>delete</button></td>                 
                             </tr>

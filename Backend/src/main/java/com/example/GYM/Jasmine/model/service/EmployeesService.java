@@ -29,18 +29,18 @@ public class EmployeesService {
 
     }
 
-    public String getCheck(String user_name ,String password) {
-        if( employeesRepository.existsByUsername(user_name) ){
-            String Employees = employeesRepository.findByUser_name(user_name);
-            if (Employees.equals(password)){
-                return "authenticated" ;
-            }
-            else {
-                return "Password does not match"; }
-        }
-
-        return "Username not found";
-    }
+//    public String getCheck(String user_name ,String password) {
+//        if( employeesRepository.existsByUsername(user_name) ){
+//            String Employees = employeesRepository.findByUser_name(user_name);
+//            if (Employees.equals(password)){
+//                return "authenticated" ;
+//            }
+//            else {
+//                return "Password does not match"; }
+//        }
+//
+//        return "Username not found";
+//    }
 
 
 

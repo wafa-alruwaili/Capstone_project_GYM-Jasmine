@@ -2,37 +2,84 @@ import React, { useEffect, useState } from 'react'
 import { Link, Outlet } from "react-router-dom";
 import axios from "axios"
 import Login from './routes/Login';
-import Login2 from './routes/Login2';
 
 
 
 export default function Home() {
-  let [Authentication,setAuthentication]= useState(false);
+
+  
+  // let [Authentication,setAuthentication]= useState(false);
 
   
   // function handleSubmit(event) {
   //   event.preventDefault();
   // }
 
-  function handleLogin(){
-    setAuthentication(true);
-}
-if(!Authentication){
-    return<Login handleLogin = {handleLogin} />
-}
-  
-// function handleLogin2(){
-//   setAuthentication(true);
+//   function handleLogin(){
+//     setAuthentication(true);
 // }
 // if(!Authentication){
-//   return<Login2 handleLogin2 = {handleLogin2} />
+//     return<Login handleLogin = {handleLogin} />
 // }
+  
+let loggedIn = localStorage.getItem("LogIn")
+if (loggedIn == "employees") {
+  
+
 
 
 
 
   return (
-    <div >
+<div><ul className="ul-list">
+                   
+
+                   <Link to="/Home"><button className='FOF'>Home</button></Link>
+                   {/* <Link to="/Home"><button className='FOF'>Home </button></Link> */}
+                   {/* <Link to="/Login"><button className='FOF'>Login </button></Link> */}
+                   <Link to="/Register"><button className='FOF' >Register </button></Link>
+                   <Link to="/Register_user"><button className='FOF' >Register user </button></Link>
+                   <Link to="/members"><button className='FOF'>Member </button></Link>
+                   <Link to="/lessons"><button className='FOF'>Lessons </button></Link>
+                   <Link to="/Lessons_details"><button className='FOF'>Lessons_details </button></Link>
+                   <Link to="/invoices"><button className='FOF'>Plan </button></Link>
+                   <Link to="/employe"><button className='FOF'>employe register </button></Link>
+                   <Link to="/Employee_details"><button className='FOF'>Employee_details </button></Link>
+                   <Link to="/employees"><button className='FOF'>Employees </button></Link>
+                 <Link to="/home"> <button onClick={()=>{localStorage.setItem("login","")}}className="FOF"> Log Out </button></Link>
+                 {/* <Link to="/home"> <button onClick={()=>{localStorage.setItem("login2","")}}className="FOF"> Log Out2 </button></Link> */}
+                   {/* <Link to="/Login2"><button className='FOF'>Login member </button></Link> */}
+                   <button onClick={()=>{localStorage.setItem("LogIn","")}}> Log Out </button>
+
+
+              
+               </ul> 
+               <Outlet />
+               </div>
+  )}
+  else if(loggedIn == "member"){
+    return (
+      <div>
+                       <Link to="/Home"><button className='FOF'>Home</button></Link>
+                        <Link to="/Register"><button className='FOF' >Register </button></Link>
+                        <Link to="/Register_user"><button className='FOF' >Register user </button></Link>
+                        <Link to="/members"><button className='FOF'>Member </button></Link>
+                        <Link to="/lessons"><button className='FOF'>Lessons </button></Link>
+                        <Link to="/Lessons_details"><button className='FOF'>Lessons_details </button></Link>
+                        <Link to="/invoices"><button className='FOF'>Plan </button></Link>
+                        <button onClick={()=>{localStorage.setItem("LogIn","")}}> Log Out </button>
+
+      </div>
+    )}
+    else{
+      return (
+        <div>
+                        <h1>No User selected</h1>
+
+       
+
+     
+     <div>
       <br /><br /><br /><br /><h1 style={{ fontsize: "2.5rem", color: "#ffcc00", textAlign: "center" }}>Welcome in<span> GYM The Lion</span> </h1>
       <img scr="logo.png" />
 
@@ -49,8 +96,8 @@ if(!Authentication){
           <p>Among the benefits of sports is the prevention of heart disease and stroke, and regular exercise strengthens the heart muscle, improves its work, increases the efficiency of blood flow and blood circulation, and regulates the level of cholesterol in the blood in a healthy way. In addition to preventing and reducing the effects of diabetes and high blood pressure.</p>
           <Link to="/Register"  ><button style={{ width: "10%", background: "#ffcc00", color: "#000000", }}>join us</button></Link><br/>
           {/* <Link to="/Login"  ><hr /><button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "10%", background: "#ffcc00", color: "#000000", }}>LogIn</button><br /><br /></Link > */}
-          <Link to="/login"><button style={{ width: "10%", background: "#ffcc00", color: "#000000", }} >LogIn for employees</button></Link><br/>
-          <Link to="/Login2"><button style={{ width: "10%", background: "#ffcc00", color: "#000000", }}>Login member </button></Link>
+          <Link to="/login"><button style={{ width: "10%", background: "#ffcc00", color: "#000000", }} >LogIn</button></Link><br/>
+          {/* <Link to="/Login2"><button style={{ width: "10%", background: "#ffcc00", color: "#000000", }}>Login member </button></Link> */}
 
 
         </div>
@@ -160,5 +207,6 @@ if(!Authentication){
       <br></br>
       <Outlet />
     </div>
-  )
+    </div>
+        )}
 }

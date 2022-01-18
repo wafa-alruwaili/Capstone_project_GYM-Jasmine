@@ -29,8 +29,8 @@ export default function Plan() {
 
   function handleSubmit(event) {
 
-    let n=localStorage.getItem("login");//n
-    if(n=="authenticated"){//n
+    // let n=localStorage.getItem("login");//n
+    // if(n=="authenticated"){//n
 
 
   event.preventDefault();
@@ -40,7 +40,7 @@ export default function Plan() {
       url: 'api/plan/add',
       data:  newplan
   });
-}//n
+// }//n
 }
    function handleClickDel2() {
 
@@ -80,10 +80,12 @@ export default function Plan() {
       <p style={{ background: "#ffcc00", color: "#000000"}}>description active:-{invoice.active}</p>
     </main>
     </div>
-    <br/><button type="submit" className="registerbutton" onClick={handleSubmit} style={{ width: "50%", background: "#ffcc00", color: "#000000", }}>submit</button><br/>
+    <br></br><Link to="/lessons_details" ><button className="FOF" >back</button></Link><br></br>
+    <hr/><button type="submit" className="registerbutton" onClick={handleSubmit} class="FOF" >submit</button>
+    <button type="submit" className="registerbutton" onClick={handleClickDel2} class="FOF">Remove</button>
+
         
-        
-          <br/> <input type="submit" value="Remove" onClick={handleClickDel2} style={{ width: "50%", background: "#ffcc00", color: "#000000", }}></input><br/><br/><br/>
+          {/* <br/> <input type="submit" value="Remove" onClick={handleClickDel2} style={{ width: "50%", background: "#ffcc00", color: "#000000", }}></input><br/><br/><br/> */}
   </div>
   );
 }

@@ -6,34 +6,41 @@ import { Link } from "react-router-dom";
 
 
 export default function Employe() {
-const [myEmployees, setmyEmployees] = useState({ e_id: "", password: "", full_name: "", user_name: "",type :"" })
+const [myEmployees, setmyEmployees] = useState({ e_id: "", password: "", full_name: "", username: "",type :"" })
 
     
 
     let [e_id, setE_id] = useState("")
     let [password, setPassword] = useState("")
     let [full_name, setFull_name] = useState("")
-    let [user_name, setUser_name] = useState("")
+    let [username, setUsername] = useState("")
     let [type, setType] = useState("")
     let [ClickDel2, setClickDel2] = useState("")
-
+    let [role, setRole] = useState("")
 
 
 
     function handleE_id(event) { setE_id((e_id = event.target.value)); }
     function handlePassword(event) { setPassword((password = event.target.value)); }
     function handleFull_name(event) { setFull_name((full_name = event.target.value)); }
-    function handleUser_name(event) { setUser_name((user_name = event.target.value)); }
+    function handleUsername(event) { setUsername((username = event.target.value)); }
     function handleType (event) { setType ((type  = event.target.value)); }
     function handleClickDel2(event) { setClickDel2((ClickDel2 = event.target.value)) }
+    function handleRole(event) { setRole((role = event.target.value)) }
 
+
+    let newusers = {
+        username:username,
+        password:password,
+        role:"employees",
+    }
 
 
     let newemployees = {
         e_id: e_id,
         password: password,
         full_name: full_name,
-        user_name: user_name,
+        username: username,
         type: type
     }
 
@@ -41,8 +48,7 @@ const [myEmployees, setmyEmployees] = useState({ e_id: "", password: "", full_na
 
     function handleSubmit(event) {
         event.preventDefault();
-let n=localStorage.getItem("login");//n
-    if(n=="authenticated"){//n
+
 
         axios({
 
@@ -51,9 +57,19 @@ let n=localStorage.getItem("login");//n
             data: newemployees
 
         });
-        }//n
+
+
+        axios({
+
+            method: 'post',
+            url: 'api/user/add',
+            data: newusers
+
+        });
+        
 
     }
+
 
     function handleClickDel2() {
 
@@ -85,15 +101,15 @@ let n=localStorage.getItem("login");//n
 
                 <hr />
                 <label style={{ width: "10%", color: "#ffcc00", }}> e_id </label>
-                <input type="text" name="e_id" placeholder="e_id" size="15" onChange={handleE_id} /><br/><br/>
+                <input type="text" name="e_id" placeholder="e_id" size="15" onChange={handleE_id} required/><br/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}> password </label>
-                <input type="text" name="name" placeholder="name" size="15" onChange={handlePassword} /><br/><br/>
+                <input type="text" name="name" placeholder="name" size="15" onChange={handlePassword} required/><br/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}>full_name</label>
-                <input type="text" name="full_name" placeholder="full_name" size="15" onChange={handleFull_name} /><br/><br/>
-                <label style={{ width: "10%", color: "#ffcc00", }}> user_name</label>
-                <input type="text" name="user_name" onChange={handleUser_name} /><br/><br/>
+                <input type="text" name="full_name" placeholder="full_name" size="15" onChange={handleFull_name} required/><br/><br/>
+                <label style={{ width: "10%", color: "#ffcc00", }}> username</label>
+                <input type="text" name="username" onChange={handleUsername} /><br/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}>type </label>
-                <input type="text" name="type " placeholder="type " size="15" onChange={handleType } /><br/><br/>
+                <input type="text" name="type " placeholder="type " size="15" onChange={handleType } required/><br/><br/>
 
             
             

@@ -36,12 +36,12 @@ public class EmployeesController<employeesService> {
         employeesService.addNewEmployees(employees);
     }
 
-@GetMapping(path ="login")
-public String checkLogin(@RequestParam(name ="user_name")String user_name ,
-                         @RequestParam (name ="password")
-                                 String password) {
-        return employeesService.getCheck(user_name,password);
-                                 }
+//@GetMapping(path ="login")
+//public String checkLogin(@RequestParam(name ="user_name")String user_name ,
+//                         @RequestParam (name ="password")
+//                                 String password) {
+//        return employeesService.getCheck(user_name,password);
+//                                 }
 
 
     @DeleteMapping(path = "delete/{employeesId}")

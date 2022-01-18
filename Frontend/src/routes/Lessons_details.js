@@ -67,6 +67,6 @@ export default class Lessons_details extends Component {
                  <br></br><Link to="/lessons" ><button className="FOF" >back</button></Link><br></br>
                  {/* <br></br><Link to="/lessons" ><button  className="FOF">Choose the lesson</button></Link><br></br> */}
 
-                    <Link to="/invoice" ><button  className="FOF">Want a monthly subscription?</button></Link>
+                    <Link to="/invoices" ><button  className="FOF">Want a monthly subscription?</button></Link>
             </div>
         )}}

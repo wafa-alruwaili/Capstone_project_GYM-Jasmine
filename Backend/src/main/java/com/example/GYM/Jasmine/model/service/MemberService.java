@@ -30,18 +30,18 @@ public class MemberService {
         }
 
 
-    public String getCheck(String username ,String password) {
-        if( memberRepository.existsByName(username) ){
-            String Member = memberRepository.findByName(username);
-            if (Member.equals(password)){
-                return "welcome" ;
-            }
-            else {
-                return "Password does not match"; }
-        }
-
-        return "Username not found";
-    }
+//    public String getCheck(String username ,String password) {
+//        if( memberRepository.existsByName(username) ){
+//            String Member = memberRepository.findByName(username);
+//            if (Member.equals(password)){
+//                return "welcome" ;
+//            }
+//            else {
+//                return "Password does not match"; }
+//        }
+//
+//        return "Username not found";
+//    }
 
 
 

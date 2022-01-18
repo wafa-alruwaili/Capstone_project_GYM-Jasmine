@@ -50,8 +50,8 @@ export default function Employees() {
     function handleSubmit(event) {
         event.preventDefault();
 
-        let n=localStorage.getItem("login");//n
-        if(n=="authenticated"){//n
+        // let n=localStorage.getItem("login");//n
+        // if(n=="authenticated"){//n
     
 
         axios({
@@ -61,7 +61,7 @@ export default function Employees() {
             data: newemployees
 
         });
-        }//n
+        // }//n
 
     }
 
@@ -96,11 +96,11 @@ export default function Employees() {
       <img src="u-1.png" alt="" /></div>
       </section>
 
-            <br/><br/> <br/><br/><center> <h1  style={{ color: "#ffcc00", }}> edit </h1> </center><br></br>
+            <br/><br/> <br/><br/><center> <h1  style={{ color: "#ffcc00", }}> Register Plan </h1> </center><br></br>
 
 
                 <hr />
-                <label style={{ width: "10%", color: "#ffcc00", }}> e_id </label>
+                <label style={{ width: "10%", color: "#ffcc00", }}> Number Employee</label>
                 <input type="text" name="e_id" placeholder="e_id" size="15" onChange={handleE_id} /><br/><br/>
                 {/* <label style={{ width: "10%", color: "#ffcc00", }}> password </label>
                 <input type="text" name="name" placeholder="name" size="15" onChange={handlePassword} /><br/><br/>
@@ -110,15 +110,15 @@ export default function Employees() {
                 <input type="text" name="user_name" onChange={handleUser_name} /><br/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}>type </label>
                 <input type="text" name="type " placeholder="type " size="15" onChange={handleType } /><br/><br/> */}
-                <label style={{ width: "10%", color: "#ffcc00", }}> p_id </label>
+                <label style={{ width: "10%", color: "#ffcc00", }}> Number plan </label>
                 <input type="text" name="p_id" placeholder="p_id" size="15" onChange={handleP_id} /><br/><br/>
-                <label style={{ width: "10%", color: "#ffcc00", }}> p_name </label>
+                <label style={{ width: "10%", color: "#ffcc00", }}> Name plan </label>
                 <input type="text" name="p_name" placeholder="p_name" size="15" onChange={handleP_name} /><br/><br/>
-                <label style={{ width: "10%", color: "#ffcc00", }}> p_description </label>
+                <label style={{ width: "10%", color: "#ffcc00", }}> Description plan </label>
                 <input type="text" name="p_description" placeholder="p_description" size="15" onChange={handleP_description} /><br/><br/>
-                <label style={{ width: "10%", color: "#ffcc00", }}> amount </label>
+                <label style={{ width: "10%", color: "#ffcc00", }}> Amount plan </label>
                 <input type="text" name="amount" placeholder="amount" size="15" onChange={handleAmount} /><br/><br/>
-                <label style={{ width: "10%", color: "#ffcc00", }}> active </label>
+                <label style={{ width: "10%", color: "#ffcc00", }}> Active plan </label>
                 <input type="text" name="active" placeholder="active" size="15" onChange={handleActive} /><br/><br/>
                
                
@@ -127,7 +127,7 @@ export default function Employees() {
                
                 <Link to="/invoice" ><hr/><button type="submit" className="registerbutton" onClick={handleSubmit} class="FOF" >submit</button></Link>
             <button type="submit" className="registerbutton" onClick={handleClickDel2} class="FOF">Remove</button>
-            {/* <Link to="/invoices"  ><button  class="FOF">profail</button></Link> */}
+            <Link to="/invoices"  ><button  class="FOF">Plan page</button></Link>
             <Link to="/Home"  ><button  class="FOF">Back</button></Link>
 
                

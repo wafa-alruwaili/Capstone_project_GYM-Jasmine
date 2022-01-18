@@ -20,6 +20,7 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
     let [renewal, setRenwal] = useState("")
     let [username, setUsername] = useState("")
     let [password, setPassword] = useState("")
+    let [role, setRole] = useState("")
     let [del, setdel] = useState("")
 
 
@@ -37,10 +38,15 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
     function handleRenewal(event) { setRenwal((renewal = event.target.value)); }
     function handleUsername(event) { setUsername((username = event.target.value)); }
     function handlePassword(event) { setPassword((password = event.target.value)); }
+    function handleRole(event) { setRole((role = event.target.value)) }
 
     
     // function handleClickDel3(event) { setdel((del = event.target.value)) }
-
+    let newusers = {
+        username:username,
+        password:password,
+        role:"member",
+    }
 
 
     let newmember = {
@@ -54,8 +60,7 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
         start_date: start_date,
         end_date: end_date,
         renewal: renewal,
-        username:username,
-        password:password,
+    
     }
 
 
@@ -63,8 +68,7 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
     function handleSubmit(event) {
         event.preventDefault();
         
-        let n=localStorage.getItem("login2");//n
-        if(n=="welcome"){//n
+        
     
         
         axios({
@@ -74,7 +78,15 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
             data: newmember
 
         });
-    }//n
+
+        axios({
+
+            method: 'post',
+            url: 'api/user/add',
+            data: newusers
+
+        });   
+
     }
 
     // function handleClickDel2() {
@@ -104,9 +116,9 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
 
                 <hr />
                 <label style={{ width: "10%", color: "#ffcc00", }}> M_id </label>
-                <input type="text" name="m_id" placeholder="m_id" size="15" onChange={handleM_id} /><br/><br/>
+                <input type="text" name="m_id" placeholder="m_id" size="15" onChange={handleM_id} required/><br/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}> Name </label>
-                <input type="text" name="name" placeholder="name" size="15" onChange={handleName} /><br/><br/>
+                <input type="text" name="name" placeholder="name" size="15" onChange={handleName} required/><br/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}> Gender  </label>
                 {/* <select id="f1" onChange={handleGender}> */}
                 {/* <option disabled value="" selected>Selection</option> */}
@@ -123,28 +135,29 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
                 <input style={{ width: "10%", color: "#ffcc00", }} type="radio" value="femal" checked={gender == 'femal'}
                     onChange={handleGender} />Femal<br/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}>Height</label>
-                <input type="text" name="height" placeholder="height" size="15" onChange={handleHeight} /><br/><br/>
+                <input type="text" name="height" placeholder="height" size="15" onChange={handleHeight} required/><br/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}>Weight</label>
-                <input type="text" name="weight" placeholder="weight" size="15" onChange={handleWeight} /><br/><br/>
+                <input type="text" name="weight" placeholder="weight" size="15" onChange={handleWeight} required/><br/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}>dob</label>
-                <input type="text" name="dob" size="10" onChange={handleDob} /><br/><br/>
+                <input type="text" name="dob" size="10" onChange={handleDob} required/><br/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}> Address</label>
-                <input type="text" name="Address" onChange={handleAddress} /><br/><br/>
+                <input type="text" name="Address" onChange={handleAddress} required/><br/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}>Start_date</label>
-                <input type="text" name="start_date" placeholder="start_date" size="15" onChange={handleStart_date} /><br/><br/>
+                <input type="text" name="start_date" placeholder="start_date" size="15" onChange={handleStart_date} required/><br/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}>End_date</label>
-                <input type="text" name="end_date" placeholder="end_date" size="15" onChange={handleEnd_date} /><br/><br/>
+                <input type="text" name="end_date" placeholder="end_date" size="15" onChange={handleEnd_date} required/><br/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}> Renewal </label>
                 <input  style={{ width: "10%", color: "#ffcc00", }}type="radio" value="yes" checked={renewal == 'yes'}
                     onChange={handleRenewal} />Yes
                 <input style={{ width: "10%", color: "#ffcc00", }}type="radio" value="no" checked={renewal == 'no'}
                     onChange={handleRenewal} />No<br/><br/>
-                <label style={{ width: "10%", color: "#ffcc00", }}> username </label>
-                <input type="text" name="username" placeholder="username" size="15" onChange={handleUsername} /><br/><br/>
+                 <label style={{ width: "10%", color: "#ffcc00", }}> username </label>
+                <input type="text" name="username" placeholder="username" size="15" onChange={handleUsername} required/><br/><br/>
 
                 <label style={{ width: "10%", color: "#ffcc00", }}> password </label>
-                <input type="password" name="password" placeholder="password" size="15" onChange={handlePassword} /><br/><br/>
+                <input type="password" name="password" placeholder="password" size="15" onChange={handlePassword} required/><br/><br/>
 
+                
                 <section class="home1" id="home1">
         <div class="image1">
       <img src="u-1.png" alt="" /></div>
@@ -152,6 +165,8 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
             
             <hr/><button type="submit" className="registerbutton" onClick={handleSubmit}  class="FOF">submit</button>
             <Link to="/members"  ><button   class="FOF">details</button></Link>
+            {/* <Link to="/Register_user"  ><button   class="FOF">Register_login</button></Link> */}
+
             <Link to="/Home"  ><button   class="FOF">Back</button></Link>
 
                 {/* <input type="text" id="id" name="id" onChange={handleClickDel3} /> */}
