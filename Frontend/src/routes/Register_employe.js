@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios"
 import { Link } from "react-router-dom";
-// import Navbar7 from "./Navbar7";
 
 
 
@@ -33,6 +32,9 @@ const [myEmployees, setmyEmployees] = useState({ e_id: "", password: "", full_na
         username:username,
         password:password,
         role:"employees",
+        employees:{
+            e_id:e_id,
+        }
     }
 
 
@@ -41,7 +43,7 @@ const [myEmployees, setmyEmployees] = useState({ e_id: "", password: "", full_na
         password: password,
         full_name: full_name,
         username: username,
-        type: type
+        type: type,
     }
 
     

@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import React from 'react'
 import react, { useState } from "react";
 import axios from "axios"
-// import Navbar7 from "./Navbar7";
 
 
 export default function Employees() {
@@ -10,10 +9,6 @@ export default function Employees() {
 
     
     let [e_id, setE_id] = useState("")
-    // let [password, setPassword] = useState("")
-    // let [full_name, setFull_name] = useState("")
-    // let [user_name, setUser_name] = useState("")
-    // let [type, setType] = useState("")
     let [clickdel12, setClickDel12] = useState("")
     let [p_id, setP_id] = useState("")
     let [p_name, setP_name] = useState("")
@@ -24,10 +19,6 @@ export default function Employees() {
 
 
     function handleE_id(event) { setE_id((e_id = event.target.value)); }
-    // function handlePassword(event) { setPassword((password = event.target.value)); }
-    // function handleFull_name(event) { setFull_name((full_name = event.target.value)); }
-    // function handleUser_name(event) { setUser_name((user_name = event.target.value)); }
-    // function handleType (event) { setType ((type  = event.target.value)); }
     function handleP_id(event) { setP_id((p_id = event.target.value)); }
     function handleP_name(event) { setP_name((p_name = event.target.value)); }
     function handleP_description(event) { setP_description((p_description = event.target.value)); }
@@ -42,16 +33,15 @@ export default function Employees() {
          p_description: p_description,
          amount: amount,
           active: active,   
-//   employees: {
-//                  e_id: e_id
-//          }  
+  employees: {
+                 e_id: e_id
+         }  
          }
 
     function handleSubmit(event) {
         event.preventDefault();
 
-        // let n=localStorage.getItem("login");//n
-        // if(n=="authenticated"){//n
+        
     
 
         axios({
@@ -61,7 +51,7 @@ export default function Employees() {
             data: newemployees
 
         });
-        // }//n
+       
 
     }
 
@@ -91,7 +81,7 @@ export default function Employees() {
 <form onSubmit={handleSubmit} >
             <div className="log">
 
-{/* <Navbar7/> */}<section class="home1" id="home1">
+<section class="home1" id="home1">
         <div class="image1">
       <img src="u-1.png" alt="" /></div>
       </section>
@@ -102,14 +92,6 @@ export default function Employees() {
                 <hr />
                 <label style={{ width: "10%", color: "#ffcc00", }}> Number Employee</label>
                 <input type="text" name="e_id" placeholder="e_id" size="15" onChange={handleE_id} /><br/><br/>
-                {/* <label style={{ width: "10%", color: "#ffcc00", }}> password </label>
-                <input type="text" name="name" placeholder="name" size="15" onChange={handlePassword} /><br/><br/>
-                <label style={{ width: "10%", color: "#ffcc00", }}>full_name</label>
-                <input type="text" name="full_name" placeholder="full_name" size="15" onChange={handleFull_name} /><br/><br/>
-                <label style={{ width: "10%", color: "#ffcc00", }}> user_name</label>
-                <input type="text" name="user_name" onChange={handleUser_name} /><br/><br/>
-                <label style={{ width: "10%", color: "#ffcc00", }}>type </label>
-                <input type="text" name="type " placeholder="type " size="15" onChange={handleType } /><br/><br/> */}
                 <label style={{ width: "10%", color: "#ffcc00", }}> Number plan </label>
                 <input type="text" name="p_id" placeholder="p_id" size="15" onChange={handleP_id} /><br/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}> Name plan </label>
@@ -141,17 +123,3 @@ export default function Employees() {
         
     )
 }
-// "p_id": 1,
-//         "p_name": "qaqa",
-//         "p_description": "w",
-//         "amount": "hello",
-//         "active": "yes",
-//         "employees": {
-//             "e_id": 80,
-//             "password": 1234,
-//             "full_name": "w",
-//             "user_name": "hello",
-//             "type": "yes"
-//         }
-//     }
-// ]

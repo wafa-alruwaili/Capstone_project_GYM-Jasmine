@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios"
 import { Link } from "react-router-dom";
-// import Navbar2 from "./Navbar2";
 
 export default function Register() {
 const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", height: "", gender: "", address: "", renewal: "", dob: "", start_date: "", end_date: "",username:"",password:"" })
@@ -41,11 +40,13 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
     function handleRole(event) { setRole((role = event.target.value)) }
 
     
-    // function handleClickDel3(event) { setdel((del = event.target.value)) }
     let newusers = {
         username:username,
         password:password,
         role:"member",
+        // member:{
+        //     m_id:m_id,
+        // }
     }
 
 
@@ -60,7 +61,8 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
         start_date: start_date,
         end_date: end_date,
         renewal: renewal,
-    
+        // username:username,
+        // password:password,
     }
 
 
@@ -89,23 +91,13 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
 
     }
 
-    // function handleClickDel2() {
-
-    //     axios({
-    //         method: 'delete',
-    //         url: `api/member/delete/${del}`,
-
-    //     });
-
-    // }
-
+    
 
 
 
     return (
         <form onSubmit={handleSubmit} >
             <div className="log">
-{/* <Navbar2/> */}
 <section class="home1" id="home1">
         <div class="image1">
       <img src="u-1.png" alt="" /></div>
@@ -120,15 +112,7 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
                 <label style={{ width: "10%", color: "#ffcc00", }}> Name </label>
                 <input type="text" name="name" placeholder="name" size="15" onChange={handleName} required/><br/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}> Gender  </label>
-                {/* <select id="f1" onChange={handleGender}> */}
-                {/* <option disabled value="" selected>Selection</option> */}
-                {/* // <option value="male">Male</option>
-                  //  <option value="femal">Femal</option> */}
-                {/* </select> */}
-                {/* <div id="f1" onChange={handleGender}>
-                    <input type="radio" value="male" />male
-                    <input type="radio" value="femal" />femal
-                </div> */}
+               
 
                 <input  style={{ width: "10%", color: "#ffcc00", }}type="radio" value="male" checked={gender == 'male'}
                     onChange={handleGender} />Male
@@ -165,15 +149,11 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
             
             <hr/><button type="submit" className="registerbutton" onClick={handleSubmit}  class="FOF">submit</button>
             <Link to="/members"  ><button   class="FOF">details</button></Link>
-            {/* <Link to="/Register_user"  ><button   class="FOF">Register_login</button></Link> */}
 
             <Link to="/Home"  ><button   class="FOF">Back</button></Link>
 
-                {/* <input type="text" id="id" name="id" onChange={handleClickDel3} /> */}
-                {/* <input type="submit" value="Remove" onClick={handleClickDel2} style={{ width: "10%", background: "#33cc33", color: "#FFFFFF", }}></input><br/><br/> */}
 
                 <br />
-                {/* <link to="/Member"></link> */}
             </div>
         </form>
 

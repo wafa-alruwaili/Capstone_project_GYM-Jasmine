@@ -31,7 +31,7 @@ public class UsersServices {
             String pass = usersRepository.findByUsername(username);
             if (pass.equals(password)) {
                 String role = usersRepository.findRole(username);
-                return "authenticated"+ role;
+                return "●•authenticated•●"+ role;
             } else {
                 return " invalid password";
             }

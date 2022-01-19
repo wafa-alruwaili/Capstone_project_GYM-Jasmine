@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios'
 import { Link } from "react-router-dom";
-// import Navbar3 from "./Navbar3";
 
 export default class Lessons_details extends Component {
     constructor(props) {
@@ -32,7 +31,7 @@ export default class Lessons_details extends Component {
                     <section class="home1" id="home1">
         <div class="image1">
       <img src="u-1.png" alt="" /></div>
-      </section>        {/* <Navbar3/> */}
+      </section>        
 
                 <table >
                   <caption>
