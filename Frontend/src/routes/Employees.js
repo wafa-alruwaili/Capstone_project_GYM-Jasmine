@@ -74,6 +74,9 @@ export default function Employees() {
                 <input type="text" name="amount" placeholder="amount" size="15" onChange={handleAmount} /><br /><br />
                 <label style={{ width: "10%", color: "#ffcc00", }}> Active plan </label>
                 <input type="text" name="active" placeholder="active" size="15" onChange={handleActive} /><br /><br />
+                
+                
+                
                 <Link to="/invoice" ><hr /><button type="submit" className="registerbutton" onClick={handleSubmit} class="FOF" >submit</button></Link>
                 <button type="submit" className="registerbutton" onClick={handleClickDel2} class="FOF">Remove</button>
                 <Link to="/invoices"  ><button class="FOF">Plan page</button></Link>
