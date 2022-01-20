@@ -18,28 +18,26 @@ export default class Member extends Component {
             console.log(this.state.MemberList)
 
         });
-        // console.log(this.state.MemberList)
     }
     deleteSpecialist(m_id) {
         axios.delete(`api/member/delete/${m_id}`)
             .then(res => {
-                const MemberList = this.state.MemberList.filter(item => item.m_id!== m_id);
+                const MemberList = this.state.MemberList.filter(item => item.m_id !== m_id);
                 this.setState({ MemberList })
-           })
+            })
     }
     render() {
-        // console.log(this.state.MemberList)
         return (
             <div>
 
                 <table >
-                  <caption>
+                    <caption>
 
-                    <h1 style={{ color: "#ffcc00"}}><b>My Page</b></h1>
-                    
+                        <h1 style={{ color: "#ffcc00" }}><b> Page members</b></h1>
+
                     </caption>
                     <thead>
-                        <tr style={{ color: "#ffcc00"}}>
+                        <tr style={{ color: "#ffcc00" }}>
                             <th  >name </th>
                             <th >gender </th>
                             <th >date_of_birt</th>
@@ -57,23 +55,22 @@ export default class Member extends Component {
                                 <td>{item.name}</td>
                                 <td>{item.gender}</td>
                                 <td>{item.dob}</td>
-                                {/* <td><img height="100" width="100" src={item.image} /></td> */}
                                 <td>{item.address}</td>
                                 <td>{item.height}</td>
                                 <td>{item.weight}</td>
                                 <td>{item.renewal}</td>
                                 <td>{item.start_date}</td>
                                 <td>{item.end_date}</td>
-
                                 <td><button onClick={(e) => this.deleteSpecialist(item.m_id, e)}>delete</button></td>
                             </tr>
                         )))
                         }
                     </tbody>
                 </table>
-                 <br></br><Link to="/register" ><button className="FOF" >back</button></Link><br></br>
-                 <br></br><Link to="/lessons" ><button  className="FOF">Choose the lesson</button></Link><br></br>
+                <br></br><Link to="/register" ><button className="FOF" >back</button></Link><br></br>
+                <br></br><Link to="/lessons" ><button className="FOF">Choose the lesson</button></Link><br></br>
 
-                    <Link to="/invoices" ><button  className="FOF">Want a monthly subscription?</button></Link>
             </div>
-        )}}
+        )
+    }
+}

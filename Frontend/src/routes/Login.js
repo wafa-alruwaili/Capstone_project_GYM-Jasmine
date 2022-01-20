@@ -1,15 +1,15 @@
 import { useState } from "react"
 import React from "react"
 import axios from "axios"
-import { Link,useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 
 export default function Login() {
 
-let [username, setUsername] = useState("")
+  let [username, setUsername] = useState("")
   let [password, setPassword] = useState("")
 
-  
+
   function handleUsername(event) {
     setUsername((event.target.value));
   }
@@ -19,7 +19,7 @@ let [username, setUsername] = useState("")
   let lestuser = {
     username: username,
     password: password,
-    
+
   }
   let navigate = useNavigate();
   function handleSubmit(event) {
@@ -45,37 +45,35 @@ let [username, setUsername] = useState("")
       }))
   }
   return (
-        
+    <div class="wrapper">
 
-            <div class="wrapper">
-               
-              <h2 class="form-signin-heading" style={{ color: "#ffcc00", }}>Please login</h2>
-    
-                <form class="form-signin" onSubmit={handleSubmit}>
-                
-                    <input
-                        type="text"
-                        value={username}
-                        username="username"
-                        placeholder=" username" class="form-control"
-                        onChange={handleUsername}
-                        required/>
-                    <input
-                        type="text"
-                        value={password}
-                        username="password"
-                        placeholder=" password" class="form-control"
-                        onChange={handlePassword}
-                    required/>
-                    <br />
-                    <label class="checkbox"> 
-                    <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"/> Remember me
-                    </label>
-                    <br /> <br />
-                
-                    <Link to="/member"><button  className="FOF" onClick={handleSubmit}>Login</button></Link>
-                    <Link to="/"> <button onClick={()=>{localStorage.setItem("LogIn","")}}className='FOF'> Log Out </button></Link>
-                </form>
-            </div>
-        )
-    }
+      <h2 class="form-signin-heading" style={{ color: "#ffcc00", }}>Please login</h2>
+
+      <form class="form-signin" onSubmit={handleSubmit}>
+
+        <input
+          type="text"
+          value={username}
+          username="username"
+          placeholder=" username" class="form-control"
+          onChange={handleUsername}
+          required />
+        <input
+          type="text"
+          value={password}
+          username="password"
+          placeholder=" password" class="form-control"
+          onChange={handlePassword}
+          required />
+        <br />
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe" /> Remember me
+        </label>
+        <br /> <br />
+
+        <Link to="/member"><button className="FOF" onClick={handleSubmit}>Login</button></Link>
+        <Link to="/"> <button onClick={() => { localStorage.setItem("LogIn", "") }} className='FOF'> Log Out </button></Link>
+      </form>
+    </div>
+  )
+}

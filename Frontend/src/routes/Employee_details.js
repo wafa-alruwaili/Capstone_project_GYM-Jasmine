@@ -77,8 +77,9 @@ export default class Employee_details extends Component {
                 </table>
 
 
+                <br></br><Link to="/Employees" ><button className="FOF">Register_plan</button></Link><br></br>
 
-                <br></br><Link to="/Home" ><button style={{ width: 50, background: "#ffcc00", color: "#000000" }}>Back</button></Link><br></br>
+                <br></br><Link to="/Register_employe" ><button  className="FOF">Back</button></Link><br></br>
 
             </div>
         )

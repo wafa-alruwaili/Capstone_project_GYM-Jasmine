@@ -61,8 +61,8 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
         start_date: start_date,
         end_date: end_date,
         renewal: renewal,
-        // username:username,
-        // password:password,
+        username:username,
+        password:password,
     }
 
 

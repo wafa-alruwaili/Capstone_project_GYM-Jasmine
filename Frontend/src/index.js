@@ -25,18 +25,18 @@ ReactDOM.render(
         <Route path="invoices" element={<Invoices />}>
           <Route path=":invoiceId" element={<Invoice />} />
         </Route>
-        </Route>
-        <Route path="/Home" element={<Home />} />
-        <Route path="/Home3" element={<Home3 />} />
-        {/* <Route path="/login" element={<Login />} /> */}
-        <Route path="/members" element={<Members />}/>
-        {/* <Route path="/register" element={<Register />} /> */}
-        <Route path="/lessons" element={<Lessons />} />
-        <Route path="/Lessons_details" element={<Lessons_details />} />
-        <Route path="/Register_employe" element={<Register_employe />} />
-        <Route path="/employee_details" element={< Employee_details />} />
-        <Route path="/employees" element={< Employees />} />
-      
+      </Route>
+      <Route path="/Home" element={<Home />} />
+      <Route path="/Home3" element={<Home3 />} />
+      {/* <Route path="/login" element={<Login />} /> */}
+      <Route path="/members" element={<Members />} />
+      {/* <Route path="/register" element={<Register />} /> */}
+      <Route path="/lessons" element={<Lessons />} />
+      <Route path="/Lessons_details" element={<Lessons_details />} />
+      <Route path="/Register_employe" element={<Register_employe />} />
+      <Route path="/employee_details" element={< Employee_details />} />
+      <Route path="/employees" element={< Employees />} />
+
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
     </Routes>
