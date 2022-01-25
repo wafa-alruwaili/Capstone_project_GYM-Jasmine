@@ -13,7 +13,9 @@ export default function Home() {
 
   return (
     <div >
-      <br /><br /><br /><br /><h1 style={{ fontsize: "2.5rem", color: "#ffcc00", textAlign: "center" }}>Welcome in<span> GYM The Lion</span> </h1>
+        <h1 style={{ fontsize: "2.5rem", color: "#ffcc00", textAlign: "left" }}>GYM The Lion</h1>
+<div className='gog'><img src="logo.png" /></div>
+<h1 style={{ fontsize: "2.5rem", color: "#ffcc00", textAlign: "center" }}>Welcome in<span> GYM The Lion</span> </h1>
 
       <section class="home" id="home">
         <div class="image">

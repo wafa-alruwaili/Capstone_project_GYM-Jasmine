@@ -76,7 +76,7 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
         axios({
 
             method: 'post',
-            url: 'api/member/add',
+            url: 'https://w-gym-the-lion-backend.herokuapp.com/api/member/add',
             data: newmember
 
         });
@@ -84,7 +84,7 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
         axios({
 
             method: 'post',
-            url: 'api/user/add',
+            url: 'https://w-gym-the-lion-backend.herokuapp.com/api/user/add',
             data: newusers
 
         });   
@@ -103,9 +103,7 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
       <img src="u-1.png" alt="" /></div>
       </section>
 
-            <br/><br/> <br/><br/><center> <h1  style={{ color: "#ffcc00", }}>  Register Member</h1> </center><br></br>
-
-
+            <center> <h1  style={{ color: "#ffcc00", }}>  Register Member</h1> </center><br></br>
                 <hr />
                 <label style={{ width: "10%", color: "#ffcc00", }}> M_id </label>
                 <input type="text" name="m_id" placeholder="m_id" size="15" onChange={handleM_id} required/><br/><br/>
@@ -121,39 +119,35 @@ const [myMember, setMyMember] = useState({ m_id: "", name: "", weight: "", heigh
                 <label style={{ width: "10%", color: "#ffcc00", }}>Height</label>
                 <input type="text" name="height" placeholder="height" size="15" onChange={handleHeight} required/><br/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}>Weight</label>
-                <input type="text" name="weight" placeholder="weight" size="15" onChange={handleWeight} required/><br/><br/>
+                <input type="text" name="weight" placeholder="weight" size="15" onChange={handleWeight} required/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}>dob</label>
-                <input type="text" name="dob" size="10" onChange={handleDob} required/><br/><br/>
+                <input type="text" name="dob" size="10" onChange={handleDob} required/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}> Address</label>
-                <input type="text" name="Address" onChange={handleAddress} required/><br/><br/>
+                <input type="text" name="Address" onChange={handleAddress} required/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}>Start_date</label>
-                <input type="text" name="start_date" placeholder="start_date" size="15" onChange={handleStart_date} required/><br/><br/>
+                <input type="text" name="start_date" placeholder="start_date" size="15" onChange={handleStart_date} required/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}>End_date</label>
-                <input type="text" name="end_date" placeholder="end_date" size="15" onChange={handleEnd_date} required/><br/><br/>
+                <input type="text" name="end_date" placeholder="end_date" size="15" onChange={handleEnd_date} required/><br/>
                 <label style={{ width: "10%", color: "#ffcc00", }}> Renewal </label>
                 <input  style={{ width: "10%", color: "#ffcc00", }}type="radio" value="yes" checked={renewal == 'yes'}
                     onChange={handleRenewal} />Yes
                 <input style={{ width: "10%", color: "#ffcc00", }}type="radio" value="no" checked={renewal == 'no'}
                     onChange={handleRenewal} />No<br/><br/>
                  <label style={{ width: "10%", color: "#ffcc00", }}> username </label>
-                <input type="text" name="username" placeholder="username" size="15" onChange={handleUsername} required/><br/><br/>
+                <input type="text" name="username" placeholder="username" size="15" onChange={handleUsername} required/><br/>
 
                 <label style={{ width: "10%", color: "#ffcc00", }}> password </label>
-                <input type="password" name="password" placeholder="password" size="15" onChange={handlePassword} required/><br/><br/>
-
-                
+                <input type="password" name="password" placeholder="password" size="15" onChange={handlePassword} required/><br/>
                 <section class="home1" id="home1">
         <div class="image1">
       <img src="u-1.png" alt="" /></div>
-      </section>
-            
+      </section> 
             <hr/><button type="submit" className="registerbutton" onClick={handleSubmit}  class="FOF">submit</button>
             <Link to="/members"  ><button   class="FOF">details</button></Link>
-
             <Link to="/Home"  ><button   class="FOF">Back</button></Link>
 
 
-                <br />
+             
             </div>
         </form>
 

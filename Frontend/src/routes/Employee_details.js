@@ -14,7 +14,7 @@ export default class Employee_details extends Component {
 
 
     componentDidMount() {
-        axios.get("api/employees").then(res => {
+        axios.get("https://w-gym-the-lion-backend.herokuapp.com/api/employees").then(res => {
             const Employee_detailsList = res.data
             this.setState({ Employee_detailsList })
         });
@@ -25,7 +25,7 @@ export default class Employee_details extends Component {
 
 
     deleteSpecialist(e_id) {
-        axios.delete(`api/employees/delete/${e_id}`)
+        axios.delete(`https://w-gym-the-lion-backend.herokuapp.com/api/employees/delete/${e_id}`)
             .then(res => {
                 const Employee_detailsList = this.state.Employee_detailsList.filter(item => item.e_id !== e_id);
                 this.setState({ Employee_detailsList })

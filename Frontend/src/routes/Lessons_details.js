@@ -10,14 +10,14 @@ export default class Lessons_details extends Component {
         };
     }
     componentDidMount() {
-        axios.get("api/lessons").then(res => {
+        axios.get("https://w-gym-the-lion-backend.herokuapp.com/api/lessons").then(res => {
             const LessonsdetailsList = res.data
             this.setState({ LessonsdetailsList })
         });
         console.log(this.state.LessonsdetailsList)
     }
     deleteSpecialist(l_id) {
-        axios.delete(`api/lessons/delete/${l_id}`)
+        axios.delete(`https://w-gym-the-lion-backend.herokuapp.com/api/lessons/delete/${l_id}`)
             .then(res => {
                 const LessonsdetailsList = this.state.LessonsdetailsList.filter(item => item.l_id!== l_id);
                 this.setState({ LessonsdetailsList })

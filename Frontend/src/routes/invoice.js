@@ -35,7 +35,7 @@ export default function Plan() {
     axios({
 
       method: 'post',
-      url: 'api/plan/add',
+      url: 'https://w-gym-the-lion-backend.herokuapp.com/api/plan/add',
       data: newplan
     });
   }
@@ -43,7 +43,7 @@ export default function Plan() {
 
     axios({
       method: 'delete',
-      url: `api/plan/delete/${clickDel2}`,
+      url: `https://w-gym-the-lion-backend.herokuapp.com/api/plan/delete/${clickDel2}`,
 
     });
 

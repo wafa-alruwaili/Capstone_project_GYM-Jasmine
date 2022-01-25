@@ -38,14 +38,14 @@ export default function Employees() {
         event.preventDefault();
         axios({
             method: 'post',
-            url: 'api/plan/add',
+            url: 'https://w-gym-the-lion-backend.herokuapp.com/api/plan/add',
             data: newemployees
         });
     }
     function handleClickDel2() {
         axios({
             method: 'delete',
-            url: `api/plan/delete/${p_id}`,
+            url: `https://w-gym-the-lion-backend.herokuapp.com/api/plan/delete/${p_id}`,
 
         });
     }
@@ -58,7 +58,7 @@ export default function Employees() {
                         <img src="u-1.png" alt="" /></div>
                 </section>
 
-                <br /><br /> <br /><br /><center> <h1 style={{ color: "#ffcc00", }}> Register Plan </h1> </center><br></br>
+              <center> <h1 style={{ color: "#ffcc00", }}> Register Plan </h1> </center><br></br>
 
 
                 <hr />

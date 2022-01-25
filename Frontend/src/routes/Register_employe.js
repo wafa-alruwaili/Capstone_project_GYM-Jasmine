@@ -55,7 +55,7 @@ export default function Employe() {
         axios({
 
             method: 'post',
-            url: 'api/employees/add',
+            url: 'https://w-gym-the-lion-backend.herokuapp.com/api/employees/add',
             data: newemployees
 
         });
@@ -64,7 +64,7 @@ export default function Employe() {
         axios({
 
             method: 'post',
-            url: 'api/user/add',
+            url: 'https://w-gym-the-lion-backend.herokuapp.com/api/user/add',
             data: newusers
 
         });
@@ -77,7 +77,7 @@ export default function Employe() {
 
         axios({
             method: 'delete',
-            url: `api/employees/delete/${ClickDel2}`,
+            url: `https://w-gym-the-lion-backend.herokuapp.com/api/employees/delete/${ClickDel2}`,
 
         });
 

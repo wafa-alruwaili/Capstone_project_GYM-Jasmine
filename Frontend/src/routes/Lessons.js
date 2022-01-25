@@ -39,7 +39,7 @@ export default function Lessons() {
 
         axios({
             method: 'post',
-            url: 'api/lessons/add',
+            url: 'https://w-gym-the-lion-backend.herokuapp.com/api/lessons/add',
             data: newlessons,
 
         });

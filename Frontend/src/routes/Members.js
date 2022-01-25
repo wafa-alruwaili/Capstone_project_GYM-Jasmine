@@ -11,7 +11,7 @@ export default class Member extends Component {
         };
     }
     componentDidMount() {
-        axios.get("api/member").then(res => {
+        axios.get("https://w-gym-the-lion-backend.herokuapp.com/api/member").then(res => {
             const MemberList = res.data
             this.setState({ MemberList })
             console.log(res.data)
@@ -20,7 +20,7 @@ export default class Member extends Component {
         });
     }
     deleteSpecialist(m_id) {
-        axios.delete(`api/member/delete/${m_id}`)
+        axios.delete(`https://w-gym-the-lion-backend.herokuapp.com/api/member/delete/${m_id}`)
             .then(res => {
                 const MemberList = this.state.MemberList.filter(item => item.m_id !== m_id);
                 this.setState({ MemberList })

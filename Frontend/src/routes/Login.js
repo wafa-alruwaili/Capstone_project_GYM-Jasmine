@@ -22,11 +22,13 @@ export default function Login() {
 
   }
   let navigate = useNavigate();
+  
+  
   function handleSubmit(event) {
     event.preventDefault();
     axios({
       method: "get",
-      url: "api/user/login",
+      url: "https://w-gym-the-lion-backend.herokuapp.com/api/user/login",
       params: { username: username, password: password }
     })
       .then((res => {
@@ -46,7 +48,8 @@ export default function Login() {
   }
   return (
     <div class="wrapper">
-
+ <h1 style={{ fontsize: "2.5rem", color: "#ffcc00", textAlign: "left" }}>GYM The Lion</h1>
+<div className='gog'><img src="logo.png" /></div>
       <h2 class="form-signin-heading" style={{ color: "#ffcc00", }}>Please login</h2>
 
       <form class="form-signin" onSubmit={handleSubmit}>

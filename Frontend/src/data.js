@@ -2,7 +2,7 @@ import axios from "axios"
 
 
 let invcc = [];
-axios.get("/api/plan")
+axios.get("https://w-gym-the-lion-backend.herokuapp.com/api/plan")
   .then(result => {
     invcc = result.data;
   });
